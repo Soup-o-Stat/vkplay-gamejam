@@ -1,11 +1,14 @@
 extends Node2D
 
+var level_modulate_speed=1
 
-# Called when the node enters the scene tree for the first time.
+func level_name_modulate(delta):
+	if $ColorRect.modulate.a>0:
+		$ColorRect.modulate.a-=level_modulate_speed*delta
+
 func _ready():
-	pass # Replace with function body.
+	$ColorRect.visible=true
+	$ColorRect.modulate.a=2
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	level_name_modulate(delta)
