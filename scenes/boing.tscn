@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://clgnqpcukn0aa"]
+
+[ext_resource type="Texture2D" uid="uid://n2fxcag0luwb" path="res://media/gfx/boing.jpg" id="1_i20el"]
+[ext_resource type="Script" path="res://scripts/boing.gd" id="1_q7ysw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj11j"]
+size = Vector2(192, 64)
+
+[node name="boing" type="Node2D"]
+script = ExtResource("1_q7ysw")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Boing" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(96, 32)
+scale = Vector2(0.09375, 0.0468864)
+texture = ExtResource("1_i20el")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(96, 32)
+shape = SubResource("RectangleShape2D_bj11j")
