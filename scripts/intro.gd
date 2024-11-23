@@ -4,7 +4,7 @@ var label_step = 0
 var angle = 0
 var speed = 3
 var amplitude = 0.05
-var modulate_speed=2
+var modulate_speed=3
 
 func _ready():
 	#Engine.max_fps=60
