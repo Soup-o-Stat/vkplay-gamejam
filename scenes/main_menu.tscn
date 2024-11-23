@@ -609,6 +609,7 @@ bus = &"sound"
 stream = ExtResource("13_qew6k")
 pitch_scale = 1.2
 
+[connection signal="pressed" from="play_label/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="settings_label/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="exit_label/exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="settings_main/graphics_label/graphics_button" to="." method="_on_graphics_button_pressed"]

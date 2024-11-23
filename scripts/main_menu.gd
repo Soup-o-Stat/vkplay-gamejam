@@ -230,6 +230,9 @@ func graph_settings_buttons_move(delta): #graph летит вниз
 			main_settings_button_step=17
 			settings_act="main"
 
+func _on_play_button_pressed():  #TODO добавить переходы
+	get_tree().change_scene_to_file("res://scenes/level_1_1.tscn")
+
 func _on_exit_button_pressed(): #нажатие на кнопку выход
 	exit_game_bool=true
 
