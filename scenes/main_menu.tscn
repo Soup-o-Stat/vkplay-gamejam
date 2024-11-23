@@ -1,0 +1,626 @@
+[gd_scene load_steps=43 format=3 uid="uid://4s1a35p6tm4c"]
+
+[ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="1_eu8jm"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jbmeq"]
+[ext_resource type="Texture2D" uid="uid://bgjljdpaj76ag" path="res://media/gfx/ui/black.png" id="2_qmrk0"]
+[ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="2_qr0ir"]
+[ext_resource type="AudioStream" uid="uid://boo0v6fobf35i" path="res://media/sfx/sounds/main_menu_buttons.wav" id="3_aboua"]
+[ext_resource type="Script" path="res://scripts/black.gd" id="4_iyfmu"]
+[ext_resource type="Shader" path="res://shaders/doom.gdshader" id="4_v0icb"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="6_48tn2"]
+[ext_resource type="Script" path="res://scripts/main_menu_camera.gd" id="6_ymsbm"]
+[ext_resource type="AudioStream" uid="uid://bdayrnilcae8x" path="res://media/sfx/test_music/main_menu.mp3" id="7_ru560"]
+[ext_resource type="AudioStream" uid="uid://da22pwymto485" path="res://media/sfx/sounds/main_menu_slide.wav" id="10_ohi2g"]
+[ext_resource type="Texture2D" uid="uid://bn1tud5v12tgq" path="res://media/gfx/ui/white_arrow_big.png" id="12_3tg2e"]
+[ext_resource type="AudioStream" uid="uid://cp6e0mm7u782d" path="res://media/sfx/sounds/main_menu_slide2.mp3" id="13_qew6k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8halw"]
+shader = ExtResource("4_v0icb")
+shader_parameter/timer = 0.0
+shader_parameter/y_offsets = PackedFloat32Array()
+shader_parameter/melting = true
+shader_parameter/melt_tex = ExtResource("2_qmrk0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ld04"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(0, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d08bg"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(20, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xytay"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(40, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15di4"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(60, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2461d"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(80, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwn0h"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(100, 0, 20, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qx47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ld04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d08bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xytay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15di4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2461d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwn0h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vxrw"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(0, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u87p5"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(20, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dxdq"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(40, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fips"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(60, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agx13"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(80, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6plwd"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(100, 0, 20, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wlmbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vxrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u87p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dxdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fips")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agx13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6plwd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr2gp"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(0, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iad1"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(20, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyet3"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(40, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osq2y"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(60, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3en8"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(80, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k67e"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(100, 0, 20, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e5km"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr2gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iad1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyet3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osq2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3en8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k67e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la3ip"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(0, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2ctt"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(20, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vol7r"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(40, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl7q8"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(60, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h648"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(80, 0, 20, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myv1r"]
+atlas = ExtResource("12_3tg2e")
+region = Rect2(100, 0, 20, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ob7o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la3ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2ctt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vol7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl7q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h648")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myv1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_jbmeq")
+
+[node name="Kazaxi" type="Sprite2D" parent="."]
+position = Vector2(640, 143.5)
+scale = Vector2(1, 0.401389)
+texture = ExtResource("2_qr0ir")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8halw")
+offset_left = -12.0
+offset_top = -10.0
+offset_right = 1280.0
+offset_bottom = 304.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_iyfmu")
+
+[node name="play_label" type="Label" parent="."]
+offset_top = 344.0
+offset_right = 640.0
+offset_bottom = 375.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "ИГРАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play_button" type="TextureButton" parent="play_label"]
+layout_mode = 0
+offset_left = 276.0
+offset_right = 364.0
+offset_bottom = 27.0
+
+[node name="settings_label" type="Label" parent="."]
+offset_top = 384.0
+offset_right = 640.0
+offset_bottom = 415.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings_button" type="TextureButton" parent="settings_label"]
+layout_mode = 0
+offset_left = 252.0
+offset_right = 390.0
+offset_bottom = 26.0
+
+[node name="exit_label" type="Label" parent="."]
+offset_top = 424.0
+offset_right = 640.0
+offset_bottom = 455.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "ВЫХОД"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit_button" type="TextureButton" parent="exit_label"]
+layout_mode = 0
+offset_left = 278.0
+offset_right = 364.0
+offset_bottom = 30.0
+
+[node name="SysImage" type="Sprite2D" parent="."]
+position = Vector2(312, 144)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("6_48tn2")
+
+[node name="Camera2D" type="Camera2D" parent="SysImage"]
+scale = Vector2(5.55556, 5.55556)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 640
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+script = ExtResource("6_ymsbm")
+
+[node name="settings_main" type="Node" parent="."]
+
+[node name="graphics_label" type="Label" parent="settings_main"]
+offset_left = 640.0
+offset_top = 140.0
+offset_right = 1280.0
+offset_bottom = 163.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "ГРАФИКА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="graphics_button" type="TextureButton" parent="settings_main/graphics_label"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = -2.0
+offset_right = 373.0
+offset_bottom = 30.0
+
+[node name="audio_label" type="Label" parent="settings_main"]
+offset_left = 640.0
+offset_top = 188.0
+offset_right = 1280.0
+offset_bottom = 219.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "АУДИО"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="audio_button" type="TextureButton" parent="settings_main/audio_label"]
+layout_mode = 0
+offset_left = 281.0
+offset_right = 358.0
+offset_bottom = 26.0
+
+[node name="back_label" type="Label" parent="settings_main"]
+offset_left = 640.0
+offset_top = 236.0
+offset_right = 1280.0
+offset_bottom = 267.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "НАЗАД"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back_button" type="TextureButton" parent="settings_main/back_label"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 1.0
+offset_right = 357.0
+offset_bottom = 26.0
+
+[node name="settings_graphics" type="Node" parent="."]
+
+[node name="graph_label" type="Label" parent="settings_graphics"]
+offset_left = 640.0
+offset_top = 344.0
+offset_right = 1280.0
+offset_bottom = 375.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "КАЧЕСТВО: ВЫСОКОЕ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="white_arrow_right" type="AnimatedSprite2D" parent="settings_graphics/graph_label"]
+position = Vector2(451, 13)
+sprite_frames = SubResource("SpriteFrames_5qx47")
+autoplay = "default"
+
+[node name="white_arrow_left" type="AnimatedSprite2D" parent="settings_graphics/graph_label"]
+position = Vector2(190, 13)
+sprite_frames = SubResource("SpriteFrames_wlmbc")
+autoplay = "default"
+flip_h = true
+
+[node name="next_qual" type="TextureButton" parent="settings_graphics/graph_label"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = -3.0
+offset_right = 461.0
+offset_bottom = 29.0
+
+[node name="back_qual" type="TextureButton" parent="settings_graphics/graph_label"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = -3.0
+offset_right = 201.0
+offset_bottom = 29.0
+
+[node name="fps_label" type="Label" parent="settings_graphics"]
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 1280.0
+offset_bottom = 415.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "ФПС: 144"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="white_arrow_right" type="AnimatedSprite2D" parent="settings_graphics/fps_label"]
+position = Vector2(381, 14)
+sprite_frames = SubResource("SpriteFrames_8e5km")
+autoplay = "default"
+
+[node name="white_arrow_left" type="AnimatedSprite2D" parent="settings_graphics/fps_label"]
+position = Vector2(260, 14)
+sprite_frames = SubResource("SpriteFrames_ob7o7")
+autoplay = "default"
+flip_h = true
+
+[node name="next_fps" type="TextureButton" parent="settings_graphics/fps_label"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = -2.0
+offset_right = 391.0
+offset_bottom = 30.0
+
+[node name="back_fps" type="TextureButton" parent="settings_graphics/fps_label"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = -2.0
+offset_right = 271.0
+offset_bottom = 30.0
+
+[node name="back_label" type="Label" parent="settings_graphics"]
+offset_left = 640.0
+offset_top = 424.0
+offset_right = 1280.0
+offset_bottom = 455.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "НАЗАД"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back_button" type="TextureButton" parent="settings_graphics/back_label"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 1.0
+offset_right = 357.0
+offset_bottom = 29.0
+
+[node name="settings_audio" type="Node" parent="."]
+
+[node name="music_label" type="Label" parent="settings_audio"]
+offset_left = 640.0
+offset_top = 344.0
+offset_right = 1280.0
+offset_bottom = 375.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "МУЗЫКА: 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="white_arrow_right" type="AnimatedSprite2D" parent="settings_audio/music_label"]
+position = Vector2(403, 13)
+sprite_frames = SubResource("SpriteFrames_5qx47")
+autoplay = "default"
+
+[node name="white_arrow_left" type="AnimatedSprite2D" parent="settings_audio/music_label"]
+position = Vector2(236, 13)
+sprite_frames = SubResource("SpriteFrames_wlmbc")
+autoplay = "default"
+flip_h = true
+
+[node name="next_music" type="TextureButton" parent="settings_audio/music_label"]
+layout_mode = 0
+offset_left = 391.0
+offset_top = -3.0
+offset_right = 413.0
+offset_bottom = 29.0
+
+[node name="back_music" type="TextureButton" parent="settings_audio/music_label"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = -3.0
+offset_right = 248.0
+offset_bottom = 29.0
+
+[node name="sound_label" type="Label" parent="settings_audio"]
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 1280.0
+offset_bottom = 415.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "ЗВУК: 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="white_arrow_right" type="AnimatedSprite2D" parent="settings_audio/sound_label"]
+position = Vector2(382, 14)
+sprite_frames = SubResource("SpriteFrames_8e5km")
+autoplay = "default"
+
+[node name="white_arrow_left" type="AnimatedSprite2D" parent="settings_audio/sound_label"]
+position = Vector2(257, 14)
+sprite_frames = SubResource("SpriteFrames_ob7o7")
+autoplay = "default"
+flip_h = true
+
+[node name="next_sound" type="TextureButton" parent="settings_audio/sound_label"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = -2.0
+offset_right = 392.0
+offset_bottom = 30.0
+
+[node name="back_sound" type="TextureButton" parent="settings_audio/sound_label"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = -2.0
+offset_right = 269.0
+offset_bottom = 30.0
+
+[node name="back_label" type="Label" parent="settings_audio"]
+offset_left = 640.0
+offset_top = 424.0
+offset_right = 1280.0
+offset_bottom = 455.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("1_eu8jm")
+theme_override_font_sizes/font_size = 30
+text = "НАЗАД"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back_button" type="TextureButton" parent="settings_audio/back_label"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 1.0
+offset_right = 357.0
+offset_bottom = 29.0
+
+[node name="Black" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(309, 140.125)
+scale = Vector2(687.5, 347.75)
+texture = ExtResource("2_qmrk0")
+
+[node name="ver_label" type="Label" parent="."]
+offset_left = 1200.0
+offset_top = 264.0
+offset_right = 1274.0
+offset_bottom = 281.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("1_eu8jm")
+text = "Версия: 1489"
+
+[node name="main_menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ru560")
+bus = &"music"
+
+[node name="buttons_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aboua")
+bus = &"sound"
+
+[node name="slide_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ohi2g")
+bus = &"sound"
+
+[node name="button_slide_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qew6k")
+pitch_scale = 1.2
+
+[connection signal="pressed" from="settings_label/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="exit_label/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="settings_main/graphics_label/graphics_button" to="." method="_on_graphics_button_pressed"]
+[connection signal="pressed" from="settings_main/audio_label/audio_button" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="settings_main/back_label/back_button" to="." method="_on_back_settings_main_button_pressed"]
+[connection signal="pressed" from="settings_graphics/graph_label/next_qual" to="." method="_on_next_qual_pressed"]
+[connection signal="pressed" from="settings_graphics/graph_label/back_qual" to="." method="_on_back_qual_pressed"]
+[connection signal="pressed" from="settings_graphics/fps_label/next_fps" to="." method="_on_next_fps_pressed"]
+[connection signal="pressed" from="settings_graphics/fps_label/back_fps" to="." method="_on_back_fps_pressed"]
+[connection signal="pressed" from="settings_graphics/back_label/back_button" to="." method="_on_back_from_graphics_button_pressed"]
+[connection signal="pressed" from="settings_audio/music_label/next_music" to="." method="_on_next_music_pressed"]
+[connection signal="pressed" from="settings_audio/music_label/back_music" to="." method="_on_back_music_pressed"]
+[connection signal="pressed" from="settings_audio/sound_label/next_sound" to="." method="_on_next_sound_pressed"]
+[connection signal="pressed" from="settings_audio/sound_label/back_sound" to="." method="_on_back_sound_pressed"]
+[connection signal="pressed" from="settings_audio/back_label/back_button" to="." method="_on_back_from_audio_button_pressed"]

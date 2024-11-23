@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7eb6hcd0t42g"]
+
+[ext_resource type="Texture2D" uid="uid://bgjljdpaj76ag" path="res://media/gfx/ui/black.png" id="1_foxrx"]
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_ltf33"]
+[ext_resource type="FontFile" uid="uid://dvwlw88rmr1t0" path="res://media/fonts/dpcomic.ttf" id="2_l5gq6"]
+[ext_resource type="AudioStream" uid="uid://cahwopg7bifgc" path="res://media/sfx/test_music/intro1.ogg" id="4_ueicy"]
+[ext_resource type="Texture2D" uid="uid://t2v4qi7pb8lx" path="res://media/gfx/ui/fc_intro.png" id="5_y4s08"]
+
+[node name="intro" type="Node2D"]
+script = ExtResource("1_ltf33")
+
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(320, 144)
+scale = Vector2(640, 288)
+texture = ExtResource("1_foxrx")
+
+[node name="intro_label" type="Label" parent="."]
+offset_right = 640.0
+offset_bottom = 288.0
+pivot_offset = Vector2(320, 144)
+theme_override_colors/font_color = Color(0, 0.952941, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0.886275, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_l5gq6")
+text = "Hi! This is \"Future Club\" from Vernadsky Avenue!
+We need a project for the hackathon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="intro_label"]
+wait_time = 2.0
+one_shot = true
+
+[node name="intro_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ueicy")
+autoplay = true
+
+[node name="FcIntro" type="Sprite2D" parent="."]
+position = Vector2(320, 136)
+texture = ExtResource("5_y4s08")
+
+[node name="Timer" type="Timer" parent="FcIntro"]
+wait_time = 2.0
+one_shot = true
