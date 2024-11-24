@@ -1,6 +1,6 @@
 extends Node
 
-var ver="0.0.8"
+var ver="0.0.9"
 
 var max_fps=DisplayServer.screen_get_refresh_rate()
 var main_menu_start_melt=false

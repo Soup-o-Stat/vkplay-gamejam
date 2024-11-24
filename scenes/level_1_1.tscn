@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dthc1cx263qo1"]
+[gd_scene load_steps=12 format=3 uid="uid://dthc1cx263qo1"]
 
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="1_eoui7"]
 [ext_resource type="Script" path="res://scripts/level_1_1.gd" id="1_ukk8j"]
@@ -6,9 +6,15 @@
 [ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="4_wqaoq"]
 [ext_resource type="PackedScene" uid="uid://b4cemn3k2iqfe" path="res://scenes/stone_brick.tscn" id="5_5vais"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="6_eha4a"]
+[ext_resource type="AudioStream" uid="uid://dri2n2oimrn51" path="res://media/sfx/test_music/01.mp3" id="7_ffnsm"]
+[ext_resource type="PackedScene" uid="uid://ddttxkxbrnwb0" path="res://scenes/catapult.tscn" id="8_vgsln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
 size = Vector2(1088, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiy76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fih0l"]
 
 [node name="level1_1" type="Node2D"]
 script = ExtResource("1_ukk8j")
@@ -19,10 +25,37 @@ position = Vector2(85, 255)
 [node name="building" type="Node2D" parent="."]
 
 [node name="stone_brick" parent="building" instance=ExtResource("5_5vais")]
-position = Vector2(280, 128)
+position = Vector2(712, 224)
 
 [node name="stone_brick2" parent="building" instance=ExtResource("5_5vais")]
-position = Vector2(328, 128)
+position = Vector2(712, 240)
+
+[node name="stone_brick3" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(712, 192)
+
+[node name="stone_brick4" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(712, 208)
+
+[node name="stone_brick5" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(744, 224)
+
+[node name="stone_brick6" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(744, 240)
+
+[node name="stone_brick7" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(712, 176)
+
+[node name="stone_brick8" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(744, 192)
+
+[node name="stone_brick9" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(744, 208)
+
+[node name="stone_brick10" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(744, 176)
+
+[node name="stone_brick11" parent="building" instance=ExtResource("5_5vais")]
+position = Vector2(712, 160)
 
 [node name="floor" type="CharacterBody2D" parent="."]
 
@@ -35,7 +68,18 @@ texture = ExtResource("4_wfeg0")
 position = Vector2(544, 272)
 shape = SubResource("RectangleShape2D_lyiku")
 
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1088.0
+offset_bottom = 288.0
+
+[node name="catapult" parent="." instance=ExtResource("8_vgsln")]
+position = Vector2(64, 192)
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 640.0
 offset_bottom = 288.0
 color = Color(0, 0, 0, 1)
@@ -50,12 +94,6 @@ text = "ТУТ НАЗВАНИЕ ЛОКАЦИИ НАДО ПРИДУМАТЬ
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1088.0
-offset_bottom = 288.0
-
 [node name="SysImage" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(320, 144)
@@ -66,5 +104,19 @@ texture = ExtResource("6_eha4a")
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 rotation_smoothing_speed = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ffnsm")
+autoplay = true
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(352, 256)
+shape = SubResource("RectangleShape2D_jiy76")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(32, 256)
+shape = SubResource("RectangleShape2D_fih0l")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

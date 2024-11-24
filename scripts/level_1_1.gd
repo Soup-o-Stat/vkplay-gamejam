@@ -9,6 +9,9 @@ var slide_step=0
 func level_name_modulate(delta):
 	if $ColorRect.modulate.a>0:
 		$ColorRect.modulate.a-=level_modulate_speed*delta
+	else:
+		$Control.visible=true
+		$ColorRect.visible=false
 
 func _ready():
 	$ColorRect.visible=true

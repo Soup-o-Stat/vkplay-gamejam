@@ -8,5 +8,5 @@ func _on_body_entered(body):
 		$AudioStreamPlayer2D.stream=preload("res://media/sfx/sounds/rock_fall1.wav")
 	if sound_count==2:
 		$AudioStreamPlayer2D.stream=preload("res://media/sfx/sounds/rock_fall2.wav")
-	$AudioStreamPlayer2D.play()
+	#$AudioStreamPlayer2D.play()
 	print(body.name)

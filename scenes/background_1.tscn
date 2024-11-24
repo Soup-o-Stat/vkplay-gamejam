@@ -1,20 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://baj0a7nltpjrl"]
+[gd_scene load_steps=5 format=3 uid="uid://baj0a7nltpjrl"]
 
 [ext_resource type="Script" path="res://scripts/background_1.gd" id="1_wbk41"]
+[ext_resource type="Texture2D" uid="uid://c60go3jl7gifn" path="res://media/gfx/bg/stone_sky.png" id="2_0px26"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="2_cg8li"]
+[ext_resource type="Texture2D" uid="uid://btmmmbgsglvad" path="res://media/gfx/bg/stone_bg_ground.png" id="3_r54cq"]
 
 [node name="background_1" type="Node2D"]
 script = ExtResource("1_wbk41")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="sky" type="Sprite2D" parent="ParallaxBackground"]
-modulate = Color(0, 1, 0.768627, 1)
-position = Vector2(320, 143.5)
-scale = Vector2(2.84444, 1.27556)
-texture = ExtResource("2_cg8li")
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(140, 0)
+
+[node name="StoneSky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(70, 16)
+texture = ExtResource("2_0px26")
+
+[node name="StoneSky2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(350, 16)
+texture = ExtResource("2_0px26")
+
+[node name="StoneSky3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(630, 16)
+texture = ExtResource("2_0px26")
+
+[node name="StoneSky4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(910, 16)
+texture = ExtResource("2_0px26")
+
+[node name="StoneSky5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1190, 16)
+texture = ExtResource("2_0px26")
+
+[node name="StoneBgGround" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(70, 39)
+texture = ExtResource("3_r54cq")
+
+[node name="StoneBgGround2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(350, 39)
+texture = ExtResource("3_r54cq")
+
+[node name="StoneBgGround3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(630, 39)
+texture = ExtResource("3_r54cq")
+
+[node name="StoneBgGround4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(910, 39)
+texture = ExtResource("3_r54cq")
+
+[node name="StoneBgGround5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1190, 39)
+texture = ExtResource("3_r54cq")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_mirroring = Vector2(750, 0)
 
 [node name="clouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
@@ -22,7 +62,10 @@ position = Vector2(318.625, 76)
 scale = Vector2(2.77667, 0.575556)
 texture = ExtResource("2_cg8li")
 
-[node name="another_objects" type="Sprite2D" parent="ParallaxBackground"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="another_objects" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(320, 190)
 scale = Vector2(2.84444, 0.871111)

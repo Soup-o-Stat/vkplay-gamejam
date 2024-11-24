@@ -10,6 +10,7 @@ size = Vector2(16, 16)
 [node name="stone_brick" type="Node2D"]
 
 [node name="stone_brick" type="RigidBody2D" parent="."]
+mass = 10.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_p16xt")
