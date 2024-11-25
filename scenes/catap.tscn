@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bv4wvkw1iel0u"]
+[gd_scene load_steps=20 format=3 uid="uid://bv4wvkw1iel0u"]
 
 [ext_resource type="Script" path="res://scripts/catapult.gd" id="1_7wsa5"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="2_bb0t4"]
 [ext_resource type="Texture2D" uid="uid://bn1tud5v12tgq" path="res://media/gfx/ui/white_arrow_big.png" id="3_bxr8h"]
+[ext_resource type="AudioStream" uid="uid://ccbpp5k3ag5o4" path="res://media/sfx/sounds/throw.mp3" id="4_5skto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y6o4"]
 size = Vector2(128, 64)
@@ -145,6 +146,10 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 8.0
 offset_bottom = 16.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5skto")
+volume_db = 15.0
 
 [connection signal="button_down" from="arrow_right/arrow_right_button" to="." method="_on_arrow_right_button_button_down"]
 [connection signal="button_up" from="arrow_right/arrow_right_button" to="." method="_on_arrow_right_button_button_up"]

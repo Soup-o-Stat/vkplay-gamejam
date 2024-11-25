@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds0slg17esk0l"]
+
+[ext_resource type="Script" path="res://scripts/stone_enemy.gd" id="1_076bv"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="2_byui4"]
+[ext_resource type="AudioStream" uid="uid://b3xfsog4kq2m5" path="res://media/sfx/sounds/stone_death.mp3" id="3_d78mn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4wap"]
+size = Vector2(10, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjx5e"]
+size = Vector2(10, 0.23221)
+
+[node name="stone_enemy1" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_076bv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 9)
+scale = Vector2(0.0444444, 0.08)
+texture = ExtResource("2_byui4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 9)
+shape = SubResource("RectangleShape2D_x4wap")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, -0.15701)
+shape = SubResource("RectangleShape2D_bjx5e")
+debug_color = Color(0.968627, 0, 0, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d78mn")
+pitch_scale = 1.85
+bus = &"sound"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

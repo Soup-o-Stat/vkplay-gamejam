@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://scripts/global.gd"
+DeathSound="*res://scripts/death_sound.gd"
 
 [display]
 

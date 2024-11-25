@@ -6,3 +6,6 @@ Used Assets
 DPComic Font - codeman38
 Keleti Font - Kitya Toropowski
 desert_sound.mp3 - SmartSound FX
+stone_death.mp3: Zombies groaning & hissing (Dry).mp3 - Locran
+wing.mp3: Birdlike, Large, Single Flap, Slow.mp3 - Epidemic Sound
+throw.mp3: Throwing item - swing.mp3 - Epic Stock Media

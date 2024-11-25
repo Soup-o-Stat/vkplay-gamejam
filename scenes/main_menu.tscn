@@ -608,6 +608,7 @@ bus = &"sound"
 [node name="button_slide_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_qew6k")
 pitch_scale = 1.2
+bus = &"sound"
 
 [connection signal="pressed" from="play_label/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="settings_label/settings_button" to="." method="_on_settings_button_pressed"]

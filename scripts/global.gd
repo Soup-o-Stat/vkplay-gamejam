@@ -1,6 +1,6 @@
 extends Node
 
-var ver="0.0.11"
+var ver="0.0.12"
 
 var max_fps=DisplayServer.screen_get_refresh_rate()
 var main_menu_start_melt=false
@@ -18,6 +18,11 @@ var maxdb=0
 var mindb=-60
 var current_volume_music=100
 var current_volume_sound=100
+
+var slide_step=0
+var global_swipe_start=0
+
+var score=0
 
 func _ready():
 	current_fps=snapped(max_fps, 1)

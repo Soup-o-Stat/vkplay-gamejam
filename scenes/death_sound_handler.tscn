@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wc4cfi6fl3jt"]
+
+[ext_resource type="Script" path="res://scripts/death_sound.gd" id="1_gyh70"]
+
+[node name="death_sound_handler" type="AudioStreamPlayer"]
+pitch_scale = 1.85
+script = ExtResource("1_gyh70")

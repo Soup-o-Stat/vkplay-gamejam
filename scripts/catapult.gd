@@ -4,8 +4,8 @@ var speed = 50
 var go_right = false
 var go_left = false
 
-# Загрузка сцены камня
-@onready var stone_scene = preload("res://scenes/ball.tscn")
+# Загрузка сцены объекта "ball"
+@onready var ball_scene = preload("res://scenes/ball.tscn")
 
 func _process(delta):
 	if go_right:
@@ -29,15 +29,21 @@ func _on_arrow_left_button_button_up():
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		spawn_stone()
+		spawn_ball()
 
-func spawn_stone():
-	var stone = stone_scene.instantiate()
-	stone.position = position-Vector2(0, 20)
-	print(stone.position)
-	get_parent().add_child(stone)
-	if stone is RigidBody2D:
+func spawn_ball():
+	$AudioStreamPlayer.play()
+	Global.global_swipe_start=1
+	Global.slide_step=1
+	var ball = ball_scene.instantiate()
+	ball.position = position - Vector2(0, 20)
+	ball.name = "ball"
+	print(ball.position, ball.name)
+	get_parent().add_child(ball)
+	
+	if ball is RigidBody2D:
+		# Устанавливаем начальную скорость
 		var arc_velocity = Vector2(1200, -350)
-		stone.linear_velocity = arc_velocity
+		ball.linear_velocity = arc_velocity
 	else:
-		print("Ошибка: Корневой узел stone_brick_1.tscn должен быть RigidBody2D")
+		print("Ошибка: Корневой узел ball.tscn должен быть RigidBody2D")
