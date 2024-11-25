@@ -1,37 +1,37 @@
-[gd_scene load_steps=19 format=3 uid="uid://ddttxkxbrnwb0"]
+[gd_scene load_steps=19 format=3 uid="uid://bv4wvkw1iel0u"]
 
-[ext_resource type="Script" path="res://scripts/catapult.gd" id="1_52peu"]
-[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="1_7726i"]
-[ext_resource type="Texture2D" uid="uid://bn1tud5v12tgq" path="res://media/gfx/ui/white_arrow_big.png" id="3_d8tp5"]
+[ext_resource type="Script" path="res://scripts/catapult.gd" id="1_7wsa5"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="2_bb0t4"]
+[ext_resource type="Texture2D" uid="uid://bn1tud5v12tgq" path="res://media/gfx/ui/white_arrow_big.png" id="3_bxr8h"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wql0n"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y6o4"]
 size = Vector2(128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xo34a"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(0, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_812e7"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(20, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tngwo"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(40, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pn5vn"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(60, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27ex4"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(80, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7yuw"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(100, 0, 20, 31)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5uu8n"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kqso"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -58,30 +58,30 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j13fw"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(0, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xeyca"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(20, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2e2v"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(40, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbari"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(60, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8prkq"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(80, 0, 20, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4kmf"]
-atlas = ExtResource("3_d8tp5")
+atlas = ExtResource("3_bxr8h")
 region = Rect2(100, 0, 20, 31)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f0otl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bahhy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -107,49 +107,46 @@ animations = [{
 "speed": 9.0
 }]
 
-[node name="catapult" type="Node2D"]
-script = ExtResource("1_52peu")
+[node name="catap" type="CharacterBody2D"]
+script = ExtResource("1_7wsa5")
 
-[node name="catap" type="CharacterBody2D" parent="."]
-
-[node name="sprite" type="Sprite2D" parent="catap"]
+[node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(64, 32)
 scale = Vector2(0.568889, 0.284444)
-texture = ExtResource("1_7726i")
+texture = ExtResource("2_bb0t4")
 
-[node name="Marker2D" type="Marker2D" parent="catap"]
+[node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(16, -16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="catap"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(64, 32)
-shape = SubResource("RectangleShape2D_wql0n")
+shape = SubResource("RectangleShape2D_2y6o4")
 
-[node name="arrow_right" type="AnimatedSprite2D" parent="catap"]
+[node name="arrow_right" type="AnimatedSprite2D" parent="."]
 position = Vector2(144, 32)
-sprite_frames = SubResource("SpriteFrames_5uu8n")
+sprite_frames = SubResource("SpriteFrames_4kqso")
 autoplay = "default"
 
-[node name="arrow_right_button" type="TextureButton" parent="catap/arrow_right"]
+[node name="arrow_right_button" type="TextureButton" parent="arrow_right"]
 offset_left = -8.0
 offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 metadata/_edit_use_anchors_ = true
 
-[node name="arrow_left" type="AnimatedSprite2D" parent="catap"]
+[node name="arrow_left" type="AnimatedSprite2D" parent="."]
 position = Vector2(-16, 32)
-sprite_frames = SubResource("SpriteFrames_f0otl")
+sprite_frames = SubResource("SpriteFrames_bahhy")
 autoplay = "default"
 flip_h = true
 
-[node name="arrow_left_button" type="TextureButton" parent="catap/arrow_left"]
+[node name="arrow_left_button" type="TextureButton" parent="arrow_left"]
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 8.0
 offset_bottom = 16.0
-metadata/_edit_use_anchors_ = true
 
-[connection signal="button_down" from="catap/arrow_right/arrow_right_button" to="." method="_on_arrow_right_button_button_down"]
-[connection signal="button_up" from="catap/arrow_right/arrow_right_button" to="." method="_on_arrow_right_button_button_up"]
-[connection signal="button_down" from="catap/arrow_left/arrow_left_button" to="." method="_on_arrow_left_button_button_down"]
-[connection signal="button_up" from="catap/arrow_left/arrow_left_button" to="." method="_on_arrow_left_button_button_up"]
+[connection signal="button_down" from="arrow_right/arrow_right_button" to="." method="_on_arrow_right_button_button_down"]
+[connection signal="button_up" from="arrow_right/arrow_right_button" to="." method="_on_arrow_right_button_button_up"]
+[connection signal="button_down" from="arrow_left/arrow_left_button" to="." method="_on_arrow_left_button_button_down"]
+[connection signal="button_up" from="arrow_left/arrow_left_button" to="." method="_on_arrow_left_button_button_up"]

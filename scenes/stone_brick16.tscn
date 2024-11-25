@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1awy2ji2ruke"]
+
+[ext_resource type="Texture2D" uid="uid://dod32tcpi23jg" path="res://media/gfx/bricks/stone/brick16.png" id="2_dea18"]
+[ext_resource type="AudioStream" uid="uid://bg70ajuqg2nwm" path="res://media/sfx/sounds/Voicy_deltarune explosion.mp3" id="2_n0cqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ufx7"]
+size = Vector2(17, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t42o"]
+size = Vector2(7.5, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ptll"]
+size = Vector2(19, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w43ns"]
+size = Vector2(15, 2)
+
+[node name="stone_brick16" type="RigidBody2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_n0cqd")
+max_distance = 500.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(9.5, 4)
+shape = SubResource("RectangleShape2D_7ufx7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(15.25, 2)
+shape = SubResource("RectangleShape2D_0t42o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.5, 5)
+shape = SubResource("RectangleShape2D_0ptll")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 8)
+shape = SubResource("RectangleShape2D_w43ns")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.5, 4.5)
+texture = ExtResource("2_dea18")

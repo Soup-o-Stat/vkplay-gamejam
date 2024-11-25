@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvcmfxhkn61ch"]
+
+[ext_resource type="Script" path="res://scripts/stone_brick.gd" id="1_8wvgl"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="2_c2kuj"]
+[ext_resource type="AudioStream" uid="uid://bg70ajuqg2nwm" path="res://media/sfx/sounds/Voicy_deltarune explosion.mp3" id="3_xbbgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opi1a"]
+size = Vector2(64, 16)
+
+[node name="stone_brick_2" type="Node2D"]
+
+[node name="stone_brick" type="RigidBody2D" parent="."]
+mass = 10.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_8wvgl")
+
+[node name="Sprite2D" type="Sprite2D" parent="stone_brick"]
+position = Vector2(32, 7.99999)
+scale = Vector2(0.284444, 0.0711111)
+texture = ExtResource("2_c2kuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stone_brick"]
+position = Vector2(32, 8)
+shape = SubResource("RectangleShape2D_opi1a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="stone_brick"]
+stream = ExtResource("3_xbbgc")
+max_distance = 500.0
+
+[connection signal="body_entered" from="stone_brick" to="stone_brick" method="_on_body_entered"]

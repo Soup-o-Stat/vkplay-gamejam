@@ -11,7 +11,7 @@ func level_name_modulate(delta):
 		$ColorRect.modulate.a-=level_modulate_speed*delta
 	else:
 		$Control.visible=true
-		$ColorRect.visible=false
+		$ColorRect.visible=false  
 
 func _ready():
 	$ColorRect.visible=true
@@ -33,9 +33,9 @@ func _calculate_swipe(swipe_end):
 	if swipe.length() > minimum_drag:
 		if swipe[0]>0:
 			if slide_step!=0:
-				$SysImage.position.x-=400
+				$SysImage.position.x=320
 				slide_step-=1
 		if swipe[0]<0:
 			if slide_step!=1:
-				$SysImage.position.x+=400
+				$SysImage.position.x=960
 				slide_step+=1

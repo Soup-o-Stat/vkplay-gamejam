@@ -9,4 +9,4 @@ func _on_body_entered(body):
 	if sound_count==2:
 		$AudioStreamPlayer2D.stream=preload("res://media/sfx/sounds/rock_fall2.wav")
 	#$AudioStreamPlayer2D.play()
-	print(body.name)
+	#print(body.name)
