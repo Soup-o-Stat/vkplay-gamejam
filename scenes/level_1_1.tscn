@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dthc1cx263qo1"]
+[gd_scene load_steps=35 format=3 uid="uid://dthc1cx263qo1"]
 
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="1_eoui7"]
 [ext_resource type="Script" path="res://scripts/level_1_1.gd" id="1_ukk8j"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://b2gvolg6ajc4b" path="res://scenes/stone_brick17.tscn" id="26_a6iwm"]
 [ext_resource type="PackedScene" uid="uid://d1upjpxkbucgv" path="res://scenes/stone_brick18.tscn" id="27_gbwhx"]
 [ext_resource type="PackedScene" uid="uid://coiqfjg3la3oa" path="res://scenes/stone_brick19.tscn" id="28_hduak"]
+[ext_resource type="PackedScene" uid="uid://coxbuy3cplqpr" path="res://scenes/soloma.tscn" id="29_hsv0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
 size = Vector2(1280, 40)
@@ -249,5 +250,8 @@ position = Vector2(995, 249)
 
 [node name="stone_brick40" parent="." instance=ExtResource("18_bti33")]
 position = Vector2(1005, 240)
+
+[node name="soloma" parent="." instance=ExtResource("29_hsv0q")]
+position = Vector2(992, 173)
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

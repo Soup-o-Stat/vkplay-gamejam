@@ -39,5 +39,4 @@ shape = SubResource("RectangleShape2D_3dfop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5.5, 5.5)
-scale = Vector2(1, 1)
 texture = ExtResource("2_3bm3y")

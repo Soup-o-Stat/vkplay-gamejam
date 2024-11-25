@@ -16,6 +16,7 @@ size = Vector2(13, 2)
 size = Vector2(10, 2)
 
 [node name="stone_brick8" type="RigidBody2D"]
+mass = 3.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_4gn44")
