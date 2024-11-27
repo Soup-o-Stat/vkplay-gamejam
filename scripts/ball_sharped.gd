@@ -11,7 +11,12 @@ func _process(delta):
 	if $Timer.is_stopped():
 		if self.sharp != 3:
 			var miniball = miniball_scene.instantiate()
-			miniball.position = position - Vector2(0, 40)
+			if self.sharp==0:
+				miniball.position = position - Vector2(0,-20)
+			if self.sharp==1:
+				miniball.position = position - Vector2(0, 40)
+			if self.sharp==2:
+				miniball.position = position - Vector2(0, 80)
 			miniball.name = "ball"
 			miniball.linear_velocity = self.linear_velocity 
 			miniball.angular_velocity = self.angular_velocity

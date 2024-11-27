@@ -135,7 +135,6 @@ shape = SubResource("CircleShape2D_5c23o")
 position = Vector2(12, 5)
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_hi18f")
-fixed_fps = 60
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(12, 12)

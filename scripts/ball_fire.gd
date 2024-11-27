@@ -5,6 +5,13 @@ var explode_var=false
 func _ready():
 	$AnimatedSprite2D.visible=false
 	name = "ball_fire"
+	if Global.current_qual=="ВЫСОКОЕ":
+		$GPUParticles2D.fixed_fps=60
+	if Global.current_qual=="СРЕДНЕЕ":
+		$GPUParticles2D.fixed_fps=30
+	if Global.current_qual=="НИЗКОЕ":
+		$PointLight2D.queue_free()
+		$GPUParticles2D.queue_free()
 
 func _on_fire_area_area_entered(area):
 	if area.name == "bonfire_area":

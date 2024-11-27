@@ -211,7 +211,6 @@ texture = ExtResource("7_ivgpa")
 position = Vector2(-48.3668, -9.2548)
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_ygpo6")
-fixed_fps = 60
 
 [node name="StoneBase" type="Sprite2D" parent="."]
 position = Vector2(60, 17)

@@ -1,6 +1,6 @@
 extends Node
 
-var ver="0.0.13"
+var ver="0.0.14"
 
 var max_fps=DisplayServer.screen_get_refresh_rate()
 var main_menu_start_melt=false
@@ -11,7 +11,7 @@ var list_of_quality=["НИЗКОЕ", "СРЕДНЕЕ", "ВЫСОКОЕ"]
 var current_fps=0
 var max_fps_in_list=0
 
-var current_qual="ВЫСОКОЕ"
+var current_qual="СРЕДНЕЕ"
 var max_qual=2
 
 var maxdb=0

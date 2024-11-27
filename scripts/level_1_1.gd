@@ -13,6 +13,7 @@ func level_name_modulate(delta):
 		$CanvasLayer/ColorRect.visible=false  
 
 func _ready():
+	Global.slide_step=0
 	Global.choosen_ball=1
 	Global.num_of_balls=3
 	Global.dead_enemies=0

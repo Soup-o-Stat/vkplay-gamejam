@@ -5,7 +5,6 @@ var go_right = false
 var go_left = false
 var spoon_anim=0
 
-
 @onready var ball_scene = preload("res://scenes/ball.tscn")
 @onready var ball_fire_scene = preload("res://scenes/ball_fire.tscn")
 @onready var ball_sharped_scene = preload("res://scenes/ball_sharped.tscn")
@@ -25,7 +24,7 @@ func spoon_animation():
 			spoon_anim=0
 
 func _process(delta):
-	if Global.num_of_balls>0 and spoon_anim==0:
+	if Global.num_of_balls>0 and spoon_anim==0 and Global.current_qual!="НИЗКОЕ":
 		if Global.choosen_ball==1:
 			$StoneSpoon/FireBall.visible=false
 			$StoneSpoon/SharpedBall.visible=false
@@ -64,6 +63,14 @@ func _on_arrow_left_button_button_up():
 #func _input(event):
 	#if event.is_action_pressed("ui_accept"):
 		#spawn_ball()
+
+func _ready():
+	if Global.current_qual=="ВЫСОКОЕ":
+		$StoneSpoon/GPUParticles2D.fixed_fps=60
+	if Global.current_qual=="СРЕДНЕЕ":
+		$StoneSpoon/GPUParticles2D.fixed_fps=30
+	if Global.current_qual=="НИЗКОЕ":
+		$StoneSpoon/GPUParticles2D.queue_free()
 
 func spawn_ball():
 	if spoon_anim==0 and Global.num_of_balls>0:
