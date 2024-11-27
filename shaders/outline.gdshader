@@ -16,8 +16,6 @@ uniform float u_x_light: hint_range(-1, 4) = 0.2;
 uniform float u_shape_light: hint_range(0.5, 4) = 2;
 uniform float u_width_light: hint_range(0.1, 2) = 1;
 
-
-
 vec2 rotate(vec2 v, float angle) {
 	mat2 rotation_matrix = mat2(
 			vec2(cos(angle / 180.0 * PI), -sin(angle / 180.0 * PI)),
@@ -26,8 +24,6 @@ vec2 rotate(vec2 v, float angle) {
 }
 
 float lorentzian(float x, float x0, float w, float shp) {
-	// modified lorentzian peak function with half-width w and exponent shp
-	// around center of x0. Normalized to be 1 at x0.
 	return pow(w, 2) / (pow(abs(x - x0), shp) + pow(w, 2));
 }
 

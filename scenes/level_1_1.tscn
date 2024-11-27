@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dthc1cx263qo1"]
+[gd_scene load_steps=60 format=3 uid="uid://dthc1cx263qo1"]
 
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="1_eoui7"]
 [ext_resource type="Script" path="res://scripts/level_1_1.gd" id="1_ukk8j"]
@@ -30,8 +30,23 @@
 [ext_resource type="PackedScene" uid="uid://coiqfjg3la3oa" path="res://scenes/stone_brick19.tscn" id="28_hduak"]
 [ext_resource type="AudioStream" uid="uid://s2e3gnv3xys3" path="res://media/sfx/music/rock_and_stone.mp3" id="29_6b08e"]
 [ext_resource type="PackedScene" uid="uid://coxbuy3cplqpr" path="res://scenes/soloma.tscn" id="29_hsv0q"]
+[ext_resource type="Texture2D" uid="uid://i0sgkad503dc" path="res://media/gfx/ui/pause.png" id="30_xikoq"]
 [ext_resource type="Script" path="res://scripts/score_count.gd" id="31_5vevs"]
+[ext_resource type="Texture2D" uid="uid://trlp1b5h7fxn" path="res://media/gfx/ui/restart.png" id="31_sywvy"]
+[ext_resource type="Script" path="res://scripts/pause_button.gd" id="31_ypbt2"]
+[ext_resource type="Script" path="res://scripts/restart_button.gd" id="32_04gow"]
+[ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="32_7k6s7"]
 [ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="32_m3tl5"]
+[ext_resource type="Texture2D" uid="uid://bxh40iko5hkkd" path="res://media/gfx/ui/shoot.png" id="33_qkjqe"]
+[ext_resource type="Script" path="res://scripts/shoot_button.gd" id="34_n26k0"]
+[ext_resource type="Texture2D" uid="uid://bsloyqksj4fnm" path="res://media/gfx/ui/ball_choose_nonact.png" id="36_lfymw"]
+[ext_resource type="Script" path="res://scripts/choose_first_button.gd" id="37_yoadv"]
+[ext_resource type="Texture2D" uid="uid://drxfx8e7ph6l6" path="res://media/gfx/balls/test_ball.png" id="38_h3v2y"]
+[ext_resource type="Texture2D" uid="uid://2xynonfkqb34" path="res://media/gfx/ui/white_arrow.png" id="39_8gyqf"]
+[ext_resource type="Script" path="res://scripts/choose_second_button.gd" id="40_0xhy5"]
+[ext_resource type="Texture2D" uid="uid://d16v2bffxsgs1" path="res://media/gfx/balls/fire_ball.png" id="40_mxv82"]
+[ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="42_a3umb"]
+[ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="43_1q2f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
 size = Vector2(1280, 40)
@@ -48,6 +63,56 @@ metadata/_snap_count = 11
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiy76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fih0l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3g32"]
+atlas = ExtResource("39_8gyqf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p5ae"]
+atlas = ExtResource("39_8gyqf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tia5q"]
+atlas = ExtResource("39_8gyqf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjdk"]
+atlas = ExtResource("39_8gyqf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4rou"]
+atlas = ExtResource("39_8gyqf")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hf5y"]
+atlas = ExtResource("39_8gyqf")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qesb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p5ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tia5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hf5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="level1_1" type="Node2D"]
 script = ExtResource("1_ukk8j")
@@ -213,17 +278,11 @@ position = Vector2(807, 271)
 [node name="stone_brick50" parent="building" instance=ExtResource("16_8i00u")]
 position = Vector2(875, 271)
 
-[node name="stone_enemy1" parent="building" instance=ExtResource("24_hatd8")]
-position = Vector2(1220, 262)
-
-[node name="stone_enemy2" parent="building" instance=ExtResource("24_hatd8")]
-position = Vector2(1035, 168)
-
 [node name="stone_enemy3" parent="building" instance=ExtResource("24_hatd8")]
-position = Vector2(1141, 262)
+position = Vector2(1142, 239)
 
 [node name="stone_enemy4" parent="building" instance=ExtResource("24_hatd8")]
-position = Vector2(978, 243)
+position = Vector2(921, 239)
 
 [node name="floor" type="CharacterBody2D" parent="."]
 
@@ -255,22 +314,6 @@ offset_bottom = 288.0
 
 [node name="catap" parent="." instance=ExtResource("6_j7chr")]
 position = Vector2(128, 216)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_right = 640.0
-offset_bottom = 288.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 288.0
-theme_override_fonts/font = ExtResource("4_wqaoq")
-text = "ROCK AND STONE
-уровень 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="SysImage" type="Sprite2D" parent="."]
 visible = false
@@ -305,18 +348,130 @@ bus = &"sound"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="ui" type="Node2D" parent="CanvasLayer"]
+
+[node name="pause_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 72.0
+texture_normal = ExtResource("30_xikoq")
+script = ExtResource("31_ypbt2")
+
+[node name="restart_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 72.0
+texture_normal = ExtResource("31_sywvy")
+script = ExtResource("32_04gow")
+
+[node name="shoot_button" type="TextureButton" parent="CanvasLayer/ui"]
+modulate = Color(1, 1, 1, 0.313726)
+offset_left = 536.0
+offset_top = 184.0
+offset_right = 636.0
+offset_bottom = 284.0
+texture_normal = ExtResource("33_qkjqe")
+script = ExtResource("34_n26k0")
+
+[node name="choose_first_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 44.0
+texture_normal = ExtResource("36_lfymw")
+script = ExtResource("37_yoadv")
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(18, 18)
+texture = ExtResource("38_h3v2y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_5qesb")
+autoplay = "default"
+frame_progress = 0.871438
+flip_v = true
+
+[node name="choose_second_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 303.0
+offset_top = 8.0
+offset_right = 339.0
+offset_bottom = 44.0
+texture_normal = ExtResource("36_lfymw")
+script = ExtResource("40_0xhy5")
+
+[node name="FireBall" type="Sprite2D" parent="CanvasLayer/ui/choose_second_button"]
+position = Vector2(18, 18)
+texture = ExtResource("40_mxv82")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_second_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_5qesb")
+autoplay = "default"
+frame_progress = 0.286126
+flip_v = true
+
+[node name="choose_third_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 348.0
+offset_top = 8.0
+offset_right = 384.0
+offset_bottom = 44.0
+texture_normal = ExtResource("36_lfymw")
+script = ExtResource("42_a3umb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_third_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_5qesb")
+autoplay = "default"
+frame_progress = 0.871438
+flip_v = true
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_third_button"]
+position = Vector2(18, 18)
+texture = ExtResource("43_1q2f4")
+
 [node name="score_label" type="Label" parent="CanvasLayer"]
 offset_left = 555.0
 offset_right = 640.0
 offset_bottom = 30.0
 pivot_offset = Vector2(85, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_wqaoq")
 text = "СЧЕТ: 999999"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("31_5vevs")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/score_label"]
+stream = ExtResource("32_7k6s7")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("32_m3tl5")
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 640.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("4_wqaoq")
+text = "ROCK AND STONE
+уровень 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/restart_button" to="CanvasLayer/ui/restart_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/shoot_button" to="CanvasLayer/ui/shoot_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_first_button" to="CanvasLayer/ui/choose_first_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_second_button" to="CanvasLayer/ui/choose_second_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_third_button" to="CanvasLayer/ui/choose_third_button" method="_on_pressed"]

@@ -24,7 +24,7 @@ func buttons_move(delta): #основные кнопки меню летят в�
 		else:
 			$play_label.position.y=140
 			$buttons_sound.play()
-			$SysImage/Camera2D.start_shake()
+			$SysImage/CameraMenu.start_shake()
 			buttons_step=1
 	if buttons_step==1:
 		if $settings_label.position.y>188:
@@ -32,7 +32,7 @@ func buttons_move(delta): #основные кнопки меню летят в�
 		else:
 			$settings_label.position.y=188
 			$buttons_sound.play()
-			$SysImage/Camera2D.start_shake()
+			$SysImage/CameraMenu.start_shake()
 			buttons_step=2
 	if buttons_step==2:
 		if $exit_label.position.y>236:
@@ -40,7 +40,7 @@ func buttons_move(delta): #основные кнопки меню летят в�
 		else:
 			$exit_label.position.y=236
 			$buttons_sound.play()
-			$SysImage/Camera2D.start_shake()
+			$SysImage/CameraMenu.start_shake()
 			Global.main_menu_start_melt=true
 			$main_menu_music.play()
 			buttons_step=3
@@ -53,7 +53,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_graphics/graph_label.position.y=140
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=8
 		if main_settings_button_step==8:
 			if $settings_graphics/fps_label.position.y>188:
@@ -61,7 +61,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_graphics/fps_label.position.y=188
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=9
 		if main_settings_button_step==9:
 			if $settings_graphics/back_label.position.y>236:
@@ -69,7 +69,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_graphics/back_label.position.y=236
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=10
 	if settings_act=="audio":
 		if main_settings_button_step==7:
@@ -78,7 +78,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_audio/music_label.position.y=140
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=8
 		if main_settings_button_step==8:
 			if $settings_audio/sound_label.position.y>188:
@@ -86,7 +86,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_audio/sound_label.position.y=188
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=9
 		if main_settings_button_step==9:
 			if $settings_audio/back_label.position.y>236:
@@ -94,7 +94,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_audio/back_label.position.y=236
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=10
 	if settings_act=="main":
 		if main_settings_button_step==17:
@@ -103,7 +103,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_main/graphics_label.position.y=140
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=18
 		if main_settings_button_step==18:
 			if $settings_main/audio_label.position.y>188:
@@ -111,7 +111,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_main/audio_label.position.y=188
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				main_settings_button_step=19
 		if main_settings_button_step==19:
 			if $settings_main/back_label.position.y>236:
@@ -119,7 +119,7 @@ func show_settigs(delta): #летит вверх (в зависимости от
 			else:
 				$settings_main/back_label.position.y=236
 				$buttons_sound.play()
-				$SysImage/Camera2D.start_shake()
+				$SysImage/CameraMenu.start_shake()
 				settings_act="none"
 				main_settings_button_step=0
 
@@ -231,7 +231,7 @@ func graph_settings_buttons_move(delta): #graph летит вниз
 			settings_act="main"
 
 func _on_play_button_pressed():  #TODO добавить переходы
-	get_tree().change_scene_to_file("res://scenes/level_1_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels_list.tscn")
 
 func _on_exit_button_pressed(): #нажатие на кнопку выход
 	exit_game_bool=true
@@ -337,19 +337,24 @@ func _on_back_sound_pressed(): #уменьшение громкости звук
 		print("Шина 'sound' не найдена!")
 
 func _ready(): #при входе в сцену
+	$SysImage/CameraMenu.make_current()
+	$SysImage/CameraMenu.offset = Vector2.ZERO
 	current_fps_local=Global.max_fps_in_list
 	current_qual_local=Global.max_qual
 	print(current_fps_local)
 	$Black.modulate.a=0
 	$Black.visible=true
 	$SysImage.hide()
+	print($SysImage/CameraMenu.position_smoothing_speed)
+	$SysImage/CameraMenu.position_smoothing_speed=1
+	
 	
 	$settings_graphics/fps_label.text="ФПС: "+str(Global.current_fps)
 	$settings_graphics/graph_label.text="КАЧЕСТВО: "+Global.current_qual
 	$settings_audio/music_label.text="МУЗЫКА: "+str(Global.current_volume_music)
 	$settings_audio/sound_label.text="ЗВУК: "+str(Global.current_volume_sound)
 	
-	$ver_label.text="Версия "+Global.ver
+	$ver_label.text="Версия "+ Global.ver
 	
 	$settings_graphics/graph_label/white_arrow_right.frame=0
 	$settings_graphics/graph_label/white_arrow_left.frame=0

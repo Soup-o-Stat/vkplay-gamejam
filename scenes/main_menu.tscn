@@ -300,7 +300,7 @@ position = Vector2(312, 144)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("6_48tn2")
 
-[node name="Camera2D" type="Camera2D" parent="SysImage"]
+[node name="CameraMenu" type="Camera2D" parent="SysImage"]
 scale = Vector2(5.55556, 5.55556)
 limit_left = 0
 limit_top = 0

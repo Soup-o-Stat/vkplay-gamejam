@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bowluyyucamen"]
+
+[ext_resource type="Script" path="res://scripts/test_server.gd" id="1_kbbea"]
+
+[node name="test_online_scene" type="Node2D"]
+
+[node name="create" type="Button" parent="."]
+offset_left = 147.0
+offset_top = 98.0
+offset_right = 255.0
+offset_bottom = 174.0
+text = "Create lobby"
+script = ExtResource("1_kbbea")
+
+[node name="join" type="Button" parent="."]
+offset_left = 281.0
+offset_top = 99.0
+offset_right = 387.0
+offset_bottom = 174.0
+text = "Join lobby"

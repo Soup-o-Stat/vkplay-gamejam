@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3hpqgaoxtp7w"]
+[gd_scene load_steps=14 format=3 uid="uid://d3hpqgaoxtp7w"]
 
 [ext_resource type="AudioStream" uid="uid://bg70ajuqg2nwm" path="res://media/sfx/sounds/Voicy_deltarune explosion.mp3" id="1_63kw0"]
 [ext_resource type="Script" path="res://scripts/stone_brick.gd" id="1_pssst"]
@@ -12,6 +12,41 @@ size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q07m"]
 size = Vector2(1, 8)
+
+[sub_resource type="Gradient" id="Gradient_16y7p"]
+offsets = PackedFloat32Array(0.368852, 1)
+colors = PackedColorArray(1, 0.254902, 0, 1, 1, 1, 0.0392157, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_apu2m"]
+gradient = SubResource("Gradient_16y7p")
+
+[sub_resource type="Curve" id="Curve_7xhnw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.933333, 0.527472), -0.770658, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ftwqs"]
+curve = SubResource("Curve_7xhnw")
+
+[sub_resource type="Curve" id="Curve_tei6m"]
+max_value = 3.0
+_data = [Vector2(0.0133333, 2.57143), 0.0, -1.31195, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uymrs"]
+curve = SubResource("Curve_tei6m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1lox0"]
+lifetime_randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 21.58
+inherit_velocity_ratio = 0.517
+spread = 30.337
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, -98, 0)
+scale_curve = SubResource("CurveTexture_ftwqs")
+scale_over_velocity_curve = SubResource("CurveTexture_uymrs")
+color_ramp = SubResource("GradientTexture1D_apu2m")
 
 [node name="stone_brick1" type="RigidBody2D"]
 script = ExtResource("1_pssst")
@@ -35,3 +70,13 @@ shape = SubResource("RectangleShape2D_6q07m")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.5, 5)
 texture = ExtResource("2_3l4jx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(5, 4)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_1lox0")
+fixed_fps = 60
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

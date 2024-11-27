@@ -1,33 +1,69 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds0slg17esk0l"]
+[gd_scene load_steps=11 format=3 uid="uid://ds0slg17esk0l"]
 
 [ext_resource type="Script" path="res://scripts/stone_enemy.gd" id="1_076bv"]
+[ext_resource type="Texture2D" uid="uid://bdrewb3sasppf" path="res://media/gfx/npc/stone_1.png" id="2_6vdho"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="2_byui4"]
 [ext_resource type="AudioStream" uid="uid://b3xfsog4kq2m5" path="res://media/sfx/sounds/stone_death.mp3" id="3_d78mn"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ciba"]
+atlas = ExtResource("2_6vdho")
+region = Rect2(0, 0, 38, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh3xh"]
+atlas = ExtResource("2_6vdho")
+region = Rect2(38, 0, 38, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6pnv"]
+atlas = ExtResource("2_6vdho")
+region = Rect2(76, 0, 38, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwvty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ciba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh3xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6pnv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4wap"]
-size = Vector2(10, 18)
+size = Vector2(33.0917, 40.8894)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjx5e"]
-size = Vector2(10, 0.23221)
+size = Vector2(32.7634, 0.23221)
 
 [node name="stone_enemy1" type="RigidBody2D"]
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_076bv")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14.8112, 16.0362)
+sprite_frames = SubResource("SpriteFrames_cwvty")
+frame_progress = 0.448171
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(5, 9)
 scale = Vector2(0.0444444, 0.08)
 texture = ExtResource("2_byui4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 9)
+position = Vector2(16.3936, 20.4447)
 shape = SubResource("RectangleShape2D_x4wap")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5, -0.15701)
+position = Vector2(16.3817, -0.15701)
 shape = SubResource("RectangleShape2D_bjx5e")
 debug_color = Color(0.968627, 0, 0, 0.419608)
 
@@ -37,4 +73,5 @@ pitch_scale = 1.85
 bus = &"sound"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,22 +3,28 @@ extends Node2D
 var level_modulate_speed=1
 var swipe_started = false
 var swipe_start = Vector2()
-var minimum_drag = 100
+var minimum_drag = 50
 
 func level_name_modulate(delta):
-	if $ColorRect.modulate.a>0:
-		$ColorRect.modulate.a-=level_modulate_speed*delta
+	if $CanvasLayer/ColorRect.modulate.a>0:
+		$CanvasLayer/ColorRect.modulate.a-=level_modulate_speed*delta
 	else:
 		$Control.visible=true
-		$ColorRect.visible=false  
+		$CanvasLayer/ColorRect.visible=false  
 
 func _ready():
-	$ColorRect.visible=true
-	$ColorRect.modulate.a=2
+	Global.choosen_ball=1
+	Global.num_of_balls=3
+	Global.dead_enemies=0
+	Global.score=0
+	$CanvasLayer/ColorRect.visible=true
+	$CanvasLayer/ColorRect.modulate.a=2
 
 func _process(delta):
 	level_name_modulate(delta)
 	global_swipe()
+	if Global.dead_enemies==2:
+		get_tree().change_scene_to_file("res://scenes/level_1_2.tscn")
 
 func _on_control_gui_input(event):
 	if event.is_action_pressed("left_mouse"):

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqwor4qbpcb0o"]
+[gd_scene load_steps=15 format=3 uid="uid://bqwor4qbpcb0o"]
 
+[ext_resource type="Script" path="res://scripts/stone_brick.gd" id="1_ddgfe"]
 [ext_resource type="AudioStream" uid="uid://bg70ajuqg2nwm" path="res://media/sfx/sounds/Voicy_deltarune explosion.mp3" id="1_nkgr0"]
 [ext_resource type="Texture2D" uid="uid://dpo8o55k6rxmb" path="res://media/gfx/bricks/stone/brick3.png" id="2_3bm3y"]
 
@@ -15,7 +16,43 @@ size = Vector2(7, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dfop"]
 size = Vector2(2, 8)
 
+[sub_resource type="Gradient" id="Gradient_v7a0x"]
+offsets = PackedFloat32Array(0.368852, 1)
+colors = PackedColorArray(1, 0.254902, 0, 1, 1, 1, 0.0392157, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yu6b6"]
+gradient = SubResource("Gradient_v7a0x")
+
+[sub_resource type="Curve" id="Curve_kb6as"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.933333, 0.527472), -0.770658, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dm3nn"]
+curve = SubResource("Curve_kb6as")
+
+[sub_resource type="Curve" id="Curve_v3jhe"]
+max_value = 3.0
+_data = [Vector2(0.0133333, 2.57143), 0.0, -1.31195, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wiwfv"]
+curve = SubResource("Curve_v3jhe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_05gfe"]
+lifetime_randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 21.58
+inherit_velocity_ratio = 0.517
+spread = 30.337
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, -98, 0)
+scale_curve = SubResource("CurveTexture_dm3nn")
+scale_over_velocity_curve = SubResource("CurveTexture_wiwfv")
+color_ramp = SubResource("GradientTexture1D_yu6b6")
+
 [node name="stone_brick3" type="RigidBody2D"]
+script = ExtResource("1_ddgfe")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_nkgr0")
@@ -40,3 +77,12 @@ shape = SubResource("RectangleShape2D_3dfop")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5.5, 5.5)
 texture = ExtResource("2_3bm3y")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(5, 4)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_05gfe")
+fixed_fps = 60
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

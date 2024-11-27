@@ -14,7 +14,7 @@ func _process(delta):
 	if melting:
 		timer += melt_speed*delta
 		self.material.set_shader_parameter("timer", timer)
-	elif Global.main_menu_start_melt:
+	elif Global.main_menu_start_melt:	
 		start_melt()
 
 func start_melt():

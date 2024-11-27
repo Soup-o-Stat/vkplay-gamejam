@@ -1,0 +1,374 @@
+[gd_scene load_steps=42 format=3 uid="uid://geuwi2t31rwe"]
+
+[ext_resource type="Script" path="res://scripts/level_1_3.gd" id="1_ycbcd"]
+[ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="2_dlnqf"]
+[ext_resource type="PackedScene" uid="uid://monif2v4reep" path="res://scenes/stone_brick21.tscn" id="3_bjv7c"]
+[ext_resource type="PackedScene" uid="uid://ds0slg17esk0l" path="res://scenes/stone_enemy_1.tscn" id="4_762yn"]
+[ext_resource type="PackedScene" uid="uid://coxbuy3cplqpr" path="res://scenes/soloma.tscn" id="5_ajh1n"]
+[ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="9_a2sx3"]
+[ext_resource type="PackedScene" uid="uid://bv4wvkw1iel0u" path="res://scenes/catap.tscn" id="10_ufkww"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="11_m45sa"]
+[ext_resource type="AudioStream" uid="uid://s2e3gnv3xys3" path="res://media/sfx/music/rock_and_stone.mp3" id="12_b37a0"]
+[ext_resource type="AudioStream" uid="uid://dwr7g26lyaxw8" path="res://media/sfx/sounds/desert_sound.mp3" id="13_u8j3m"]
+[ext_resource type="Texture2D" uid="uid://i0sgkad503dc" path="res://media/gfx/ui/pause.png" id="14_8r0af"]
+[ext_resource type="Script" path="res://scripts/pause_button.gd" id="15_cj537"]
+[ext_resource type="Texture2D" uid="uid://trlp1b5h7fxn" path="res://media/gfx/ui/restart.png" id="16_6vj41"]
+[ext_resource type="Script" path="res://scripts/restart_button.gd" id="17_dd34h"]
+[ext_resource type="Texture2D" uid="uid://bxh40iko5hkkd" path="res://media/gfx/ui/shoot.png" id="18_058c4"]
+[ext_resource type="Script" path="res://scripts/shoot_button.gd" id="19_1vulx"]
+[ext_resource type="Texture2D" uid="uid://bsloyqksj4fnm" path="res://media/gfx/ui/ball_choose_nonact.png" id="20_gjlvs"]
+[ext_resource type="Script" path="res://scripts/choose_first_button.gd" id="21_m5vh1"]
+[ext_resource type="Texture2D" uid="uid://drxfx8e7ph6l6" path="res://media/gfx/balls/test_ball.png" id="22_kd7dx"]
+[ext_resource type="Texture2D" uid="uid://2xynonfkqb34" path="res://media/gfx/ui/white_arrow.png" id="23_d4mob"]
+[ext_resource type="Script" path="res://scripts/choose_second_button.gd" id="24_jp11w"]
+[ext_resource type="Texture2D" uid="uid://d16v2bffxsgs1" path="res://media/gfx/balls/fire_ball.png" id="25_6uh13"]
+[ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="26_wypfb"]
+[ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="27_k0y5g"]
+[ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="28_jnhyl"]
+[ext_resource type="Script" path="res://scripts/score_count.gd" id="29_i3jso"]
+[ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="30_6dntk"]
+[ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="31_vsq82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
+size = Vector2(1280, 40)
+
+[sub_resource type="Gradient" id="Gradient_pbej4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m4gfw"]
+gradient = SubResource("Gradient_pbej4")
+fill_from = Vector2(0.545455, 1)
+fill_to = Vector2(0.545455, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 11
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiy76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fih0l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3g32"]
+atlas = ExtResource("23_d4mob")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p5ae"]
+atlas = ExtResource("23_d4mob")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tia5q"]
+atlas = ExtResource("23_d4mob")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjdk"]
+atlas = ExtResource("23_d4mob")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4rou"]
+atlas = ExtResource("23_d4mob")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hf5y"]
+atlas = ExtResource("23_d4mob")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utw0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p5ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tia5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hf5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mq1wx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p5ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tia5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hf5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="level1_1" type="Node2D"]
+script = ExtResource("1_ycbcd")
+
+[node name="background_1" parent="." instance=ExtResource("2_dlnqf")]
+position = Vector2(23, 1)
+
+[node name="building" type="Node2D" parent="."]
+
+[node name="stone_brick21" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(902, 242)
+rotation = 1.5708
+
+[node name="stone_brick27" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(1027, 204)
+rotation = 1.5708
+
+[node name="stone_brick23" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(1027, 242)
+rotation = 1.5708
+
+[node name="stone_brick40" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(902, 204)
+rotation = 1.5708
+
+[node name="stone_brick44" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(939, 204)
+rotation = 1.5708
+
+[node name="stone_brick45" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(826, 204)
+rotation = 1.5708
+
+[node name="stone_brick46" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(826, 242)
+rotation = 1.5708
+
+[node name="stone_brick47" parent="building" instance=ExtResource("3_bjv7c")]
+position = Vector2(939, 242)
+rotation = 1.5708
+
+[node name="stone_enemy9" parent="building" instance=ExtResource("4_762yn")]
+position = Vector2(1032, 239)
+
+[node name="soloma" parent="building" instance=ExtResource("5_ajh1n")]
+position = Vector2(802, 163)
+
+[node name="soloma2" parent="building" instance=ExtResource("5_ajh1n")]
+position = Vector2(922, 163)
+
+[node name="stone_enemy3" parent="building" instance=ExtResource("4_762yn")]
+position = Vector2(845, 239)
+
+[node name="stone_enemy4" parent="building" instance=ExtResource("4_762yn")]
+position = Vector2(959, 239)
+
+[node name="stone_enemy5" parent="building" instance=ExtResource("4_762yn")]
+position = Vector2(957, 122)
+
+[node name="stone_enemy6" parent="building" instance=ExtResource("4_762yn")]
+position = Vector2(776, 239)
+
+[node name="stone_enemy7" parent="building" instance=ExtResource("4_762yn")]
+position = Vector2(837, 122)
+
+[node name="floor" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+visible = false
+position = Vector2(640, 272)
+scale = Vector2(1, 0.0444444)
+texture = ExtResource("9_a2sx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(640, 300)
+shape = SubResource("RectangleShape2D_lyiku")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(636, 12.5)
+scale = Vector2(20.375, 1.89062)
+color = Color(1, 1, 0.690196, 1)
+energy = 1.37
+blend_mode = 1
+range_layer_min = -100
+texture = SubResource("GradientTexture2D_m4gfw")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1088.0
+offset_bottom = 288.0
+
+[node name="catap" parent="." instance=ExtResource("10_ufkww")]
+position = Vector2(128, 216)
+
+[node name="SysImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 144)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("11_m45sa")
+
+[node name="Camera2D" type="Camera2D" parent="SysImage"]
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+rotation_smoothing_speed = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_b37a0")
+autoplay = true
+bus = &"music"
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(424, 280)
+shape = SubResource("RectangleShape2D_jiy76")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(32, 280)
+shape = SubResource("RectangleShape2D_fih0l")
+
+[node name="desert_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_u8j3m")
+autoplay = true
+bus = &"sound"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" type="Node2D" parent="CanvasLayer"]
+
+[node name="pause_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 72.0
+texture_normal = ExtResource("14_8r0af")
+script = ExtResource("15_cj537")
+
+[node name="restart_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 72.0
+texture_normal = ExtResource("16_6vj41")
+script = ExtResource("17_dd34h")
+
+[node name="shoot_button" type="TextureButton" parent="CanvasLayer/ui"]
+modulate = Color(1, 1, 1, 0.313726)
+offset_left = 536.0
+offset_top = 184.0
+offset_right = 636.0
+offset_bottom = 284.0
+texture_normal = ExtResource("18_058c4")
+script = ExtResource("19_1vulx")
+
+[node name="choose_first_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 44.0
+texture_normal = ExtResource("20_gjlvs")
+script = ExtResource("21_m5vh1")
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(18, 18)
+texture = ExtResource("22_kd7dx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_utw0l")
+autoplay = "default"
+flip_v = true
+
+[node name="choose_second_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 303.0
+offset_top = 8.0
+offset_right = 339.0
+offset_bottom = 44.0
+texture_normal = ExtResource("20_gjlvs")
+script = ExtResource("24_jp11w")
+
+[node name="FireBall" type="Sprite2D" parent="CanvasLayer/ui/choose_second_button"]
+position = Vector2(18, 18)
+texture = ExtResource("25_6uh13")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_second_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_utw0l")
+autoplay = "default"
+flip_v = true
+
+[node name="choose_third_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 348.0
+offset_top = 8.0
+offset_right = 384.0
+offset_bottom = 44.0
+texture_normal = ExtResource("20_gjlvs")
+script = ExtResource("26_wypfb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_third_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_mq1wx")
+autoplay = "default"
+flip_v = true
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_third_button"]
+position = Vector2(18, 18)
+texture = ExtResource("27_k0y5g")
+
+[node name="score_label" type="Label" parent="CanvasLayer"]
+offset_left = 555.0
+offset_right = 640.0
+offset_bottom = 30.0
+pivot_offset = Vector2(85, 0)
+theme_override_fonts/font = ExtResource("28_jnhyl")
+text = "СЧЕТ: 999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("29_i3jso")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/score_label"]
+stream = ExtResource("30_6dntk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("31_vsq82")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 640.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("28_jnhyl")
+text = "ROCK AND STONE
+уровень 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/restart_button" to="CanvasLayer/ui/restart_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/shoot_button" to="CanvasLayer/ui/shoot_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_first_button" to="CanvasLayer/ui/choose_first_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_second_button" to="CanvasLayer/ui/choose_second_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_third_button" to="CanvasLayer/ui/choose_third_button" method="_on_pressed"]

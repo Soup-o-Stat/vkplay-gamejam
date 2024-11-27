@@ -1,0 +1,168 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ac3727itifv"]
+
+[ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="1_4nawi"]
+[ext_resource type="Script" path="res://scripts/levels_list.gd" id="1_851jb"]
+[ext_resource type="Texture2D" uid="uid://duv7yxbja7mbp" path="res://media/gfx/ui/level_buttons/stone_unlock.png" id="2_4w5wy"]
+
+[node name="levels_list" type="Node2D"]
+script = ExtResource("1_851jb")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 640.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 26
+text = "ИМЯ ЛОКАЦИИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="level1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 72.0
+offset_bottom = 64.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level1"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level2" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 152.0
+offset_right = 216.0
+offset_bottom = 64.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level2"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level3" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 296.0
+offset_right = 360.0
+offset_bottom = 64.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level3"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level4" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 440.0
+offset_right = 504.0
+offset_bottom = 64.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level4"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level5" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 128.0
+offset_right = 72.0
+offset_bottom = 192.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level5"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level6" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 128.0
+offset_right = 216.0
+offset_bottom = 192.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level6"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level7" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 128.0
+offset_right = 360.0
+offset_bottom = 192.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level7"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level8" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 128.0
+offset_right = 504.0
+offset_bottom = 192.0
+texture_normal = ExtResource("2_4w5wy")
+
+[node name="Label" type="Label" parent="Control/level8"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_4nawi")
+theme_override_font_sizes/font_size = 50
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Control/level2" to="." method="_on_level_2_pressed"]

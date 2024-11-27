@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cktillxu8s1bf"]
+[gd_scene load_steps=13 format=3 uid="uid://cktillxu8s1bf"]
 
 [ext_resource type="AudioStream" uid="uid://bg70ajuqg2nwm" path="res://media/sfx/sounds/Voicy_deltarune explosion.mp3" id="1_fms7k"]
+[ext_resource type="Script" path="res://scripts/stone_brick.gd" id="1_rsa7g"]
 [ext_resource type="Texture2D" uid="uid://bvvkd12qqncrw" path="res://media/gfx/bricks/stone/brick2.png" id="2_efysy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3netb"]
@@ -9,7 +10,43 @@ size = Vector2(7, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfi1t"]
 size = Vector2(9, 7)
 
+[sub_resource type="Gradient" id="Gradient_l7dka"]
+offsets = PackedFloat32Array(0.368852, 1)
+colors = PackedColorArray(1, 0.254902, 0, 1, 1, 1, 0.0392157, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1q02b"]
+gradient = SubResource("Gradient_l7dka")
+
+[sub_resource type="Curve" id="Curve_4bhv8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.933333, 0.527472), -0.770658, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_88d8k"]
+curve = SubResource("Curve_4bhv8")
+
+[sub_resource type="Curve" id="Curve_1n4a3"]
+max_value = 3.0
+_data = [Vector2(0.0133333, 2.57143), 0.0, -1.31195, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2lbx0"]
+curve = SubResource("Curve_1n4a3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0s8om"]
+lifetime_randomness = 0.21
+emission_shape = 1
+emission_sphere_radius = 21.58
+inherit_velocity_ratio = 0.517
+spread = 30.337
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, -98, 0)
+scale_curve = SubResource("CurveTexture_88d8k")
+scale_over_velocity_curve = SubResource("CurveTexture_2lbx0")
+color_ramp = SubResource("GradientTexture1D_1q02b")
+
 [node name="stone_brick2" type="RigidBody2D"]
+script = ExtResource("1_rsa7g")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_fms7k")
@@ -26,3 +63,12 @@ shape = SubResource("RectangleShape2D_kfi1t")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.5, 4.5)
 texture = ExtResource("2_efysy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(5, 4)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_0s8om")
+fixed_fps = 60
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

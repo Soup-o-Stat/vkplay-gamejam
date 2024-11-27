@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwuh4l7u851td"]
+
+[ext_resource type="Script" path="res://scripts/ball_sharped.gd" id="1_qxxa7"]
+[ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="2_agb0g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l15o0"]
+radius = 12.0
+
+[node name="ball_sharped" type="RigidBody2D"]
+mass = 9.0
+script = ExtResource("1_qxxa7")
+
+[node name="TestBall" type="Sprite2D" parent="."]
+position = Vector2(12, 12)
+texture = ExtResource("2_agb0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 12)
+shape = SubResource("CircleShape2D_l15o0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true

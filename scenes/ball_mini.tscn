@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpiy1lvsglikh"]
+
+[ext_resource type="Script" path="res://scripts/ball_mini.gd" id="1_e5xwl"]
+[ext_resource type="Texture2D" uid="uid://ycwlnj026qg3" path="res://media/gfx/balls/mini_ball.png" id="2_pjuku"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_52jjo"]
+radius = 7.0
+
+[node name="ball_mini" type="RigidBody2D"]
+mass = 3.0
+contact_monitor = true
+max_contacts_reported = 1
+constant_force = Vector2(10, 10)
+script = ExtResource("1_e5xwl")
+
+[node name="TestBall" type="Sprite2D" parent="."]
+position = Vector2(12, 12)
+texture = ExtResource("2_pjuku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 12)
+shape = SubResource("CircleShape2D_52jjo")

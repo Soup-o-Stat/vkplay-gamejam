@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://baj0a7nltpjrl"]
+[gd_scene load_steps=58 format=3 uid="uid://baj0a7nltpjrl"]
 
 [ext_resource type="Script" path="res://scripts/background_1.gd" id="1_wbk41"]
 [ext_resource type="Texture2D" uid="uid://c60go3jl7gifn" path="res://media/gfx/bg/stone_sky.png" id="2_0px26"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://de0wf43ifelot" path="res://media/sfx/sounds/wing.mp3" id="8_n2r3c"]
 [ext_resource type="Texture2D" uid="uid://b4y88acme4jbj" path="res://media/gfx/bg_npc/dino_big.png" id="9_fwpwi"]
 [ext_resource type="Texture2D" uid="uid://f3c45hdqajq7" path="res://media/gfx/bg_npc/dino_jump.png" id="10_m3dqn"]
+[ext_resource type="Shader" path="res://shaders/warm.gdshader" id="13_axq65"]
 
 [sub_resource type="Gradient" id="Gradient_7c1sw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -22,6 +23,21 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.8)
 metadata/_snap_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sylws"]
+shader = ExtResource("13_axq65")
+shader_parameter/waveAmplitude = 0.012
+shader_parameter/correctVertex = true
+shader_parameter/waveFrequency = 41.461
+shader_parameter/verticalWave = true
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 1.124
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.388
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = false
+shader_parameter/freezeSecondHalf = false
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kvmif"]
 light_mode = 1
@@ -462,6 +478,7 @@ texture_scale = 0.52
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="StoneSunset" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+material = SubResource("ShaderMaterial_sylws")
 position = Vector2(640, 136)
 texture = ExtResource("4_71frl")
 
