@@ -2,6 +2,8 @@ extends RigidBody2D
 
 var explode_var=false
 
+var explode_scene=load("res://scenes/fireball_explode.tscn")
+
 func _ready():
 	$AnimatedSprite2D.visible=false
 	name = "ball_fire"
@@ -19,15 +21,17 @@ func _on_fire_area_area_entered(area):
 
 func explode():
 	$expl_col.disabled=false
-	$AudioStreamPlayer.play()
 	self.explode_var=true
-	self.mass=10000
+	self.mass=20
 	self.gravity_scale=9999
 	$AnimatedSprite2D.visible=true
 	$AnimatedSprite2D.frame=0
 	$AnimatedSprite2D.play
 	$TestBall.visible=false
 	print("explode")
+	var explode = explode_scene.instantiate()
+	explode.position = position
+	get_parent().add_child(explode)
 
 func _process(delta):
 	if self.explode_var==true and $AudioStreamPlayer.playing==false and $AnimatedSprite2D.frame==6:

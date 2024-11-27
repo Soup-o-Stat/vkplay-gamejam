@@ -268,10 +268,10 @@ script = ExtResource("17_dd34h")
 
 [node name="shoot_button" type="TextureButton" parent="CanvasLayer/ui"]
 modulate = Color(1, 1, 1, 0.313726)
-offset_left = 536.0
-offset_top = 184.0
-offset_right = 636.0
-offset_bottom = 284.0
+offset_left = 528.0
+offset_top = 176.0
+offset_right = 628.0
+offset_bottom = 276.0
 texture_normal = ExtResource("18_058c4")
 script = ExtResource("19_1vulx")
 

@@ -9,6 +9,7 @@ func _ready():
 
 func _process(delta):
 	if $Timer.is_stopped():
+			
 		if self.sharp != 3:
 			var miniball = miniball_scene.instantiate()
 			if self.sharp==0:
@@ -23,5 +24,6 @@ func _process(delta):
 
 			get_parent().add_child(miniball)
 			self.sharp += 1
+			
 		else:
 			self.queue_free()

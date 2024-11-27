@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=3 uid="uid://m25vh0gov43x"]
+
+[ext_resource type="Texture2D" uid="uid://ddt8x26k0umew" path="res://media/gfx/kaboom.png" id="1_roh2i"]
+[ext_resource type="Script" path="res://scripts/fireball_explode.gd" id="1_vakwo"]
+[ext_resource type="AudioStream" uid="uid://bip1qxn51i4kx" path="res://media/sfx/sounds/explosion.wav" id="3_ewrqi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nki3b"]
+atlas = ExtResource("1_roh2i")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdx8w"]
+atlas = ExtResource("1_roh2i")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m3cx"]
+atlas = ExtResource("1_roh2i")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enkar"]
+atlas = ExtResource("1_roh2i")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygirn"]
+atlas = ExtResource("1_roh2i")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcbej"]
+atlas = ExtResource("1_roh2i")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5x41"]
+atlas = ExtResource("1_roh2i")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rrmfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nki3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdx8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m3cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enkar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygirn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcbej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5x41")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7f8bo"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 5.73
+angle_min = -472.3
+angle_max = 301.9
+orbit_velocity_min = -0.236
+orbit_velocity_max = 0.215
+gravity = Vector3(0, -98, 0)
+color = Color(0.898039, 0.172549, 0, 1)
+
+[node name="fireball_explode" type="Node2D"]
+script = ExtResource("1_vakwo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rrmfr")
+frame_progress = 0.542859
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_7f8bo")
+lifetime = 1.5
+one_shot = true
+speed_scale = 3.0
+randomness = 0.05
+fixed_fps = 60
+interp_to_end = 0.01
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_rrmfr")
+frame_progress = 0.0593689
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 24)
+sprite_frames = SubResource("SpriteFrames_rrmfr")
+frame_progress = 0.645093
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, -24)
+sprite_frames = SubResource("SpriteFrames_rrmfr")
+frame_progress = 0.349878
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, -16)
+sprite_frames = SubResource("SpriteFrames_rrmfr")
+frame_progress = 0.534653
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ewrqi")

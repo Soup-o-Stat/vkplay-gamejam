@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpiy1lvsglikh"]
+[gd_scene load_steps=5 format=3 uid="uid://dpiy1lvsglikh"]
 
 [ext_resource type="Script" path="res://scripts/ball_mini.gd" id="1_e5xwl"]
 [ext_resource type="Texture2D" uid="uid://ycwlnj026qg3" path="res://media/gfx/balls/mini_ball.png" id="2_pjuku"]
+[ext_resource type="AudioStream" uid="uid://bovrfl23huh1h" path="res://media/sfx/sounds/rock_fall2.wav" id="3_aveuc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52jjo"]
 radius = 7.0
@@ -21,3 +22,6 @@ texture = ExtResource("2_pjuku")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 12)
 shape = SubResource("CircleShape2D_52jjo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aveuc")

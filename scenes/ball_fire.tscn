@@ -58,8 +58,8 @@ metadata/_snap_enabled = true
 radius = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsya0"]
-radius = 12.0
-height = 462.0
+radius = 68.0
+height = 284.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqgwf"]
 atlas = ExtResource("4_3xei6")
