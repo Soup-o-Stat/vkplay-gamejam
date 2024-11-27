@@ -284,7 +284,6 @@ rotation_smoothing_speed = 10.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_5y371")
-autoplay = true
 bus = &"music"
 
 [node name="walls" type="StaticBody2D" parent="."]

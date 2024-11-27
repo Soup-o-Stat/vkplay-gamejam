@@ -24,7 +24,8 @@ func _process(delta):
 	level_name_modulate(delta)
 	global_swipe()
 	if Global.dead_enemies==2:
-		get_tree().change_scene_to_file("res://scenes/level_1_2.tscn")
+		if $CanvasLayer/score_label.local_score==Global.score:
+			get_tree().change_scene_to_file("res://scenes/level_1_2.tscn")
 
 func _on_control_gui_input(event):
 	if event.is_action_pressed("left_mouse"):
