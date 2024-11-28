@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ds0slg17esk0l"]
+[gd_scene load_steps=15 format=3 uid="uid://ds0slg17esk0l"]
 
 [ext_resource type="Script" path="res://scripts/stone_enemy.gd" id="1_076bv"]
 [ext_resource type="Texture2D" uid="uid://bdrewb3sasppf" path="res://media/gfx/npc/stone_1.png" id="2_6vdho"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="2_byui4"]
 [ext_resource type="AudioStream" uid="uid://b3xfsog4kq2m5" path="res://media/sfx/sounds/stone_death.mp3" id="3_d78mn"]
+[ext_resource type="Texture2D" uid="uid://bxs7yy3irnnii" path="res://media/gfx/npc/stone_2.png" id="3_fu2rc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ciba"]
 atlas = ExtResource("2_6vdho")
@@ -15,6 +16,18 @@ region = Rect2(38, 0, 38, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6pnv"]
 atlas = ExtResource("2_6vdho")
+region = Rect2(76, 0, 38, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rwty"]
+atlas = ExtResource("3_fu2rc")
+region = Rect2(0, 0, 38, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy805"]
+atlas = ExtResource("3_fu2rc")
+region = Rect2(38, 0, 38, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a71u1"]
+atlas = ExtResource("3_fu2rc")
 region = Rect2(76, 0, 38, 54)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cwvty"]
@@ -30,7 +43,21 @@ animations = [{
 "texture": SubResource("AtlasTexture_n6pnv")
 }],
 "loop": true,
-"name": &"default",
+"name": &"0",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rwty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy805")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a71u1")
+}],
+"loop": true,
+"name": &"1",
 "speed": 6.0
 }]
 
@@ -48,7 +75,8 @@ script = ExtResource("1_076bv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(14.8112, 16.0362)
 sprite_frames = SubResource("SpriteFrames_cwvty")
-frame_progress = 0.448171
+animation = &"0"
+frame_progress = 0.615482
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

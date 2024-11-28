@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://b14cc16hp8msu"]
+
+[ext_resource type="Texture2D" uid="uid://cuwe1diuthdsd" path="res://media/gfx/ui/end_level_table.png" id="1_llx6s"]
+[ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="2_h1add"]
+
+[node name="end_level_screen" type="CanvasLayer"]
+
+[node name="EndLevelTable" type="Sprite2D" parent="."]
+position = Vector2(320, 160)
+texture = ExtResource("1_llx6s")
+
+[node name="main_label" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 72.0
+offset_right = 448.0
+offset_bottom = 113.0
+theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_h1add")
+theme_override_font_sizes/font_size = 35
+text = "ВЕЛИКОЛЕПНО!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 104.0
+offset_right = 448.0
+offset_bottom = 127.0
+theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_h1add")
+text = "12345678 ОЧКОВ НАБРАНО"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="continue" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 139.0
+offset_right = 447.0
+offset_bottom = 162.0
+theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_h1add")
+text = "ПРОДОЛЖИТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="continue_button" type="TextureButton" parent="Control/continue"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 3.0
+offset_right = 173.0
+offset_bottom = 18.0
+
+[node name="repeat" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 168.0
+offset_right = 447.0
+offset_bottom = 191.0
+theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_h1add")
+text = "ПОВТОРИТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="repeat_button" type="TextureButton" parent="Control/repeat"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 3.0
+offset_right = 169.0
+offset_bottom = 17.0

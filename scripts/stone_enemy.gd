@@ -2,6 +2,7 @@ extends RigidBody2D
 
 var dead=false
 var flip_var=0
+var skin=0
 
 func _on_area_2d_body_entered(body):
 	if body.name.substr(0, 4)!="ball":
@@ -35,6 +36,8 @@ func _on_area_2d_area_entered(area):
 
 func _ready():
 	self.flip_var=randi()%2
+	self.skin=randi()%2
+	$AnimatedSprite2D.animation=str(self.skin)
 	if self.flip_var==0:
 		pass
 	if self.flip_var==1:

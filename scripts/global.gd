@@ -24,6 +24,7 @@ var global_swipe_start=0
 
 var score=0
 var dead_enemies=0
+var level_clear=false
 
 var high_score_1_1=0
 var high_score_1_2=0
@@ -32,6 +33,7 @@ var num_of_balls=0
 var choosen_ball=1
 
 var reload_main_scene=0
+
 
 func _ready():
 	Input.set_use_accumulated_input(false)
