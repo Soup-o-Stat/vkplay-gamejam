@@ -9,7 +9,6 @@ func _ready():
 
 func _process(delta):
 	if $Timer.is_stopped():
-			
 		if self.sharp != 3:
 			var miniball = miniball_scene.instantiate()
 			if self.sharp==0:

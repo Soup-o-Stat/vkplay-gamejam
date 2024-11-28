@@ -1,7 +1,7 @@
 extends Node2D
 
 var location=1
-var location_name=["ONLINE", "ROCK AND STONE", "CASTLE VANYA"]
+var location_name=["ONLINE", "ROCK AND STONE", "CASTLEVANYA"]
 
 func _process(delta):
 	$Label.text=location_name[location]
