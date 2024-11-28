@@ -8,7 +8,7 @@ var settings_act="none"
 var exit_game_bool=false
 
 var current_fps_local=0
-var current_qual_local=0
+var current_qual_local=1
 var volume=0
 
 func exit_game(delta): #выход из игры
@@ -271,11 +271,13 @@ func _on_back_fps_pressed(): #уменьшить фпс
 
 func _on_next_qual_pressed(): #увеличить качество графики
 	current_qual_local+=1
+	print(current_qual_local)
 	if current_qual_local>Global.max_qual:
 		current_qual_local=0
+		print("Qual reset")
 	Global.current_qual=Global.list_of_quality[current_qual_local]
 	$settings_graphics/graph_label.text="КАЧЕСТВО: "+Global.current_qual
-	print("Set "+ str(Global.current_qual))
+	print("Set "+ str(Global.current_qual)+ str(current_qual_local))
 	
 func _on_back_qual_pressed(): #уменьшить качество графики TODO: надо, шоб эта залупа хоть на что-то влияла, а то как то не комильфо
 	current_qual_local-=1
@@ -340,7 +342,7 @@ func _ready(): #при входе в сцену
 	$SysImage/CameraMenu.make_current()
 	$SysImage/CameraMenu.offset = Vector2.ZERO
 	current_fps_local=Global.max_fps_in_list
-	current_qual_local=Global.max_qual
+	current_qual_local=1
 	print(current_fps_local)
 	$Black.modulate.a=0
 	$Black.visible=true

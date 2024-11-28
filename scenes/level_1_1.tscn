@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dthc1cx263qo1"]
+[gd_scene load_steps=63 format=3 uid="uid://dthc1cx263qo1"]
 
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="1_eoui7"]
 [ext_resource type="Script" path="res://scripts/level_1_1.gd" id="1_ukk8j"]
@@ -47,12 +47,16 @@
 [ext_resource type="Texture2D" uid="uid://d16v2bffxsgs1" path="res://media/gfx/balls/fire_ball.png" id="40_mxv82"]
 [ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="42_a3umb"]
 [ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="43_1q2f4"]
+[ext_resource type="Script" path="res://scripts/fps_debug.gd" id="48_g4m1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
 size = Vector2(1280, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eeyy"]
 size = Vector2(34, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvi27"]
+size = Vector2(1293, 48)
 
 [sub_resource type="Gradient" id="Gradient_pbej4"]
 
@@ -303,6 +307,10 @@ shape = SubResource("RectangleShape2D_lyiku")
 position = Vector2(1297, -7)
 shape = SubResource("RectangleShape2D_1eeyy")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
+position = Vector2(647, -313)
+shape = SubResource("RectangleShape2D_gvi27")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(636, 12.5)
 scale = Vector2(20.375, 1.89062)
@@ -473,6 +481,14 @@ text = "ROCK AND STONE
 уровень 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="fps_debug" type="Label" parent="CanvasLayer"]
+offset_left = 573.0
+offset_top = 27.0
+offset_right = 638.0
+offset_bottom = 50.0
+text = "FPS: 244"
+script = ExtResource("48_g4m1x")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]

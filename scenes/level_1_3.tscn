@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://geuwi2t31rwe"]
+[gd_scene load_steps=45 format=3 uid="uid://geuwi2t31rwe"]
 
 [ext_resource type="Script" path="res://scripts/level_1_3.gd" id="1_ycbcd"]
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="2_dlnqf"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="27_k0y5g"]
 [ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="28_jnhyl"]
 [ext_resource type="Script" path="res://scripts/score_count.gd" id="29_i3jso"]
+[ext_resource type="Script" path="res://scripts/fps_debug.gd" id="29_rpy4e"]
 [ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="30_6dntk"]
 [ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="31_vsq82"]
 
@@ -34,6 +35,9 @@ size = Vector2(1280, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp8tk"]
 size = Vector2(34, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7s6k"]
+size = Vector2(1293, 48)
 
 [sub_resource type="Gradient" id="Gradient_pbej4"]
 
@@ -204,6 +208,10 @@ shape = SubResource("RectangleShape2D_lyiku")
 position = Vector2(1297, -7)
 shape = SubResource("RectangleShape2D_dp8tk")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
+position = Vector2(647, -313)
+shape = SubResource("RectangleShape2D_i7s6k")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(636, 12.5)
 scale = Vector2(20.375, 1.89062)
@@ -370,6 +378,14 @@ text = "ROCK AND STONE
 уровень 3"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="fps_debug" type="Label" parent="CanvasLayer"]
+offset_left = 573.0
+offset_top = 27.0
+offset_right = 638.0
+offset_bottom = 50.0
+text = "FPS: 244"
+script = ExtResource("29_rpy4e")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]

@@ -214,7 +214,7 @@ debug_color = Color(0.467452, 0.588302, 0.168212, 0.42)
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(59, 13)
 emitting = false
-amount = 1000
+amount = 100
 process_material = SubResource("ParticleProcessMaterial_36row")
 texture = SubResource("AtlasTexture_2wmmf")
 lifetime = 2.0

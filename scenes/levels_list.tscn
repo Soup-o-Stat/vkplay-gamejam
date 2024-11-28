@@ -1,11 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6ac3727itifv"]
+[gd_scene load_steps=6 format=3 uid="uid://b6ac3727itifv"]
 
 [ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="1_4nawi"]
 [ext_resource type="Script" path="res://scripts/levels_list.gd" id="1_851jb"]
 [ext_resource type="Texture2D" uid="uid://duv7yxbja7mbp" path="res://media/gfx/ui/level_buttons/stone_unlock.png" id="2_4w5wy"]
+[ext_resource type="Texture2D" uid="uid://c60go3jl7gifn" path="res://media/gfx/bg/stone_sky.png" id="2_cva1g"]
+[ext_resource type="Texture2D" uid="uid://bvu2jnkkdg2t1" path="res://media/gfx/bg/castle vanya.png" id="3_utcwb"]
 
 [node name="levels_list" type="Node2D"]
 script = ExtResource("1_851jb")
+
+[node name="bg" type="Node2D" parent="."]
+
+[node name="location_1" type="Sprite2D" parent="bg"]
+position = Vector2(463, 153)
+texture = ExtResource("2_cva1g")
+
+[node name="location_2" type="Sprite2D" parent="bg"]
+position = Vector2(73, 144)
+texture = ExtResource("3_utcwb")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 640.0
@@ -167,3 +179,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="Control/level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Control/level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Control/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Control/level4" to="." method="_on_level_4_pressed"]

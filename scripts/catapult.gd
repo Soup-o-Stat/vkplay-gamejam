@@ -43,7 +43,8 @@ func _process(delta):
 	if Global.num_of_balls==0:
 		$StoneSpoon/FireBall.visible=false
 		$StoneSpoon/SharpedBall.visible=false
-		$StoneSpoon/GPUParticles2D.visible=false
+		if Global.current_qual!="НИЗКОЕ":
+			$StoneSpoon/GPUParticles2D.visible=false
 		$StoneSpoon/TestBall.visible=false
 	spoon_animation()
 	if go_right:

@@ -2,6 +2,12 @@ extends RigidBody2D
 
 var part=false
 
+func _ready():
+	if Global.current_qual=="НИЗКОЕ":
+		$GPUParticles2D.amount=100
+	if Global.current_qual=="СРЕДНЕЕ":
+		$GPUParticles2D.amount=500
+		
 func disable_col():
 	$CollisionShape2D.disabled=true
 	$CollisionShape2D2.disabled=true

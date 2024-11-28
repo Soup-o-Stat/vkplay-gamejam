@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://crxcmnje47gp1"]
+[gd_scene load_steps=46 format=3 uid="uid://crxcmnje47gp1"]
 
 [ext_resource type="Script" path="res://scripts/level_1_2.gd" id="1_f8bxg"]
 [ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="10_3gond"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="28_cmsi3"]
 [ext_resource type="AudioStream" uid="uid://s2e3gnv3xys3" path="res://media/sfx/music/rock_and_stone.mp3" id="29_5y371"]
 [ext_resource type="AudioStream" uid="uid://dwr7g26lyaxw8" path="res://media/sfx/sounds/desert_sound.mp3" id="30_4qboq"]
+[ext_resource type="Script" path="res://scripts/fps_debug.gd" id="30_261u0"]
 [ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="31_8e5mx"]
 [ext_resource type="Script" path="res://scripts/score_count.gd" id="32_e3mij"]
 [ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="33_shtae"]
@@ -35,6 +36,9 @@ size = Vector2(1280, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d50e2"]
 size = Vector2(34, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g1e4"]
+size = Vector2(1293, 48)
 
 [sub_resource type="Gradient" id="Gradient_pbej4"]
 
@@ -248,6 +252,10 @@ shape = SubResource("RectangleShape2D_lyiku")
 position = Vector2(1297, -7)
 shape = SubResource("RectangleShape2D_d50e2")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
+position = Vector2(647, -313)
+shape = SubResource("RectangleShape2D_1g1e4")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(636, 12.5)
 scale = Vector2(20.375, 1.89062)
@@ -414,6 +422,14 @@ text = "ROCK AND STONE
 уровень 2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="fps_debug" type="Label" parent="CanvasLayer"]
+offset_left = 573.0
+offset_top = 27.0
+offset_right = 638.0
+offset_bottom = 50.0
+text = "FPS: 244"
+script = ExtResource("30_261u0")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]

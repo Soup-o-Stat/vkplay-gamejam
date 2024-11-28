@@ -1,7 +1,7 @@
 extends Node2D
 
 var location=1
-var location_name=["ONLINE", "ROCK AND STONE"]
+var location_name=["ONLINE", "ROCK AND STONE", "CASTLE VANYA"]
 
 func _process(delta):
 	$Label.text=location_name[location]
@@ -20,4 +20,8 @@ func _on_level_2_pressed():
 
 func _on_level_3_pressed():
 	var level=load("res://scenes/level_"+str(location)+"_3.tscn")
+	go_to_level(level)
+
+func _on_level_4_pressed():
+	var level=load("res://scenes/level_"+str(location)+"_4.tscn")
 	go_to_level(level)
