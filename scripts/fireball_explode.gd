@@ -9,6 +9,7 @@ func _ready():
 	$AnimatedSprite2D3.hide()
 	$AnimatedSprite2D4.hide()
 	$AnimatedSprite2D5.hide()
+	$GPUParticles2D2.emitting=true
 	
 func _process(delta):
 	if $AnimatedSprite2D.frame==1:

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cexuohq31nn3x"]
+
+[ext_resource type="Texture2D" uid="uid://bvu2jnkkdg2t1" path="res://media/gfx/bg/castle vanya.png" id="1_c08le"]
+
+[node name="background_1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="StoneSky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(640, 144)
+texture = ExtResource("1_c08le")

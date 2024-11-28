@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://geuwi2t31rwe"]
+[gd_scene load_steps=43 format=3 uid="uid://geuwi2t31rwe"]
 
 [ext_resource type="Script" path="res://scripts/level_1_3.gd" id="1_ycbcd"]
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="2_dlnqf"]
@@ -31,6 +31,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
 size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp8tk"]
+size = Vector2(34, 658)
 
 [sub_resource type="Gradient" id="Gradient_pbej4"]
 
@@ -196,6 +199,10 @@ texture = ExtResource("9_a2sx3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 position = Vector2(640, 300)
 shape = SubResource("RectangleShape2D_lyiku")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="floor"]
+position = Vector2(1297, -7)
+shape = SubResource("RectangleShape2D_dp8tk")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(636, 12.5)

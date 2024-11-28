@@ -22,7 +22,7 @@ func _on_fire_area_area_entered(area):
 func explode():
 	$expl_col.disabled=false
 	self.explode_var=true
-	self.mass=20
+	self.mass=25
 	self.gravity_scale=9999
 	$AnimatedSprite2D.visible=true
 	$AnimatedSprite2D.frame=0
@@ -32,7 +32,9 @@ func explode():
 	var explode = explode_scene.instantiate()
 	explode.position = position
 	get_parent().add_child(explode)
+	
 
 func _process(delta):
-	if self.explode_var==true and $AudioStreamPlayer.playing==false and $AnimatedSprite2D.frame==6:
+	if self.explode_var==true and $AnimatedSprite2D.frame==0:
 		self.queue_free()
+		
