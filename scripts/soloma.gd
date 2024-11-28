@@ -39,7 +39,7 @@ func _on_area_2d_body_entered(body):
 	if body.name.substr(0, 4)=="ball":
 		if self.part==false:
 			call_deferred("disable_col")
-			disable_col()
+			#disable_col()
 			$Soloma1.hide()
 			$AudioStreamPlayer.play()
 			Global.score+=50
