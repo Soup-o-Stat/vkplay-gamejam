@@ -1,0 +1,609 @@
+[gd_scene load_steps=66 format=3 uid="uid://c54lq6rt5peby"]
+
+[ext_resource type="Script" path="res://scripts/level_1_5.gd" id="1_2j0w5"]
+[ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="2_xg713"]
+[ext_resource type="PackedScene" uid="uid://monif2v4reep" path="res://scenes/stone_brick21.tscn" id="3_kip2y"]
+[ext_resource type="PackedScene" uid="uid://k6r21k5g5byh" path="res://scenes/stone_brick4.tscn" id="3_xyaer"]
+[ext_resource type="PackedScene" uid="uid://bqwor4qbpcb0o" path="res://scenes/stone_brick3.tscn" id="4_vyuss"]
+[ext_resource type="PackedScene" uid="uid://dbf8acxji4c04" path="res://scenes/stone_brick5.tscn" id="5_ta0kp"]
+[ext_resource type="PackedScene" uid="uid://cktillxu8s1bf" path="res://scenes/stone_brick2.tscn" id="6_idv57"]
+[ext_resource type="PackedScene" uid="uid://bcw003u5ht22y" path="res://scenes/stone_brick6.tscn" id="7_wrfog"]
+[ext_resource type="PackedScene" uid="uid://cp8sdmin3exep" path="res://scenes/stone_brick8.tscn" id="8_whivc"]
+[ext_resource type="PackedScene" uid="uid://bfl6wse1wev7e" path="res://scenes/stone_brick9.tscn" id="9_sgkwj"]
+[ext_resource type="PackedScene" uid="uid://bpgg6f357j5w7" path="res://scenes/stone_brick10.tscn" id="10_87g1d"]
+[ext_resource type="PackedScene" uid="uid://csk0k8afpk8qk" path="res://scenes/stone_brick7.tscn" id="11_fwf84"]
+[ext_resource type="PackedScene" uid="uid://d3hpqgaoxtp7w" path="res://scenes/stone_brick1.tscn" id="12_is08x"]
+[ext_resource type="PackedScene" uid="uid://cbxchunpgpdee" path="res://scenes/stone_brick11.tscn" id="13_x02mn"]
+[ext_resource type="PackedScene" uid="uid://cmewfdugngyei" path="res://scenes/stone_brick12.tscn" id="14_qwqmr"]
+[ext_resource type="PackedScene" uid="uid://di67xytd0mkdq" path="res://scenes/stone_brick13.tscn" id="15_14qws"]
+[ext_resource type="PackedScene" uid="uid://bvuow31vlimi6" path="res://scenes/stone_brick14.tscn" id="16_v66by"]
+[ext_resource type="PackedScene" uid="uid://df4fcs8pvr5q6" path="res://scenes/stone_brick15.tscn" id="17_qa2bq"]
+[ext_resource type="PackedScene" uid="uid://c1awy2ji2ruke" path="res://scenes/stone_brick16.tscn" id="18_daiqa"]
+[ext_resource type="PackedScene" uid="uid://ccyrdp1367kus" path="res://scenes/stone_brick20.tscn" id="19_lktw5"]
+[ext_resource type="PackedScene" uid="uid://b2gvolg6ajc4b" path="res://scenes/stone_brick17.tscn" id="20_plnea"]
+[ext_resource type="PackedScene" uid="uid://d1upjpxkbucgv" path="res://scenes/stone_brick18.tscn" id="21_4jyv3"]
+[ext_resource type="PackedScene" uid="uid://coiqfjg3la3oa" path="res://scenes/stone_brick19.tscn" id="22_y2lxh"]
+[ext_resource type="PackedScene" uid="uid://coxbuy3cplqpr" path="res://scenes/soloma.tscn" id="23_sn762"]
+[ext_resource type="PackedScene" uid="uid://bj7k7vabbccgg" path="res://scenes/bonfire.tscn" id="24_ui6mt"]
+[ext_resource type="PackedScene" uid="uid://ds0slg17esk0l" path="res://scenes/stone_enemy_1.tscn" id="25_ehi8v"]
+[ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="26_hk60y"]
+[ext_resource type="PackedScene" uid="uid://bv4wvkw1iel0u" path="res://scenes/catap.tscn" id="27_jyi4v"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="28_q32ff"]
+[ext_resource type="AudioStream" uid="uid://s2e3gnv3xys3" path="res://media/sfx/music/rock_and_stone.mp3" id="29_vlp65"]
+[ext_resource type="AudioStream" uid="uid://dwr7g26lyaxw8" path="res://media/sfx/sounds/desert_sound.mp3" id="30_maox6"]
+[ext_resource type="Texture2D" uid="uid://i0sgkad503dc" path="res://media/gfx/ui/pause.png" id="31_pd0rk"]
+[ext_resource type="Script" path="res://scripts/pause_button.gd" id="32_7ix8t"]
+[ext_resource type="Texture2D" uid="uid://trlp1b5h7fxn" path="res://media/gfx/ui/restart.png" id="33_swmsf"]
+[ext_resource type="Script" path="res://scripts/restart_button.gd" id="34_rrgd4"]
+[ext_resource type="Texture2D" uid="uid://bxh40iko5hkkd" path="res://media/gfx/ui/shoot.png" id="35_ygd0j"]
+[ext_resource type="Script" path="res://scripts/shoot_button.gd" id="36_8pv4b"]
+[ext_resource type="Texture2D" uid="uid://bsloyqksj4fnm" path="res://media/gfx/ui/ball_choose_nonact.png" id="37_wis5b"]
+[ext_resource type="Script" path="res://scripts/choose_first_button.gd" id="38_4m56x"]
+[ext_resource type="Texture2D" uid="uid://drxfx8e7ph6l6" path="res://media/gfx/balls/test_ball.png" id="39_wolyo"]
+[ext_resource type="Texture2D" uid="uid://2xynonfkqb34" path="res://media/gfx/ui/white_arrow.png" id="40_xk28e"]
+[ext_resource type="Script" path="res://scripts/choose_second_button.gd" id="41_xhfos"]
+[ext_resource type="Texture2D" uid="uid://d16v2bffxsgs1" path="res://media/gfx/balls/fire_ball.png" id="42_u8ids"]
+[ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="43_rff43"]
+[ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="44_ul0xb"]
+[ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="45_m66fv"]
+[ext_resource type="Script" path="res://scripts/score_count.gd" id="46_dxdd7"]
+[ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="47_yvvwi"]
+[ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="48_6chsc"]
+[ext_resource type="Script" path="res://scripts/fps_debug.gd" id="49_4wmac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
+size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s52ye"]
+size = Vector2(34, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j13kr"]
+size = Vector2(1293, 48)
+
+[sub_resource type="Gradient" id="Gradient_pbej4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m4gfw"]
+gradient = SubResource("Gradient_pbej4")
+fill_from = Vector2(0.545455, 1)
+fill_to = Vector2(0.545455, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 11
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiy76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fih0l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3g32"]
+atlas = ExtResource("40_xk28e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p5ae"]
+atlas = ExtResource("40_xk28e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tia5q"]
+atlas = ExtResource("40_xk28e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjdk"]
+atlas = ExtResource("40_xk28e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4rou"]
+atlas = ExtResource("40_xk28e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hf5y"]
+atlas = ExtResource("40_xk28e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utw0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p5ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tia5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hf5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mq1wx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p5ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tia5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hf5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="level1_1" type="Node2D"]
+script = ExtResource("1_2j0w5")
+
+[node name="background_1" parent="." instance=ExtResource("2_xg713")]
+position = Vector2(23, 1)
+
+[node name="building" type="Node2D" parent="."]
+
+[node name="stone_brick21" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1073, 242)
+rotation = 1.5708
+
+[node name="stone_brick22" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1084, 242)
+rotation = 1.5708
+
+[node name="stone_brick46" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1094, 242)
+rotation = 1.5708
+
+[node name="stone_brick47" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1116, 242)
+rotation = 1.5708
+
+[node name="stone_brick48" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1117, 195)
+rotation = 1.5708
+
+[node name="stone_brick49" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1117, 148)
+rotation = 1.5708
+
+[node name="stone_brick27" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1127, 242)
+rotation = 1.5708
+
+[node name="stone_brick28" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1140, 242)
+rotation = 1.5708
+
+[node name="stone_brick29" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1127, 195)
+rotation = 1.5708
+
+[node name="stone_brick30" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1140, 195)
+rotation = 1.5708
+
+[node name="stone_brick24" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1105, 242)
+rotation = 1.5708
+
+[node name="stone_brick25" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1106, 195)
+rotation = 1.5708
+
+[node name="stone_brick23" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1064, 233)
+
+[node name="stone_brick26" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1102, 233)
+
+[node name="stone_brick31" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1065, 186)
+
+[node name="stone_brick32" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1103, 186)
+
+[node name="stone_brick33" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1128, 148)
+rotation = 1.5708
+
+[node name="stone_brick39" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1074, 148)
+rotation = 1.5708
+
+[node name="stone_brick40" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1074, 195)
+rotation = 1.5708
+
+[node name="stone_brick34" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1141, 148)
+rotation = 1.5708
+
+[node name="stone_brick35" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1107, 148)
+rotation = 1.5708
+
+[node name="stone_brick36" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1066, 139)
+
+[node name="stone_brick37" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1104, 139)
+
+[node name="stone_brick38" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1085, 130)
+
+[node name="stone_brick41" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1025, 270)
+
+[node name="stone_brick42" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1025, 260)
+
+[node name="stone_brick43" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1025, 250)
+
+[node name="stone_brick44" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1025, 240)
+
+[node name="stone_brick45" parent="building" instance=ExtResource("3_kip2y")]
+position = Vector2(1025, 230)
+
+[node name="stone_enemy1" parent="building" instance=ExtResource("25_ehi8v")]
+position = Vector2(990, 239)
+
+[node name="stone_enemy2" parent="building" instance=ExtResource("25_ehi8v")]
+position = Vector2(1029, 190)
+
+[node name="stone_enemy3" parent="building" instance=ExtResource("25_ehi8v")]
+position = Vector2(1201, 239)
+
+[node name="stone_enemy4" parent="building" instance=ExtResource("25_ehi8v")]
+position = Vector2(1149, 239)
+
+[node name="soloma" parent="building" instance=ExtResource("23_sn762")]
+position = Vector2(1051, 90)
+
+[node name="stone_brick4" parent="building" instance=ExtResource("3_xyaer")]
+position = Vector2(834, 266)
+
+[node name="stone_brick3" parent="building" instance=ExtResource("4_vyuss")]
+position = Vector2(834, 255)
+
+[node name="stone_brick5" parent="building" instance=ExtResource("5_ta0kp")]
+position = Vector2(835, 244)
+
+[node name="stone_brick2" parent="building" instance=ExtResource("6_idv57")]
+position = Vector2(856, 233)
+
+[node name="stone_brick6" parent="building" instance=ExtResource("7_wrfog")]
+position = Vector2(865, 233)
+
+[node name="stone_brick8" parent="building" instance=ExtResource("8_whivc")]
+position = Vector2(855, 270)
+
+[node name="stone_brick10" parent="building" instance=ExtResource("9_sgkwj")]
+position = Vector2(854, 242)
+
+[node name="stone_brick9" parent="building" instance=ExtResource("10_87g1d")]
+position = Vector2(855, 261)
+
+[node name="stone_brick7" parent="building" instance=ExtResource("11_fwf84")]
+position = Vector2(854, 252)
+
+[node name="stone_brick1" parent="building" instance=ExtResource("12_is08x")]
+position = Vector2(863, 251)
+
+[node name="stone_brick11" parent="building" instance=ExtResource("13_x02mn")]
+position = Vector2(872, 268)
+
+[node name="stone_brick12" parent="building" instance=ExtResource("14_qwqmr")]
+position = Vector2(872, 257)
+
+[node name="stone_brick13" parent="building" instance=ExtResource("15_14qws")]
+position = Vector2(872, 246)
+
+[node name="stone_brick14" parent="building" instance=ExtResource("16_v66by")]
+position = Vector2(882, 240)
+
+[node name="stone_brick15" parent="building" instance=ExtResource("17_qa2bq")]
+position = Vector2(882, 271)
+
+[node name="stone_brick16" parent="building" instance=ExtResource("18_daiqa")]
+position = Vector2(902, 271)
+
+[node name="stone_brick19" parent="building" instance=ExtResource("19_lktw5")]
+position = Vector2(882, 260)
+
+[node name="stone_brick17" parent="building" instance=ExtResource("20_plnea")]
+position = Vector2(882, 251)
+
+[node name="stone_brick18" parent="building" instance=ExtResource("21_4jyv3")]
+position = Vector2(863, 241)
+
+[node name="stone_brick20" parent="building" instance=ExtResource("22_y2lxh")]
+position = Vector2(897, 259)
+
+[node name="stone_brick50" parent="building" instance=ExtResource("18_daiqa")]
+position = Vector2(837, 235)
+
+[node name="stone_brick51" parent="building" instance=ExtResource("18_daiqa")]
+position = Vector2(787, 261)
+
+[node name="stone_brick52" parent="building" instance=ExtResource("8_whivc")]
+position = Vector2(822, 229)
+
+[node name="stone_brick53" parent="building" instance=ExtResource("9_sgkwj")]
+position = Vector2(806, 239)
+
+[node name="stone_brick54" parent="building" instance=ExtResource("11_fwf84")]
+position = Vector2(825, 271)
+
+[node name="stone_brick55" parent="building" instance=ExtResource("4_vyuss")]
+position = Vector2(907, 260)
+
+[node name="stone_brick56" parent="building" instance=ExtResource("5_ta0kp")]
+position = Vector2(904, 249)
+
+[node name="stone_brick57" parent="building" instance=ExtResource("14_qwqmr")]
+position = Vector2(893, 240)
+
+[node name="stone_brick58" parent="building" instance=ExtResource("11_fwf84")]
+position = Vector2(903, 240)
+
+[node name="stone_brick59" parent="building" instance=ExtResource("14_qwqmr")]
+position = Vector2(782, 269)
+
+[node name="stone_brick60" parent="building" instance=ExtResource("17_qa2bq")]
+position = Vector2(884, 231)
+
+[node name="stone_brick61" parent="building" instance=ExtResource("8_whivc")]
+position = Vector2(809, 270)
+
+[node name="stone_brick62" parent="building" instance=ExtResource("13_x02mn")]
+position = Vector2(825, 259)
+
+[node name="stone_brick63" parent="building" instance=ExtResource("14_qwqmr")]
+position = Vector2(815, 259)
+
+[node name="stone_brick64" parent="building" instance=ExtResource("17_qa2bq")]
+position = Vector2(816, 250)
+
+[node name="stone_brick65" parent="building" instance=ExtResource("15_14qws")]
+position = Vector2(824, 239)
+
+[node name="stone_brick66" parent="building" instance=ExtResource("10_87g1d")]
+position = Vector2(792, 271)
+
+[node name="stone_brick67" parent="building" instance=ExtResource("5_ta0kp")]
+position = Vector2(805, 260)
+
+[node name="stone_brick68" parent="building" instance=ExtResource("4_vyuss")]
+position = Vector2(805, 249)
+
+[node name="stone_brick69" parent="building" instance=ExtResource("12_is08x")]
+position = Vector2(815, 240)
+
+[node name="soloma2" parent="building" instance=ExtResource("23_sn762")]
+position = Vector2(801, 185)
+
+[node name="bonfire" parent="building" instance=ExtResource("24_ui6mt")]
+position = Vector2(733, 244)
+
+[node name="stone_enemy5" parent="building" instance=ExtResource("25_ehi8v")]
+position = Vector2(935, 239)
+
+[node name="floor" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+visible = false
+position = Vector2(640, 272)
+scale = Vector2(1, 0.0444444)
+texture = ExtResource("26_hk60y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(640, 300)
+shape = SubResource("RectangleShape2D_lyiku")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="floor"]
+position = Vector2(1297, -7)
+shape = SubResource("RectangleShape2D_s52ye")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
+position = Vector2(647, -313)
+shape = SubResource("RectangleShape2D_j13kr")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(636, 12.5)
+scale = Vector2(20.375, 1.89062)
+color = Color(1, 1, 0.690196, 1)
+energy = 1.37
+blend_mode = 1
+range_layer_min = -100
+texture = SubResource("GradientTexture2D_m4gfw")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1088.0
+offset_bottom = 288.0
+
+[node name="catap" parent="." instance=ExtResource("27_jyi4v")]
+position = Vector2(128, 216)
+
+[node name="SysImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 144)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("28_q32ff")
+
+[node name="Camera2D" type="Camera2D" parent="SysImage"]
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+rotation_smoothing_speed = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_vlp65")
+bus = &"music"
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(424, 280)
+shape = SubResource("RectangleShape2D_jiy76")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(32, 280)
+shape = SubResource("RectangleShape2D_fih0l")
+
+[node name="desert_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_maox6")
+autoplay = true
+bus = &"sound"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" type="Node2D" parent="CanvasLayer"]
+
+[node name="pause_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 72.0
+texture_normal = ExtResource("31_pd0rk")
+script = ExtResource("32_7ix8t")
+
+[node name="restart_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 72.0
+texture_normal = ExtResource("33_swmsf")
+script = ExtResource("34_rrgd4")
+
+[node name="shoot_button" type="TextureButton" parent="CanvasLayer/ui"]
+modulate = Color(1, 1, 1, 0.313726)
+offset_left = 528.0
+offset_top = 176.0
+offset_right = 628.0
+offset_bottom = 276.0
+texture_normal = ExtResource("35_ygd0j")
+script = ExtResource("36_8pv4b")
+
+[node name="choose_first_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 44.0
+texture_normal = ExtResource("37_wis5b")
+script = ExtResource("38_4m56x")
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(18, 18)
+texture = ExtResource("39_wolyo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_utw0l")
+autoplay = "default"
+flip_v = true
+
+[node name="choose_second_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 303.0
+offset_top = 8.0
+offset_right = 339.0
+offset_bottom = 44.0
+texture_normal = ExtResource("37_wis5b")
+script = ExtResource("41_xhfos")
+
+[node name="FireBall" type="Sprite2D" parent="CanvasLayer/ui/choose_second_button"]
+position = Vector2(18, 18)
+texture = ExtResource("42_u8ids")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_second_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_utw0l")
+autoplay = "default"
+flip_v = true
+
+[node name="choose_third_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 348.0
+offset_top = 8.0
+offset_right = 384.0
+offset_bottom = 44.0
+texture_normal = ExtResource("37_wis5b")
+script = ExtResource("43_rff43")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_third_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_mq1wx")
+autoplay = "default"
+flip_v = true
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_third_button"]
+position = Vector2(18, 18)
+texture = ExtResource("44_ul0xb")
+
+[node name="score_label" type="Label" parent="CanvasLayer"]
+offset_left = 555.0
+offset_right = 640.0
+offset_bottom = 30.0
+pivot_offset = Vector2(85, 0)
+theme_override_fonts/font = ExtResource("45_m66fv")
+text = "СЧЕТ: 999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("46_dxdd7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/score_label"]
+stream = ExtResource("47_yvvwi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("48_6chsc")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 640.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("45_m66fv")
+text = "ROCK AND STONE
+уровень 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fps_debug" type="Label" parent="CanvasLayer"]
+offset_left = 573.0
+offset_top = 27.0
+offset_right = 638.0
+offset_bottom = 50.0
+text = "FPS: 244"
+script = ExtResource("49_4wmac")
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/restart_button" to="CanvasLayer/ui/restart_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/shoot_button" to="CanvasLayer/ui/shoot_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_first_button" to="CanvasLayer/ui/choose_first_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_second_button" to="CanvasLayer/ui/choose_second_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_third_button" to="CanvasLayer/ui/choose_third_button" method="_on_pressed"]

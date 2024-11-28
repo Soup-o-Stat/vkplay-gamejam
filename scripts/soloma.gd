@@ -40,9 +40,10 @@ func _on_area_2d_body_entered(body):
 		if self.part==false:
 			call_deferred("disable_col")
 			disable_col()
-			self.part=true
 			$Soloma1.hide()
 			$AudioStreamPlayer.play()
+			Global.score+=50
+			self.part=true
 		
 func _process(delta):
 	if self.part==true and $GPUParticles2D.emitting==false:

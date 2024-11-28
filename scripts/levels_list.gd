@@ -25,3 +25,7 @@ func _on_level_3_pressed():
 func _on_level_4_pressed():
 	var level=load("res://scenes/level_"+str(location)+"_4.tscn")
 	go_to_level(level)
+
+func _on_level_5_pressed():
+	var level=load("res://scenes/level_"+str(location)+"_5.tscn")
+	go_to_level(level)

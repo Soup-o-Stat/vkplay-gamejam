@@ -350,7 +350,6 @@ func _ready(): #при входе в сцену
 	print($SysImage/CameraMenu.position_smoothing_speed)
 	$SysImage/CameraMenu.position_smoothing_speed=1
 	
-	
 	$settings_graphics/fps_label.text="ФПС: "+str(Global.current_fps)
 	$settings_graphics/graph_label.text="КАЧЕСТВО: "+Global.current_qual
 	$settings_audio/music_label.text="МУЗЫКА: "+str(Global.current_volume_music)
