@@ -200,7 +200,6 @@ texture = ExtResource("5_gcflk")
 
 [node name="StoneSpoon" type="Sprite2D" parent="."]
 position = Vector2(50, 29)
-scale = Vector2(1, 1)
 texture = ExtResource("6_b4adw")
 offset = Vector2(-31, -31)
 

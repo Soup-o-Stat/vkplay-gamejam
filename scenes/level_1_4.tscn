@@ -617,16 +617,16 @@ bus = &"sound"
 [node name="pause_button" type="TextureButton" parent="CanvasLayer/ui"]
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 72.0
+offset_right = 58.0
+offset_bottom = 58.0
 texture_normal = ExtResource("11_koh0d")
 script = ExtResource("12_0ioh7")
 
 [node name="restart_button" type="TextureButton" parent="CanvasLayer/ui"]
-offset_left = 88.0
+offset_left = 72.0
 offset_top = 8.0
-offset_right = 152.0
-offset_bottom = 72.0
+offset_right = 122.0
+offset_bottom = 58.0
 texture_normal = ExtResource("13_de30o")
 script = ExtResource("14_0bs4w")
 

@@ -9,7 +9,7 @@
 [ext_resource type="Shader" path="res://shaders/doom.gdshader" id="4_v0icb"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="6_48tn2"]
 [ext_resource type="Script" path="res://scripts/main_menu_camera.gd" id="6_ymsbm"]
-[ext_resource type="AudioStream" uid="uid://bdayrnilcae8x" path="res://media/sfx/test_music/main_menu.mp3" id="7_ru560"]
+[ext_resource type="AudioStream" uid="uid://bxpitnocdglh4" path="res://media/sfx/music/symphony_of_destruction.mp3" id="10_0ncif"]
 [ext_resource type="AudioStream" uid="uid://da22pwymto485" path="res://media/sfx/sounds/main_menu_slide.wav" id="10_ohi2g"]
 [ext_resource type="Texture2D" uid="uid://bn1tud5v12tgq" path="res://media/gfx/ui/white_arrow_big.png" id="12_3tg2e"]
 [ext_resource type="AudioStream" uid="uid://cp6e0mm7u782d" path="res://media/sfx/sounds/main_menu_slide2.mp3" id="13_qew6k"]
@@ -594,7 +594,7 @@ theme_override_fonts/font = ExtResource("1_eu8jm")
 text = "Версия: 1489"
 
 [node name="main_menu_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_ru560")
+stream = ExtResource("10_0ncif")
 bus = &"music"
 
 [node name="buttons_sound" type="AudioStreamPlayer" parent="."]
