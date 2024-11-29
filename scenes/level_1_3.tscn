@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://geuwi2t31rwe"]
+[gd_scene load_steps=46 format=3 uid="uid://geuwi2t31rwe"]
 
 [ext_resource type="Script" path="res://scripts/level_1_3.gd" id="1_ycbcd"]
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="2_dlnqf"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://scripts/score_count.gd" id="29_i3jso"]
 [ext_resource type="Script" path="res://scripts/fps_debug.gd" id="29_rpy4e"]
 [ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="30_6dntk"]
+[ext_resource type="PackedScene" uid="uid://b14cc16hp8msu" path="res://scenes/end_level_screen.tscn" id="30_ro73c"]
 [ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="31_vsq82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
@@ -386,6 +387,8 @@ offset_right = 638.0
 offset_bottom = 50.0
 text = "FPS: 244"
 script = ExtResource("29_rpy4e")
+
+[node name="end_level_screen" parent="." instance=ExtResource("30_ro73c")]
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]

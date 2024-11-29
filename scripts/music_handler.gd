@@ -7,4 +7,4 @@ func play_music(music_name):
 	play()
 
 func stop_music():
-	stop_music()
+	stop()

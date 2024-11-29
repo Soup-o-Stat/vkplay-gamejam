@@ -6,6 +6,14 @@ var location_name=["ONLINE", "ROCK AND STONE", "CASTLEVANYA"]
 func _process(delta):
 	$Label.text=location_name[location]
 
+func _ready():
+	if Global.current_location==1:
+		$bg/location_2.hide()
+		$bg/location_1.show()
+	if Global.current_location==2:
+		$bg/location_1.hide()
+		$bg/location_2.show()
+
 func go_to_level(level):
 	MusicHandler.play_music("rock_and_stone")
 	get_tree().change_scene_to_packed(level)

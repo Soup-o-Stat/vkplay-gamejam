@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dthc1cx263qo1"]
+[gd_scene load_steps=64 format=3 uid="uid://dthc1cx263qo1"]
 
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="1_eoui7"]
 [ext_resource type="Script" path="res://scripts/level_1_1.gd" id="1_ukk8j"]
@@ -48,6 +48,7 @@
 [ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="42_a3umb"]
 [ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="43_1q2f4"]
 [ext_resource type="Script" path="res://scripts/fps_debug.gd" id="48_g4m1x"]
+[ext_resource type="PackedScene" uid="uid://b14cc16hp8msu" path="res://scenes/end_level_screen.tscn" id="49_ex0e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
 size = Vector2(1280, 40)
@@ -489,6 +490,8 @@ offset_right = 638.0
 offset_bottom = 50.0
 text = "FPS: 244"
 script = ExtResource("48_g4m1x")
+
+[node name="end_level_screen" parent="." instance=ExtResource("49_ex0e3")]
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
