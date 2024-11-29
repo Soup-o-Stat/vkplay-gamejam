@@ -13,6 +13,7 @@ func level_name_modulate(delta):
 		$CanvasLayer/ColorRect.visible=false  
 	
 func _ready():
+	Global.high_score_reached=0
 	Global.current_level=2
 	Global.current_location=1
 	Global.level_clear=0
@@ -28,6 +29,8 @@ func _process(delta):
 	level_name_modulate(delta)
 	global_swipe()
 	if Global.dead_enemies==11:
+		if Global.level_clear==0:
+			Global.score+=Global.num_of_balls*500
 		Global.level_clear=1
 
 func _on_control_gui_input(event):

@@ -13,9 +13,13 @@ func level_name_modulate(delta):
 		$CanvasLayer/ColorRect.visible=false  
 
 func _ready():
+	Global.high_score_reached=0
+	Global.current_level=5
+	Global.current_location=1
+	Global.level_clear=0
 	Global.slide_step=0
 	Global.choosen_ball=1
-	Global.num_of_balls=3
+	Global.num_of_balls=4
 	Global.dead_enemies=0
 	Global.score=0
 	$CanvasLayer/ColorRect.visible=true
@@ -25,8 +29,8 @@ func _process(delta):
 	level_name_modulate(delta)
 	global_swipe()
 	if Global.dead_enemies==2:
-		if $CanvasLayer/score_label.local_score==Global.score:
-			get_tree().change_scene_to_file("res://scenes/level_1_2.tscn")
+		if Global.level_clear==0:
+			Global.score+=Global.num_of_balls*500
 
 func _on_control_gui_input(event):
 	if event.is_action_pressed("left_mouse"):
