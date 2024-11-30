@@ -17,219 +17,6 @@ func exit_game(delta): #выход из игры
 	else:
 		get_tree().quit()
 
-func buttons_move(delta): #основные кнопки меню летят вверх
-	if buttons_step==0:
-		if $play_label.position.y>140:
-			$play_label.position.y-=button_speed*delta
-		else:
-			$play_label.position.y=140
-			$buttons_sound.play()
-			$SysImage/CameraMenu.start_shake()
-			buttons_step=1
-	if buttons_step==1:
-		if $settings_label.position.y>188:
-			$settings_label.position.y-=button_speed*delta
-		else:
-			$settings_label.position.y=188
-			$buttons_sound.play()
-			$SysImage/CameraMenu.start_shake()
-			buttons_step=2
-	if buttons_step==2:
-		if $exit_label.position.y>236:
-			$exit_label.position.y-=button_speed*delta
-		else:
-			$exit_label.position.y=236
-			$buttons_sound.play()
-			$SysImage/CameraMenu.start_shake()
-			Global.main_menu_start_melt=true
-			$main_menu_music.play()
-			buttons_step=3
-
-func show_settigs(delta): #летит вверх (в зависимости от меню настроек)
-	if settings_act=="graphics":
-		if main_settings_button_step==7:
-			if $settings_graphics/graph_label.position.y>140:
-				$settings_graphics/graph_label.position.y-=button_speed*delta
-			else:
-				$settings_graphics/graph_label.position.y=140
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=8
-		if main_settings_button_step==8:
-			if $settings_graphics/fps_label.position.y>188:
-				$settings_graphics/fps_label.position.y-=button_speed*delta
-			else:
-				$settings_graphics/fps_label.position.y=188
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=9
-		if main_settings_button_step==9:
-			if $settings_graphics/back_label.position.y>236:
-				$settings_graphics/back_label.position.y-=button_speed*delta
-			else:
-				$settings_graphics/back_label.position.y=236
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=10
-	if settings_act=="audio":
-		if main_settings_button_step==7:
-			if $settings_audio/music_label.position.y>140:
-				$settings_audio/music_label.position.y-=button_speed*delta
-			else:
-				$settings_audio/music_label.position.y=140
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=8
-		if main_settings_button_step==8:
-			if $settings_audio/sound_label.position.y>188:
-				$settings_audio/sound_label.position.y-=button_speed*delta
-			else:
-				$settings_audio/sound_label.position.y=188
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=9
-		if main_settings_button_step==9:
-			if $settings_audio/back_label.position.y>236:
-				$settings_audio/back_label.position.y-=button_speed*delta
-			else:
-				$settings_audio/back_label.position.y=236
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=10
-	if settings_act=="main":
-		if main_settings_button_step==17:
-			if $settings_main/graphics_label.position.y>140:
-				$settings_main/graphics_label.position.y-=button_speed*delta
-			else:
-				$settings_main/graphics_label.position.y=140
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=18
-		if main_settings_button_step==18:
-			if $settings_main/audio_label.position.y>188:
-				$settings_main/audio_label.position.y-=button_speed*delta
-			else:
-				$settings_main/audio_label.position.y=188
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				main_settings_button_step=19
-		if main_settings_button_step==19:
-			if $settings_main/back_label.position.y>236:
-				$settings_main/back_label.position.y-=button_speed*delta
-			else:
-				$settings_main/back_label.position.y=236
-				$buttons_sound.play()
-				$SysImage/CameraMenu.start_shake()
-				settings_act="none"
-				main_settings_button_step=0
-
-func main_settings_buttons_move(delta): #main летит вниз
-	if main_settings_button_step==1:
-		if $settings_main/graphics_label.position.y>131:
-			$settings_main/graphics_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=2
-			$button_slide_sound.play()
-	if main_settings_button_step==2:
-		if $settings_main/graphics_label.position.y<337:
-			$settings_main/graphics_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=3
-	if main_settings_button_step==3:
-		if $settings_main/audio_label.position.y>178:
-			$settings_main/audio_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=4
-			$button_slide_sound.play()
-	if main_settings_button_step==4:
-		if $settings_main/audio_label.position.y<376:
-			$settings_main/audio_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=5
-	if main_settings_button_step==5:
-		if $settings_main/back_label.position.y>224:
-			$settings_main/back_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=6
-			$button_slide_sound.play()
-	if main_settings_button_step==6:
-		if $settings_main/back_label.position.y<416:
-			$settings_main/back_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=7
-
-func audio_settings_buttons_move(delta): #audio летит вниз
-	if main_settings_button_step==20:
-		if $settings_audio/music_label.position.y>131:
-			$settings_audio/music_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=21
-			$button_slide_sound.play()
-	if main_settings_button_step==21:
-		if $settings_audio/music_label.position.y<337:
-			$settings_audio/music_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=22
-	if main_settings_button_step==22:
-		if $settings_audio/sound_label.position.y>178:
-			$settings_audio/sound_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=23
-			$button_slide_sound.play()
-	if main_settings_button_step==23:
-		if $settings_audio/sound_label.position.y<376:
-			$settings_audio/sound_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=24
-	if main_settings_button_step==24:
-		if $settings_audio/back_label.position.y>224:
-			$settings_audio/back_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=25
-			$button_slide_sound.play()
-	if main_settings_button_step==25:
-		if $settings_audio/back_label.position.y<416:
-			$settings_audio/back_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=17
-			settings_act="main"
-
-func graph_settings_buttons_move(delta): #graph летит вниз
-	if main_settings_button_step==11:
-		if $settings_graphics/graph_label.position.y>131:
-			$settings_graphics/graph_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=12
-			$button_slide_sound.play()
-	if main_settings_button_step==12:
-		if $settings_graphics/graph_label.position.y<337:
-			$settings_graphics/graph_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=13
-	if main_settings_button_step==13:
-		if $settings_graphics/fps_label.position.y>178:
-			$settings_graphics/fps_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=14
-			$button_slide_sound.play()
-	if main_settings_button_step==14:
-		if $settings_graphics/fps_label.position.y<376:
-			$settings_graphics/fps_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=15
-	if main_settings_button_step==15:
-		if $settings_graphics/back_label.position.y>224:
-			$settings_graphics/back_label.position.y-=button_speed2*delta
-		else:
-			main_settings_button_step=16
-			$button_slide_sound.play()
-	if main_settings_button_step==16:
-		if $settings_graphics/back_label.position.y<416:
-			$settings_graphics/back_label.position.y+=button_speed2*delta
-		else:
-			main_settings_button_step=17
-			settings_act="main"
-
 func _on_play_button_pressed():  #TODO добавить переходы
 	get_tree().change_scene_to_file("res://scenes/levels_list.tscn")
 
@@ -237,19 +24,40 @@ func _on_exit_button_pressed(): #нажатие на кнопку выход
 	exit_game_bool=true
 
 func _on_settings_button_pressed(): #нажатие на кнопку настройки
-	$SysImage.position.x=965
-	$slide_sound.play()
+	$settings_main/graphics_label.show()
+	$settings_main/audio_label.show()
+	$settings_main/back_label.show()
+	
+	$play_label.hide()
+	$settings_label.hide()
+	$exit_label.hide()
 
 func _on_back_settings_main_button_pressed(): #нажатие на кнопку назад из главного меню настроек
-	$SysImage.position.x=312
-	$slide_sound.play()
+	$settings_main/graphics_label.hide()
+	$settings_main/audio_label.hide()
+	$settings_main/back_label.hide()
+	
+	$play_label.show()
+	$settings_label.show()
+	$exit_label.show()
 
 func _on_graphics_button_pressed(): #нажатие на кнопку графика
-	main_settings_button_step=1
-	settings_act="graphics"
+	$settings_main/graphics_label.hide()
+	$settings_main/audio_label.hide()
+	$settings_main/back_label.hide()
+	
+	$settings_graphics/graph_label.show()
+	$settings_graphics/fps_label.show()
+	$settings_graphics/back_label.show()
 
 func _on_back_from_graphics_button_pressed(): #нажатие на кнопку назад из меню настроек графики
-	main_settings_button_step=11
+	$settings_main/graphics_label.show()
+	$settings_main/audio_label.show()
+	$settings_main/back_label.show()
+	
+	$settings_graphics/graph_label.hide()
+	$settings_graphics/fps_label.hide()
+	$settings_graphics/back_label.hide()
 
 func _on_next_fps_pressed(): #увеличить фпс
 	current_fps_local+=1
@@ -279,7 +87,7 @@ func _on_next_qual_pressed(): #увеличить качество график�
 	$settings_graphics/graph_label.text="КАЧЕСТВО: "+Global.current_qual
 	print("Set "+ str(Global.current_qual)+ str(current_qual_local))
 	
-func _on_back_qual_pressed(): #уменьшить качество графики TODO: надо, шоб эта залупа хоть на что-то влияла, а то как то не комильфо
+func _on_back_qual_pressed(): #уменьшить качество графики
 	current_qual_local-=1
 	if current_qual_local<0:
 		current_qual_local=Global.max_qual
@@ -288,11 +96,22 @@ func _on_back_qual_pressed(): #уменьшить качество график�
 	print("Set "+ str(Global.current_qual))
 
 func _on_audio_button_pressed(): #нажатие на кнопку аудио
-	main_settings_button_step=1
-	settings_act="audio"
+	$settings_main/graphics_label.hide()
+	$settings_main/audio_label.hide()
+	$settings_main/back_label.hide()
+	
+	$settings_audio/music_label.show()
+	$settings_audio/sound_label.show()
+	$settings_audio/back_label.show()
 
 func _on_back_from_audio_button_pressed(): #нажатие на кнопку назад из меню настроек аудио
-	main_settings_button_step=20
+	$settings_main/graphics_label.show()
+	$settings_main/audio_label.show()
+	$settings_main/back_label.show()
+	
+	$settings_audio/music_label.hide()
+	$settings_audio/sound_label.hide()
+	$settings_audio/back_label.hide()
 
 func _on_next_music_pressed(): #увеличение громкости музыки
 	Global.current_volume_music = min(Global.current_volume_music + 10, 100)
@@ -339,7 +158,7 @@ func _on_back_sound_pressed(): #уменьшение громкости звук
 		print("Шина 'sound' не найдена!")
 
 func _ready(): #при входе в сцену
-	$SysImage/CameraMenu.make_current()
+	MusicHandler.play_music("symphony_of_destruction")
 	$SysImage/CameraMenu.offset = Vector2.ZERO
 	current_fps_local=Global.max_fps_in_list
 	current_qual_local=1
@@ -363,10 +182,5 @@ func _ready(): #при входе в сцену
 	$settings_graphics/fps_label/white_arrow_left.frame=0
 	
 func _process(delta): #основной цикл (неоптимизированный кал блять)
-	buttons_move(delta)
-	main_settings_buttons_move(delta)
-	graph_settings_buttons_move(delta)
-	audio_settings_buttons_move(delta)
-	show_settigs(delta)
 	if exit_game_bool==true:
 		exit_game(delta)

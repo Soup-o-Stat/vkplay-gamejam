@@ -14,12 +14,12 @@ func level_name_modulate(delta):
 	
 func _ready():
 	Global.high_score_reached=0
-	Global.current_level=5
+	Global.current_level=7
 	Global.current_location=1
 	Global.level_clear=0
 	Global.slide_step=0
 	Global.choosen_ball=1
-	Global.num_of_balls=4
+	Global.num_of_balls=3
 	Global.dead_enemies=0
 	Global.score=0
 	$CanvasLayer/ColorRect.visible=true

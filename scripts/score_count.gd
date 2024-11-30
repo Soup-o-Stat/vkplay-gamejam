@@ -3,6 +3,7 @@ extends Label
 var local_score=0
 var scale_change=0
 var high_score_reached=0
+var high_score_played=0
 
 func upscale():
 	if scale_change==0:
@@ -46,7 +47,9 @@ func _process(delta):
 	else:
 		scale_change=0
 	if Global.high_score_reached==1:
-		$AudioStreamPlayer.play()
+		if high_score_played==0:
+			$AudioStreamPlayer.play()
+			high_score_played=1
 		Global.high_score_reached=2
 		add_theme_color_override("font_color", "#ffed00")
 	text=("СЧЕТ: "+str(local_score))

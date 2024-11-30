@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="vk_play_gamejam"
-config/version="0.0.20"
+config/name="Symphony of Destruction DEMO"
+config/version="0.0.21"
 run/main_scene="res://scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/symphony_of_destruction.mp3-5845edd26139aeaaf
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

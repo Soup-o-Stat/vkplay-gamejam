@@ -1,25 +1,28 @@
-[gd_scene load_steps=43 format=3 uid="uid://4s1a35p6tm4c"]
+[gd_scene load_steps=45 format=3 uid="uid://4s1a35p6tm4c"]
 
 [ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="1_eu8jm"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jbmeq"]
 [ext_resource type="Texture2D" uid="uid://bgjljdpaj76ag" path="res://media/gfx/ui/black.png" id="2_qmrk0"]
-[ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="2_qr0ir"]
 [ext_resource type="AudioStream" uid="uid://boo0v6fobf35i" path="res://media/sfx/sounds/main_menu_buttons.wav" id="3_aboua"]
 [ext_resource type="Script" path="res://scripts/black.gd" id="4_iyfmu"]
-[ext_resource type="Shader" path="res://shaders/doom.gdshader" id="4_v0icb"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="6_48tn2"]
 [ext_resource type="Script" path="res://scripts/main_menu_camera.gd" id="6_ymsbm"]
+[ext_resource type="Texture2D" uid="uid://du6c24gkw71hy" path="res://media/gfx/ui/logo.png" id="8_c15jc"]
 [ext_resource type="AudioStream" uid="uid://bxpitnocdglh4" path="res://media/sfx/music/symphony_of_destruction.mp3" id="10_0ncif"]
 [ext_resource type="AudioStream" uid="uid://da22pwymto485" path="res://media/sfx/sounds/main_menu_slide.wav" id="10_ohi2g"]
 [ext_resource type="Texture2D" uid="uid://bn1tud5v12tgq" path="res://media/gfx/ui/white_arrow_big.png" id="12_3tg2e"]
+[ext_resource type="Texture2D" uid="uid://2p43hj2t5dwy" path="res://media/gfx/bg/main_menu.png" id="13_cry8q"]
 [ext_resource type="AudioStream" uid="uid://cp6e0mm7u782d" path="res://media/sfx/sounds/main_menu_slide2.mp3" id="13_qew6k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8halw"]
-shader = ExtResource("4_v0icb")
-shader_parameter/timer = 0.0
-shader_parameter/y_offsets = PackedFloat32Array()
-shader_parameter/melting = true
-shader_parameter/melt_tex = ExtResource("2_qmrk0")
+
+[sub_resource type="Gradient" id="Gradient_0w6yv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2k50o"]
+gradient = SubResource("Gradient_0w6yv")
+fill_from = Vector2(1, 0.5)
+fill_to = Vector2(0, 0.5)
+metadata/_snap_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ld04"]
 atlas = ExtResource("12_3tg2e")
@@ -224,24 +227,33 @@ animations = [{
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_jbmeq")
 
-[node name="Kazaxi" type="Sprite2D" parent="."]
-position = Vector2(640, 143.5)
-scale = Vector2(1, 0.401389)
-texture = ExtResource("2_qr0ir")
+[node name="MainMenu" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(388, 144)
+scale = Vector2(1.44, 1.44)
+texture = ExtResource("13_cry8q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_8halw")
-offset_left = -12.0
-offset_top = -10.0
-offset_right = 1280.0
-offset_bottom = 304.0
+offset_left = -1.0
+offset_right = 159.0
+offset_bottom = 288.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_iyfmu")
 
+[node name="PointLight2D" type="PointLight2D" parent="ColorRect"]
+position = Vector2(216.5, 141)
+scale = Vector2(2.07813, 4.70313)
+energy = 1.95
+blend_mode = 1
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_2k50o")
+
 [node name="play_label" type="Label" parent="."]
-offset_top = 344.0
-offset_right = 640.0
-offset_bottom = 375.0
+offset_left = -256.0
+offset_top = 136.0
+offset_right = 384.0
+offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -258,9 +270,10 @@ offset_right = 364.0
 offset_bottom = 27.0
 
 [node name="settings_label" type="Label" parent="."]
-offset_top = 384.0
-offset_right = 640.0
-offset_bottom = 415.0
+offset_left = -232.0
+offset_top = 184.0
+offset_right = 408.0
+offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -277,9 +290,10 @@ offset_right = 390.0
 offset_bottom = 26.0
 
 [node name="exit_label" type="Label" parent="."]
-offset_top = 424.0
-offset_right = 640.0
-offset_bottom = 455.0
+offset_left = -256.0
+offset_top = 232.0
+offset_right = 384.0
+offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -296,6 +310,7 @@ offset_right = 364.0
 offset_bottom = 30.0
 
 [node name="SysImage" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(312, 144)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("6_48tn2")
@@ -313,10 +328,11 @@ script = ExtResource("6_ymsbm")
 [node name="settings_main" type="Node" parent="."]
 
 [node name="graphics_label" type="Label" parent="settings_main"]
-offset_left = 640.0
-offset_top = 140.0
-offset_right = 1280.0
-offset_bottom = 163.0
+visible = false
+offset_left = -248.0
+offset_top = 136.0
+offset_right = 392.0
+offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -334,10 +350,11 @@ offset_right = 373.0
 offset_bottom = 30.0
 
 [node name="audio_label" type="Label" parent="settings_main"]
-offset_left = 640.0
-offset_top = 188.0
-offset_right = 1280.0
-offset_bottom = 219.0
+visible = false
+offset_left = -264.0
+offset_top = 184.0
+offset_right = 376.0
+offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -354,10 +371,11 @@ offset_right = 358.0
 offset_bottom = 26.0
 
 [node name="back_label" type="Label" parent="settings_main"]
-offset_left = 640.0
-offset_top = 236.0
-offset_right = 1280.0
-offset_bottom = 267.0
+visible = false
+offset_left = -264.0
+offset_top = 232.0
+offset_right = 376.0
+offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -377,10 +395,11 @@ offset_bottom = 26.0
 [node name="settings_graphics" type="Node" parent="."]
 
 [node name="graph_label" type="Label" parent="settings_graphics"]
-offset_left = 640.0
-offset_top = 344.0
-offset_right = 1280.0
-offset_bottom = 375.0
+visible = false
+offset_left = -168.0
+offset_top = 136.0
+offset_right = 472.0
+offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -416,10 +435,11 @@ offset_right = 201.0
 offset_bottom = 29.0
 
 [node name="fps_label" type="Label" parent="settings_graphics"]
-offset_left = 640.0
-offset_top = 384.0
-offset_right = 1280.0
-offset_bottom = 415.0
+visible = false
+offset_left = -240.0
+offset_top = 184.0
+offset_right = 400.0
+offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -455,10 +475,11 @@ offset_right = 271.0
 offset_bottom = 30.0
 
 [node name="back_label" type="Label" parent="settings_graphics"]
-offset_left = 640.0
-offset_top = 424.0
-offset_right = 1280.0
-offset_bottom = 455.0
+visible = false
+offset_left = -256.0
+offset_top = 232.0
+offset_right = 384.0
+offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -478,10 +499,11 @@ offset_bottom = 29.0
 [node name="settings_audio" type="Node" parent="."]
 
 [node name="music_label" type="Label" parent="settings_audio"]
-offset_left = 640.0
-offset_top = 344.0
-offset_right = 1280.0
-offset_bottom = 375.0
+visible = false
+offset_left = -216.0
+offset_top = 136.0
+offset_right = 424.0
+offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -517,10 +539,11 @@ offset_right = 248.0
 offset_bottom = 29.0
 
 [node name="sound_label" type="Label" parent="settings_audio"]
-offset_left = 640.0
-offset_top = 384.0
-offset_right = 1280.0
-offset_bottom = 415.0
+visible = false
+offset_left = -232.0
+offset_top = 184.0
+offset_right = 408.0
+offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -556,10 +579,11 @@ offset_right = 269.0
 offset_bottom = 30.0
 
 [node name="back_label" type="Label" parent="settings_audio"]
-offset_left = 640.0
-offset_top = 424.0
-offset_right = 1280.0
-offset_bottom = 455.0
+visible = false
+offset_left = -256.0
+offset_top = 232.0
+offset_right = 384.0
+offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
@@ -576,6 +600,10 @@ offset_top = 1.0
 offset_right = 357.0
 offset_bottom = 29.0
 
+[node name="Logo" type="Sprite2D" parent="settings_audio"]
+position = Vector2(80, 48)
+texture = ExtResource("8_c15jc")
+
 [node name="Black" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(309, 140.125)
@@ -583,9 +611,9 @@ scale = Vector2(687.5, 347.75)
 texture = ExtResource("2_qmrk0")
 
 [node name="ver_label" type="Label" parent="."]
-offset_left = 1200.0
+offset_left = 552.0
 offset_top = 264.0
-offset_right = 1274.0
+offset_right = 626.0
 offset_bottom = 281.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1

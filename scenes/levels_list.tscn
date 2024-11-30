@@ -181,3 +181,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="Control/level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Control/level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="Control/level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Control/level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Control/level7" to="." method="_on_level_7_pressed"]
