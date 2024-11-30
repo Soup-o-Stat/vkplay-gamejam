@@ -1,6 +1,11 @@
-Future CLub
-Soup-o-Stat
-
+Used technologies
+Godot Engine 4
+Aseprite
+Adobe Photoshop
+FL Studio
+Android Studio
+Java SDK
+VK SDK
 
 Used Assets
 DPComic Font - codeman38
@@ -9,3 +14,4 @@ desert_sound.mp3 - SmartSound FX
 stone_death.mp3: Zombies groaning & hissing (Dry).mp3 - Locran
 wing.mp3: Birdlike, Large, Single Flap, Slow.mp3 - Epidemic Sound
 throw.mp3: Throwing item - swing.mp3 - Epic Stock Media
+glass.mp3: Glass shatering (Short).mp3 - SmartSound FX

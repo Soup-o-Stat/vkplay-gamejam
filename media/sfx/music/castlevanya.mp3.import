@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/castlevanya.mp3-eda7b085e0b4c4185fd1b309826a3
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

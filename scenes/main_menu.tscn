@@ -250,13 +250,13 @@ range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_2k50o")
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(80, 48)
+position = Vector2(88, 48)
 texture = ExtResource("8_c15jc")
 
 [node name="play_label" type="Label" parent="."]
-offset_left = -256.0
+offset_left = -248.0
 offset_top = 136.0
-offset_right = 384.0
+offset_right = 392.0
 offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -274,9 +274,9 @@ offset_right = 364.0
 offset_bottom = 27.0
 
 [node name="settings_label" type="Label" parent="."]
-offset_left = -232.0
+offset_left = -224.0
 offset_top = 184.0
-offset_right = 408.0
+offset_right = 416.0
 offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -294,9 +294,9 @@ offset_right = 390.0
 offset_bottom = 26.0
 
 [node name="exit_label" type="Label" parent="."]
-offset_left = -256.0
+offset_left = -248.0
 offset_top = 232.0
-offset_right = 384.0
+offset_right = 392.0
 offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -333,9 +333,9 @@ script = ExtResource("6_ymsbm")
 
 [node name="graphics_label" type="Label" parent="settings_main"]
 visible = false
-offset_left = -248.0
+offset_left = -240.0
 offset_top = 136.0
-offset_right = 392.0
+offset_right = 400.0
 offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -355,9 +355,9 @@ offset_bottom = 30.0
 
 [node name="audio_label" type="Label" parent="settings_main"]
 visible = false
-offset_left = -264.0
+offset_left = -256.0
 offset_top = 184.0
-offset_right = 376.0
+offset_right = 384.0
 offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -376,9 +376,9 @@ offset_bottom = 26.0
 
 [node name="back_label" type="Label" parent="settings_main"]
 visible = false
-offset_left = -264.0
+offset_left = -256.0
 offset_top = 232.0
-offset_right = 376.0
+offset_right = 384.0
 offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -400,9 +400,9 @@ offset_bottom = 26.0
 
 [node name="graph_label" type="Label" parent="settings_graphics"]
 visible = false
-offset_left = -168.0
+offset_left = -160.0
 offset_top = 136.0
-offset_right = 472.0
+offset_right = 480.0
 offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -440,9 +440,9 @@ offset_bottom = 29.0
 
 [node name="fps_label" type="Label" parent="settings_graphics"]
 visible = false
-offset_left = -240.0
+offset_left = -232.0
 offset_top = 184.0
-offset_right = 400.0
+offset_right = 408.0
 offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -480,9 +480,9 @@ offset_bottom = 30.0
 
 [node name="back_label" type="Label" parent="settings_graphics"]
 visible = false
-offset_left = -256.0
+offset_left = -248.0
 offset_top = 232.0
-offset_right = 384.0
+offset_right = 392.0
 offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -504,9 +504,9 @@ offset_bottom = 29.0
 
 [node name="music_label" type="Label" parent="settings_audio"]
 visible = false
-offset_left = -216.0
+offset_left = -208.0
 offset_top = 136.0
-offset_right = 424.0
+offset_right = 432.0
 offset_bottom = 167.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -544,9 +544,9 @@ offset_bottom = 29.0
 
 [node name="sound_label" type="Label" parent="settings_audio"]
 visible = false
-offset_left = -232.0
+offset_left = -224.0
 offset_top = 184.0
-offset_right = 408.0
+offset_right = 416.0
 offset_bottom = 215.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -584,9 +584,9 @@ offset_bottom = 30.0
 
 [node name="back_label" type="Label" parent="settings_audio"]
 visible = false
-offset_left = -256.0
+offset_left = -248.0
 offset_top = 232.0
-offset_right = 384.0
+offset_right = 392.0
 offset_bottom = 263.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0

@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://bup4xsu86vb8"]
+
+[ext_resource type="AudioStream" uid="uid://bg70ajuqg2nwm" path="res://media/sfx/sounds/Voicy_deltarune explosion.mp3" id="1_rp2cy"]
+[ext_resource type="Script" path="res://scripts/glass_brick.gd" id="1_wf6cv"]
+[ext_resource type="Texture2D" uid="uid://uprwrth74utm" path="res://media/gfx/bricks/castle/glass_brick.png" id="3_6yhfa"]
+[ext_resource type="Texture2D" uid="uid://hn1dukut0nr1" path="res://media/gfx/bricks/castle/glass_sharp.png" id="4_t2jo4"]
+[ext_resource type="AudioStream" uid="uid://c8ju53e6uhw22" path="res://media/sfx/sounds/glass.mp3" id="5_5a2aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ptll"]
+size = Vector2(31, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7icfm"]
+size = Vector2(33, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_db30o"]
+radius = 11.0
+height = 40.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s3c1w"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 17.45
+angle_min = -165.6
+angle_max = 86.4
+inherit_velocity_ratio = 0.146
+initial_velocity_max = 45.0
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -9.0
+radial_accel_max = 9.0
+anim_offset_max = 0.075
+
+[node name="glass_brick" type="RigidBody2D"]
+mass = 3.0
+script = ExtResource("1_wf6cv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_rp2cy")
+max_distance = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 9)
+shape = SubResource("RectangleShape2D_0ptll")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 9)
+shape = SubResource("RectangleShape2D_7icfm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16.5, 9)
+scale = Vector2(1, 1)
+texture = ExtResource("3_6yhfa")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(17, 9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_db30o")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(18, 2)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_s3c1w")
+texture = ExtResource("4_t2jo4")
+lifetime = 2.0
+one_shot = true
+speed_scale = 5.0
+explosiveness = 0.09
+fixed_fps = 60
+collision_base_size = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5a2aj")
+bus = &"sound"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

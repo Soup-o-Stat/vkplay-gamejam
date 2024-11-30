@@ -1,0 +1,399 @@
+[gd_scene load_steps=46 format=3 uid="uid://bhas8kdrpmcm7"]
+
+[ext_resource type="Script" path="res://scripts/level_2_5.gd" id="1_bh5is"]
+[ext_resource type="PackedScene" uid="uid://duqqana1x4eg" path="res://scenes/background_2.tscn" id="2_rxosd"]
+[ext_resource type="PackedScene" uid="uid://dj30t1x5kjwhc" path="res://scenes/wood_brick.tscn" id="4_yv5t2"]
+[ext_resource type="PackedScene" uid="uid://coxbuy3cplqpr" path="res://scenes/soloma.tscn" id="5_r65eu"]
+[ext_resource type="PackedScene" uid="uid://cugk6otlo1d1l" path="res://scenes/castle_enemy_2.tscn" id="6_a8r6m"]
+[ext_resource type="PackedScene" uid="uid://d4b31q4u85gal" path="res://scenes/castle_enemy_1.tscn" id="6_yfpk8"]
+[ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="7_n5vfy"]
+[ext_resource type="PackedScene" uid="uid://6xcrvgtiywph" path="res://scenes/catap2.tscn" id="8_pri8q"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="9_mwwxk"]
+[ext_resource type="AudioStream" uid="uid://dwr7g26lyaxw8" path="res://media/sfx/sounds/desert_sound.mp3" id="10_qja62"]
+[ext_resource type="Texture2D" uid="uid://i0sgkad503dc" path="res://media/gfx/ui/pause.png" id="11_flw1e"]
+[ext_resource type="Script" path="res://scripts/pause_button.gd" id="12_5nxtl"]
+[ext_resource type="Texture2D" uid="uid://trlp1b5h7fxn" path="res://media/gfx/ui/restart.png" id="13_1euye"]
+[ext_resource type="Script" path="res://scripts/restart_button.gd" id="14_0cjus"]
+[ext_resource type="Texture2D" uid="uid://bxh40iko5hkkd" path="res://media/gfx/ui/shoot.png" id="15_qypyf"]
+[ext_resource type="Script" path="res://scripts/shoot_button.gd" id="16_qc347"]
+[ext_resource type="Texture2D" uid="uid://8ea1vr6ddbyd" path="res://media/gfx/ui/help.png" id="17_3kief"]
+[ext_resource type="Texture2D" uid="uid://bsloyqksj4fnm" path="res://media/gfx/ui/ball_choose_nonact.png" id="18_q0bg3"]
+[ext_resource type="Script" path="res://scripts/choose_first_button.gd" id="19_lsbba"]
+[ext_resource type="Texture2D" uid="uid://l7iser2lbq3" path="res://media/gfx/balls/bomb.png" id="20_3mllp"]
+[ext_resource type="Texture2D" uid="uid://2xynonfkqb34" path="res://media/gfx/ui/white_arrow.png" id="21_r4pm6"]
+[ext_resource type="Script" path="res://scripts/choose_second_button.gd" id="22_6h5k1"]
+[ext_resource type="Texture2D" uid="uid://brf6oj4d7623r" path="res://media/gfx/balls/poizon.png" id="23_hfb08"]
+[ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="24_7itp1"]
+[ext_resource type="Texture2D" uid="uid://bj4mqmg5t5wx4" path="res://media/gfx/balls/ball_fire_barrel.png" id="25_4ppi0"]
+[ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="26_263mt"]
+[ext_resource type="Script" path="res://scripts/score_count.gd" id="27_wcav2"]
+[ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="28_0qbof"]
+[ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="29_0y1i8"]
+[ext_resource type="Script" path="res://scripts/fps_debug.gd" id="30_0yi6y"]
+[ext_resource type="PackedScene" uid="uid://bup4xsu86vb8" path="res://scenes/glass_brick.tscn" id="30_rn5ul"]
+[ext_resource type="PackedScene" uid="uid://b14cc16hp8msu" path="res://scenes/end_level_screen.tscn" id="31_3qioy"]
+[ext_resource type="Texture2D" uid="uid://bnufffp5fnro" path="res://media/gfx/ui/info_book.png" id="32_lrey1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
+size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eeyy"]
+size = Vector2(34, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvi27"]
+size = Vector2(1293, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiy76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fih0l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3g32"]
+atlas = ExtResource("21_r4pm6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p5ae"]
+atlas = ExtResource("21_r4pm6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tia5q"]
+atlas = ExtResource("21_r4pm6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjdk"]
+atlas = ExtResource("21_r4pm6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4rou"]
+atlas = ExtResource("21_r4pm6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hf5y"]
+atlas = ExtResource("21_r4pm6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qesb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p5ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tia5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hf5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="level1_1" type="Node2D"]
+script = ExtResource("1_bh5is")
+
+[node name="background_2" parent="." instance=ExtResource("2_rxosd")]
+position = Vector2(213, 344)
+
+[node name="building" type="Node2D" parent="."]
+
+[node name="wood_brick" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1141, 237)
+rotation = 1.5708
+
+[node name="wood_brick2" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1202, 237)
+rotation = 1.5708
+
+[node name="wood_brick3" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1106, 218)
+
+[node name="wood_brick4" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1178, 218)
+
+[node name="soloma" parent="building" instance=ExtResource("5_r65eu")]
+position = Vector2(1103, 166)
+
+[node name="stone_enemy1" parent="building" instance=ExtResource("6_a8r6m")]
+position = Vector2(1144, 239)
+
+[node name="stone_enemy2" parent="building" instance=ExtResource("6_yfpk8")]
+position = Vector2(848, 239)
+
+[node name="stone_enemy3" parent="building" instance=ExtResource("6_a8r6m")]
+position = Vector2(917, 219)
+
+[node name="stone_enemy4" parent="building" instance=ExtResource("6_a8r6m")]
+position = Vector2(1013, 220)
+
+[node name="wood_brick5" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(920, 261)
+
+[node name="wood_brick10" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(890, 186)
+
+[node name="wood_brick11" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1041, 185)
+
+[node name="wood_brick6" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(964, 261)
+
+[node name="wood_brick7" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1007, 261)
+
+[node name="wood_brick8" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(920, 237)
+rotation = 1.5708
+
+[node name="wood_brick9" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(973, 218)
+rotation = 1.5708
+
+[node name="wood_brick12" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1015, 218)
+rotation = 1.5708
+
+[node name="wood_brick13" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(973, 175)
+rotation = 1.5708
+
+[node name="wood_brick14" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1015, 175)
+rotation = 1.5708
+
+[node name="wood_brick15" parent="building" instance=ExtResource("4_yv5t2")]
+position = Vector2(1069, 237)
+rotation = 1.5708
+
+[node name="glass_brick" parent="building" instance=ExtResource("30_rn5ul")]
+position = Vector2(919, 204)
+rotation = 1.5708
+
+[node name="glass_brick2" parent="building" instance=ExtResource("30_rn5ul")]
+position = Vector2(1069, 204)
+rotation = 1.5708
+
+[node name="soloma2" parent="building" instance=ExtResource("5_r65eu")]
+position = Vector2(924, 130)
+
+[node name="floor" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+visible = false
+position = Vector2(640, 272)
+scale = Vector2(1, 0.0444444)
+texture = ExtResource("7_n5vfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(640, 300)
+shape = SubResource("RectangleShape2D_lyiku")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="floor"]
+position = Vector2(1297, -7)
+shape = SubResource("RectangleShape2D_1eeyy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
+position = Vector2(647, -313)
+shape = SubResource("RectangleShape2D_gvi27")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1088.0
+offset_bottom = 288.0
+
+[node name="catap" parent="." instance=ExtResource("8_pri8q")]
+position = Vector2(141, 217)
+
+[node name="SysImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 144)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("9_mwwxk")
+
+[node name="Camera2D" type="Camera2D" parent="SysImage"]
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+rotation_smoothing_speed = 10.0
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(424, 280)
+shape = SubResource("RectangleShape2D_jiy76")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(32, 280)
+shape = SubResource("RectangleShape2D_fih0l")
+
+[node name="desert_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qja62")
+autoplay = true
+bus = &"sound"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" type="Node2D" parent="CanvasLayer"]
+
+[node name="pause_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 58.0
+texture_normal = ExtResource("11_flw1e")
+script = ExtResource("12_5nxtl")
+
+[node name="restart_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 72.0
+offset_top = 8.0
+offset_right = 122.0
+offset_bottom = 58.0
+texture_normal = ExtResource("13_1euye")
+script = ExtResource("14_0cjus")
+
+[node name="shoot_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 528.0
+offset_top = 176.0
+offset_right = 608.0
+offset_bottom = 256.0
+texture_normal = ExtResource("15_qypyf")
+script = ExtResource("16_qc347")
+
+[node name="help_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 136.0
+offset_top = 8.0
+offset_right = 186.0
+offset_bottom = 58.0
+texture_normal = ExtResource("17_3kief")
+
+[node name="choose_first_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 44.0
+texture_normal = ExtResource("18_q0bg3")
+script = ExtResource("19_lsbba")
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(18, 18)
+texture = ExtResource("20_3mllp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_first_button"]
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_5qesb")
+autoplay = "default"
+frame_progress = 0.871438
+flip_v = true
+
+[node name="choose_second_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 303.0
+offset_top = 8.0
+offset_right = 339.0
+offset_bottom = 44.0
+texture_normal = ExtResource("18_q0bg3")
+script = ExtResource("22_6h5k1")
+
+[node name="FireBall" type="Sprite2D" parent="CanvasLayer/ui/choose_second_button"]
+position = Vector2(18, 18)
+texture = ExtResource("23_hfb08")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_second_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_5qesb")
+autoplay = "default"
+frame_progress = 0.286126
+flip_v = true
+
+[node name="choose_third_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 348.0
+offset_top = 8.0
+offset_right = 384.0
+offset_bottom = 44.0
+texture_normal = ExtResource("18_q0bg3")
+script = ExtResource("24_7itp1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_third_button"]
+visible = false
+position = Vector2(25, 42)
+sprite_frames = SubResource("SpriteFrames_5qesb")
+autoplay = "default"
+frame_progress = 0.871438
+flip_v = true
+
+[node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_third_button"]
+position = Vector2(18, 18)
+texture = ExtResource("25_4ppi0")
+
+[node name="score_label" type="Label" parent="CanvasLayer"]
+offset_left = 555.0
+offset_right = 640.0
+offset_bottom = 30.0
+pivot_offset = Vector2(85, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_263mt")
+text = "СЧЕТ: 999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("27_wcav2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/score_label"]
+stream = ExtResource("28_0qbof")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("29_0y1i8")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 640.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("26_263mt")
+text = "CASTLEVANYA
+уровень 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fps_debug" type="Label" parent="CanvasLayer"]
+offset_left = 573.0
+offset_top = 27.0
+offset_right = 638.0
+offset_bottom = 50.0
+text = "FPS: 244"
+script = ExtResource("30_0yi6y")
+
+[node name="end_level_screen" parent="." instance=ExtResource("31_3qioy")]
+
+[node name="InfoBook" type="Sprite2D" parent="."]
+position = Vector2(320, 424)
+texture = ExtResource("32_lrey1")
+
+[node name="book_button" type="TextureButton" parent="InfoBook"]
+offset_left = -320.0
+offset_top = -144.0
+offset_right = 320.0
+offset_bottom = 152.0
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/restart_button" to="CanvasLayer/ui/restart_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/shoot_button" to="CanvasLayer/ui/shoot_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_first_button" to="CanvasLayer/ui/choose_first_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_second_button" to="CanvasLayer/ui/choose_second_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/choose_third_button" to="CanvasLayer/ui/choose_third_button" method="_on_pressed"]
+[connection signal="pressed" from="InfoBook/book_button" to="." method="_on_book_button_pressed"]

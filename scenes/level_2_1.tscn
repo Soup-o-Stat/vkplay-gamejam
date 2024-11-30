@@ -1,16 +1,22 @@
-[gd_scene load_steps=39 format=3 uid="uid://yvvbnyo57t1q"]
+[gd_scene load_steps=44 format=3 uid="uid://yvvbnyo57t1q"]
 
 [ext_resource type="Script" path="res://scripts/level_2_1.gd" id="1_jtyby"]
 [ext_resource type="PackedScene" uid="uid://duqqana1x4eg" path="res://scenes/background_2.tscn" id="2_weuqo"]
+[ext_resource type="PackedScene" uid="uid://dj30t1x5kjwhc" path="res://scenes/wood_brick.tscn" id="3_kjv4b"]
 [ext_resource type="PackedScene" uid="uid://6xcrvgtiywph" path="res://scenes/catap2.tscn" id="4_v8hmr"]
 [ext_resource type="Texture2D" uid="uid://l7iser2lbq3" path="res://media/gfx/balls/bomb.png" id="15_rgud0"]
+[ext_resource type="Texture2D" uid="uid://8ea1vr6ddbyd" path="res://media/gfx/ui/help.png" id="16_hur55"]
 [ext_resource type="Texture2D" uid="uid://brf6oj4d7623r" path="res://media/gfx/balls/poizon.png" id="18_mjiak"]
+[ext_resource type="Texture2D" uid="uid://bj4mqmg5t5wx4" path="res://media/gfx/balls/ball_fire_barrel.png" id="24_fbuv4"]
 [ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="25_2l28f"]
 [ext_resource type="PackedScene" uid="uid://b14cc16hp8msu" path="res://scenes/end_level_screen.tscn" id="26_dtgis"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="27_s0xih"]
+[ext_resource type="PackedScene" uid="uid://coxbuy3cplqpr" path="res://scenes/soloma.tscn" id="28_57x58"]
 [ext_resource type="AudioStream" uid="uid://dwr7g26lyaxw8" path="res://media/sfx/sounds/desert_sound.mp3" id="29_okavk"]
+[ext_resource type="PackedScene" uid="uid://cugk6otlo1d1l" path="res://scenes/castle_enemy_2.tscn" id="29_y10f1"]
 [ext_resource type="Texture2D" uid="uid://i0sgkad503dc" path="res://media/gfx/ui/pause.png" id="30_qudvp"]
 [ext_resource type="Script" path="res://scripts/pause_button.gd" id="31_kpwlc"]
+[ext_resource type="Texture2D" uid="uid://bnufffp5fnro" path="res://media/gfx/ui/info_book.png" id="31_rscao"]
 [ext_resource type="Texture2D" uid="uid://trlp1b5h7fxn" path="res://media/gfx/ui/restart.png" id="32_e3hfd"]
 [ext_resource type="Script" path="res://scripts/restart_button.gd" id="33_wn6k2"]
 [ext_resource type="Texture2D" uid="uid://bxh40iko5hkkd" path="res://media/gfx/ui/shoot.png" id="34_mmbho"]
@@ -20,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://2xynonfkqb34" path="res://media/gfx/ui/white_arrow.png" id="39_t7ru4"]
 [ext_resource type="Script" path="res://scripts/choose_second_button.gd" id="40_ccslh"]
 [ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="42_bfdsr"]
-[ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="43_8qa0i"]
 [ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="44_5sfl7"]
 [ext_resource type="Script" path="res://scripts/score_count.gd" id="45_ieuwp"]
 [ext_resource type="AudioStream" uid="uid://7s0shaun1tnw" path="res://media/sfx/sounds/high_score.wav" id="46_aq53g"]
@@ -97,6 +102,66 @@ script = ExtResource("1_jtyby")
 position = Vector2(213, 344)
 
 [node name="building" type="Node2D" parent="."]
+
+[node name="wood_brick" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(998, 237)
+rotation = 1.5708
+
+[node name="wood_brick2" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(1059, 237)
+rotation = 1.5708
+
+[node name="wood_brick3" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(963, 218)
+
+[node name="wood_brick4" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(1035, 218)
+
+[node name="soloma" parent="building" instance=ExtResource("28_57x58")]
+position = Vector2(960, 166)
+
+[node name="stone_enemy1" parent="building" instance=ExtResource("29_y10f1")]
+position = Vector2(1001, 239)
+
+[node name="wood_brick5" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(1127, 237)
+rotation = 1.5708
+
+[node name="wood_brick6" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(1188, 237)
+rotation = 1.5708
+
+[node name="wood_brick7" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(1092, 218)
+
+[node name="wood_brick8" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(1164, 218)
+
+[node name="soloma2" parent="building" instance=ExtResource("28_57x58")]
+position = Vector2(1089, 166)
+
+[node name="stone_enemy2" parent="building" instance=ExtResource("29_y10f1")]
+position = Vector2(1130, 239)
+
+[node name="wood_brick9" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(870, 237)
+rotation = 1.5708
+
+[node name="wood_brick10" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(931, 237)
+rotation = 1.5708
+
+[node name="wood_brick11" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(835, 218)
+
+[node name="wood_brick12" parent="building" instance=ExtResource("3_kjv4b")]
+position = Vector2(907, 218)
+
+[node name="soloma3" parent="building" instance=ExtResource("28_57x58")]
+position = Vector2(832, 166)
+
+[node name="stone_enemy3" parent="building" instance=ExtResource("29_y10f1")]
+position = Vector2(873, 239)
 
 [node name="floor" type="CharacterBody2D" parent="."]
 
@@ -175,13 +240,19 @@ texture_normal = ExtResource("32_e3hfd")
 script = ExtResource("33_wn6k2")
 
 [node name="shoot_button" type="TextureButton" parent="CanvasLayer/ui"]
-modulate = Color(1, 1, 1, 0.313726)
 offset_left = 528.0
 offset_top = 176.0
-offset_right = 628.0
-offset_bottom = 276.0
+offset_right = 608.0
+offset_bottom = 256.0
 texture_normal = ExtResource("34_mmbho")
 script = ExtResource("35_u8hxb")
+
+[node name="help_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 136.0
+offset_top = 8.0
+offset_right = 186.0
+offset_bottom = 58.0
+texture_normal = ExtResource("16_hur55")
 
 [node name="choose_first_button" type="TextureButton" parent="CanvasLayer/ui"]
 offset_left = 256.0
@@ -240,7 +311,7 @@ flip_v = true
 
 [node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_third_button"]
 position = Vector2(18, 18)
-texture = ExtResource("43_8qa0i")
+texture = ExtResource("24_fbuv4")
 
 [node name="score_label" type="Label" parent="CanvasLayer"]
 offset_left = 555.0
@@ -285,12 +356,23 @@ text = "FPS: 244"
 script = ExtResource("48_ggo30")
 
 [node name="end_level_screen" parent="." instance=ExtResource("26_dtgis")]
-visible = false
+
+[node name="InfoBook" type="Sprite2D" parent="."]
+position = Vector2(320, 424)
+texture = ExtResource("31_rscao")
+
+[node name="book_button" type="TextureButton" parent="InfoBook"]
+offset_left = -320.0
+offset_top = -144.0
+offset_right = 320.0
+offset_bottom = 152.0
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/restart_button" to="CanvasLayer/ui/restart_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/shoot_button" to="CanvasLayer/ui/shoot_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/choose_first_button" to="CanvasLayer/ui/choose_first_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/choose_second_button" to="CanvasLayer/ui/choose_second_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/choose_third_button" to="CanvasLayer/ui/choose_third_button" method="_on_pressed"]
+[connection signal="pressed" from="InfoBook/book_button" to="." method="_on_book_button_pressed"]

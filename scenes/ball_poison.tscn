@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqcbtwhad7a65"]
+
+[ext_resource type="Script" path="res://scripts/ball_fire.gd" id="1_nvxid"]
+[ext_resource type="Texture2D" uid="uid://brf6oj4d7623r" path="res://media/gfx/balls/poizon.png" id="2_1w8tj"]
+[ext_resource type="AudioStream" uid="uid://bip1qxn51i4kx" path="res://media/sfx/sounds/explosion.wav" id="3_j3h74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5c23o"]
+radius = 12.0
+
+[sub_resource type="Gradient" id="Gradient_yytkn"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3sen"]
+gradient = SubResource("Gradient_yytkn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.8)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0p3jy"]
+radius = 28.0
+
+[node name="ball_fire_barrel" type="RigidBody2D"]
+mass = 5.0
+gravity_scale = 1.2
+script = ExtResource("1_nvxid")
+
+[node name="TestBall" type="Sprite2D" parent="."]
+position = Vector2(12, 12)
+texture = ExtResource("2_1w8tj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 12)
+shape = SubResource("CircleShape2D_5c23o")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(12, 13)
+scale = Vector2(1.20703, 1.20703)
+color = Color(5.96821e-06, 0.749899, 0.494275, 1)
+energy = 1.61
+texture = SubResource("GradientTexture2D_l3sen")
+
+[node name="poison_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poison_area"]
+position = Vector2(12, 12)
+shape = SubResource("CircleShape2D_0p3jy")
+debug_color = Color(0.738635, 0.467144, 0.0322824, 0.42)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j3h74")
+
+[connection signal="area_entered" from="poison_area" to="." method="_on_fire_area_area_entered"]

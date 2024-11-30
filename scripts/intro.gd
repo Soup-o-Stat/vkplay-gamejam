@@ -46,7 +46,7 @@ func play_with_label_modulate(delta):
 			label_step = 6
 	if label_step==6:
 		if $intro_music.playing==false:
-			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+			get_tree().change_scene_to_file("res://scenes/cutscene_1.tscn")
 			
 func _process(delta):
 	play_with_label_modulate(delta)

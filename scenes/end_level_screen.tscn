@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b14cc16hp8msu"]
+[gd_scene load_steps=12 format=3 uid="uid://b14cc16hp8msu"]
 
 [ext_resource type="Script" path="res://scripts/end_level_screen.gd" id="1_ee3xo"]
 [ext_resource type="Texture2D" uid="uid://cuwe1diuthdsd" path="res://media/gfx/ui/end_level_table.png" id="1_llx6s"]
@@ -8,20 +8,23 @@
 [ext_resource type="Script" path="res://scripts/exit_button.gd" id="5_11vvj"]
 [ext_resource type="AudioStream" uid="uid://cp6e0mm7u782d" path="res://media/sfx/sounds/main_menu_slide2.mp3" id="6_kybuj"]
 [ext_resource type="Script" path="res://scripts/share_button.gd" id="7_4gbbq"]
+[ext_resource type="Texture2D" uid="uid://bblg0vbs20ar0" path="res://media/gfx/medal/bronze.png" id="9_o2r64"]
+[ext_resource type="Texture2D" uid="uid://dwvmujfgsw4o3" path="res://media/gfx/medal/gold.png" id="10_c8w1a"]
+[ext_resource type="Texture2D" uid="uid://c0tlyllp161ms" path="res://media/gfx/medal/silver.png" id="11_et6py"]
 
 [node name="end_level_screen" type="CanvasLayer"]
 script = ExtResource("1_ee3xo")
 
 [node name="EndLevelTable" type="Sprite2D" parent="."]
-position = Vector2(320, 160)
+position = Vector2(320, 145)
 texture = ExtResource("1_llx6s")
 
 [node name="main_label" type="Label" parent="EndLevelTable"]
-offset_left = -128.0
-offset_top = -71.0
-offset_right = 128.0
-offset_bottom = -30.0
-theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
+offset_left = -135.0
+offset_top = -94.0
+offset_right = 135.0
+offset_bottom = -53.0
+theme_override_colors/font_color = Color(0.239216, 0.14902, 0.109804, 1)
 theme_override_fonts/font = ExtResource("2_h1add")
 theme_override_font_sizes/font_size = 30
 text = "ВЕЛИКОЛЕПНО!!!"
@@ -29,28 +32,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="EndLevelTable"]
-offset_left = -128.0
-offset_top = -36.0
-offset_right = 128.0
-offset_bottom = -13.0
-theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
+offset_left = -135.0
+offset_top = -62.0
+offset_right = 135.0
+offset_bottom = -39.0
+theme_override_colors/font_color = Color(0.658824, 0.494118, 0.329412, 1)
 theme_override_fonts/font = ExtResource("2_h1add")
 text = "СЧЕТ: 12345678"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level_label" type="Label" parent="EndLevelTable"]
-offset_left = -127.0
-offset_top = -92.0
-offset_right = 127.0
-offset_bottom = -69.0
-theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
+offset_left = -136.0
+offset_top = -114.0
+offset_right = 136.0
+offset_bottom = -91.0
+theme_override_colors/font_color = Color(0.658824, 0.494118, 0.329412, 1)
 theme_override_fonts/font = ExtResource("2_h1add")
 text = "Уровень 9"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="EndLevelTable"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -320.0
@@ -58,91 +62,54 @@ offset_top = -160.0
 offset_right = 319.0
 offset_bottom = 129.0
 
-[node name="continue" type="Label" parent="EndLevelTable/Control"]
-layout_mode = 0
-offset_left = 193.0
-offset_top = 158.0
-offset_right = 447.0
-offset_bottom = 181.0
-theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
-theme_override_fonts/font = ExtResource("2_h1add")
-text = "ПРОДОЛЖИТЬ"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="continue_button" type="TextureButton" parent="EndLevelTable/Control/continue"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 3.0
-offset_right = 173.0
-offset_bottom = 18.0
+[node name="continue_button" type="TextureButton" parent="EndLevelTable"]
+offset_left = 65.0
+offset_top = 60.0
+offset_right = 116.0
+offset_bottom = 111.0
 script = ExtResource("4_5qffh")
 
-[node name="repeat" type="Label" parent="EndLevelTable/Control"]
-layout_mode = 0
-offset_left = 193.0
-offset_top = 183.0
-offset_right = 447.0
-offset_bottom = 206.0
-theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
-theme_override_fonts/font = ExtResource("2_h1add")
-text = "ПОВТОРИТЬ"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="repeat_button" type="TextureButton" parent="EndLevelTable/Control/repeat"]
-layout_mode = 0
-offset_left = 86.0
-offset_top = 3.0
-offset_right = 169.0
-offset_bottom = 17.0
-script = ExtResource("4_fwdm4")
-
-[node name="exit" type="Label" parent="EndLevelTable/Control"]
-layout_mode = 0
-offset_left = 193.0
-offset_top = 231.0
-offset_right = 447.0
-offset_bottom = 254.0
-theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
-theme_override_fonts/font = ExtResource("2_h1add")
-text = "ВЫХОД"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="exit_button" type="TextureButton" parent="EndLevelTable/Control/exit"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 3.0
-offset_right = 151.0
-offset_bottom = 18.0
+[node name="exit_button" type="TextureButton" parent="EndLevelTable"]
+offset_left = -119.0
+offset_top = 60.0
+offset_right = -68.0
+offset_bottom = 111.0
 script = ExtResource("5_11vvj")
 
-[node name="share" type="Label" parent="EndLevelTable/Control"]
-layout_mode = 0
-offset_left = 193.0
-offset_top = 207.0
-offset_right = 447.0
-offset_bottom = 230.0
-theme_override_colors/font_shadow_color = Color(0.168627, 0.12549, 0.0901961, 1)
-theme_override_fonts/font = ExtResource("2_h1add")
-text = "ПОХВАСТАТЬСЯ В ВК"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="share_button" type="TextureButton" parent="EndLevelTable/Control/share"]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 3.0
-offset_right = 197.0
-offset_bottom = 17.0
+[node name="share_button" type="TextureButton" parent="EndLevelTable"]
+offset_left = -57.0
+offset_top = 60.0
+offset_right = -6.0
+offset_bottom = 111.0
 script = ExtResource("7_4gbbq")
+
+[node name="repeat_button" type="TextureButton" parent="EndLevelTable"]
+offset_left = 5.0
+offset_top = 60.0
+offset_right = 56.0
+offset_bottom = 111.0
+script = ExtResource("4_fwdm4")
+
+[node name="Bronze" type="Sprite2D" parent="EndLevelTable"]
+modulate = Color(0, 0, 0, 0.584314)
+position = Vector2(-72, 7)
+texture = ExtResource("9_o2r64")
+
+[node name="Gold" type="Sprite2D" parent="EndLevelTable"]
+modulate = Color(0, 0, 0, 0.584314)
+position = Vector2(64, 7)
+texture = ExtResource("10_c8w1a")
+
+[node name="Silver" type="Sprite2D" parent="EndLevelTable"]
+modulate = Color(0, 0, 0, 0.584314)
+position = Vector2(0, 7)
+texture = ExtResource("11_et6py")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kybuj")
 bus = &"sound"
 
-[connection signal="pressed" from="EndLevelTable/Control/continue/continue_button" to="EndLevelTable/Control/continue/continue_button" method="_on_pressed"]
-[connection signal="pressed" from="EndLevelTable/Control/repeat/repeat_button" to="EndLevelTable/Control/repeat/repeat_button" method="_on_pressed"]
-[connection signal="pressed" from="EndLevelTable/Control/exit/exit_button" to="EndLevelTable/Control/exit/exit_button" method="_on_pressed"]
-[connection signal="pressed" from="EndLevelTable/Control/share/share_button" to="EndLevelTable/Control/share/share_button" method="_on_pressed"]
+[connection signal="pressed" from="EndLevelTable/continue_button" to="EndLevelTable/continue_button" method="_on_pressed"]
+[connection signal="pressed" from="EndLevelTable/exit_button" to="EndLevelTable/exit_button" method="_on_pressed"]
+[connection signal="pressed" from="EndLevelTable/share_button" to="EndLevelTable/share_button" method="_on_pressed"]
+[connection signal="pressed" from="EndLevelTable/repeat_button" to="EndLevelTable/repeat_button" method="_on_pressed"]

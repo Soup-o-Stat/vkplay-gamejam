@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bll1or5n4bhsk"]
+
+[ext_resource type="Script" path="res://scripts/cutscene_1.gd" id="1_3i2me"]
+[ext_resource type="Texture2D" uid="uid://ctcgywine561e" path="res://media/gfx/cutscene/0.png" id="2_qnjfu"]
+[ext_resource type="Texture2D" uid="uid://eaal7ldxns8o" path="res://media/gfx/cutscene/1.png" id="3_yrsr3"]
+[ext_resource type="Texture2D" uid="uid://bhx8qrhqwc0gs" path="res://media/gfx/cutscene/2.png" id="4_obi0f"]
+[ext_resource type="AudioStream" uid="uid://dkdelbrbmlhmr" path="res://media/sfx/music/time_machine.mp3" id="5_f2qbk"]
+[ext_resource type="Texture2D" uid="uid://don4rj72u4817" path="res://media/gfx/cutscene/sqr.png" id="5_va8ip"]
+[ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="7_dfqco"]
+
+[node name="cutscene1" type="Node2D"]
+script = ExtResource("1_3i2me")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 288.0
+color = Color(0.164706, 0.0862745, 0.113725, 1)
+
+[node name="0" type="Sprite2D" parent="."]
+position = Vector2(320, 112)
+texture = ExtResource("2_qnjfu")
+
+[node name="1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 112)
+texture = ExtResource("3_yrsr3")
+
+[node name="2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 112)
+texture = ExtResource("4_obi0f")
+
+[node name="Sqr" type="Sprite2D" parent="."]
+position = Vector2(320, 257)
+texture = ExtResource("5_va8ip")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f2qbk")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 221.0
+offset_right = 568.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.615686, 1)
+theme_override_fonts/font = ExtResource("7_dfqco")
+theme_override_font_sizes/font_size = 12
+text = "Да! Вот оно! Четвёртая координата пространства — время. Долгие бессонные ночи я проводил за исследованиями, и наконец-то результат… Я ИЗОБРЕЛ МАШИНУ ВРЕМЕНИ! Мир больше никогда не будет прежним: теперь разум покорил само время, ни одно пространство не скроется от чуткого взора наблюдателей. Но у меня на материю совсем другие планы...
+"
+autowrap_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 640.0
+offset_bottom = 287.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

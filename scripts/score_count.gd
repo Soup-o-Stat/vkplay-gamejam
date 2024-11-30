@@ -39,6 +39,31 @@ func _process(delta):
 		if Global.current_level==8:
 			if local_score>Global.high_score_1_8:
 				Global.high_score_reached=1
+	if Global.current_location==2:
+		if Global.current_level==1:
+			if local_score>Global.high_score_2_1:
+				Global.high_score_reached=1
+		if Global.current_level==2:
+			if local_score>Global.high_score_2_2:
+				Global.high_score_reached=1
+		if Global.current_level==3:
+			if local_score>Global.high_score_2_3:
+				Global.high_score_reached=1
+		if Global.current_level==4:
+			if local_score>Global.high_score_2_4:
+				Global.high_score_reached=1
+		if Global.current_level==5:
+			if local_score>Global.high_score_2_5:
+				Global.high_score_reached=1
+		if Global.current_level==6:
+			if local_score>Global.high_score_2_6:
+				Global.high_score_reached=1
+		if Global.current_level==7:
+			if local_score>Global.high_score_2_7:
+				Global.high_score_reached=1
+		if Global.current_level==8:
+			if local_score>Global.high_score_2_8:
+				Global.high_score_reached=1
 	if local_score<Global.score:
 		local_score+=1
 		scale_change=1

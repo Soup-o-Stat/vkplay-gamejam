@@ -4,6 +4,7 @@ var level_modulate_speed=1
 var swipe_started = false
 var swipe_start = Vector2()
 var minimum_drag = 50
+var help_book=false
 
 func level_name_modulate(delta):
 	if $CanvasLayer/ColorRect.modulate.a>0:
@@ -26,11 +27,21 @@ func _ready():
 	$CanvasLayer/ColorRect.modulate.a=2
 
 func _process(delta):
+	if help_book==true:
+		if $InfoBook.position.y>144:
+			$InfoBook.position.y-=300*delta
+		if $InfoBook.position.y<144:
+			$InfoBook.position.y=144
+	if help_book==false:
+		if $InfoBook.position.y<424:
+			$InfoBook.position.y+=600*delta
+		if $InfoBook.position.y>424:
+			$InfoBook.position.y=424
 	level_name_modulate(delta)
 	global_swipe()
 	if Global.dead_enemies==2:
 		if Global.level_clear==0:
-			Global.score+=Global.num_of_balls*500
+			Global.score+=Global.num_of_balls*1000
 		Global.level_clear=1
 
 func _on_control_gui_input(event):
@@ -60,3 +71,9 @@ func global_swipe():
 		if Global.slide_step==1:
 			$SysImage.position.x=960
 		Global.global_swipe_start=0
+
+func _on_help_button_pressed():
+	help_book=true
+
+func _on_book_button_pressed():
+	help_book=false

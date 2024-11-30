@@ -1,9 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://c54lq6rt5peby"]
+[gd_scene load_steps=51 format=3 uid="uid://c54lq6rt5peby"]
 
 [ext_resource type="Script" path="res://scripts/level_1_5.gd" id="1_2j0w5"]
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="2_xg713"]
 [ext_resource type="PackedScene" uid="uid://monif2v4reep" path="res://scenes/stone_brick21.tscn" id="3_kip2y"]
 [ext_resource type="PackedScene" uid="uid://ccyrdp1367kus" path="res://scenes/stone_brick20.tscn" id="19_lktw5"]
+[ext_resource type="Texture2D" uid="uid://8ea1vr6ddbyd" path="res://media/gfx/ui/help.png" id="20_26eyk"]
 [ext_resource type="PackedScene" uid="uid://coiqfjg3la3oa" path="res://scenes/stone_brick19.tscn" id="22_y2lxh"]
 [ext_resource type="PackedScene" uid="uid://coxbuy3cplqpr" path="res://scenes/soloma.tscn" id="23_sn762"]
 [ext_resource type="PackedScene" uid="uid://bj7k7vabbccgg" path="res://scenes/bonfire.tscn" id="24_ui6mt"]
@@ -17,6 +18,7 @@
 [ext_resource type="Script" path="res://scripts/pause_button.gd" id="32_7ix8t"]
 [ext_resource type="Texture2D" uid="uid://trlp1b5h7fxn" path="res://media/gfx/ui/restart.png" id="33_swmsf"]
 [ext_resource type="Script" path="res://scripts/restart_button.gd" id="34_rrgd4"]
+[ext_resource type="Texture2D" uid="uid://bnufffp5fnro" path="res://media/gfx/ui/info_book.png" id="35_pfnma"]
 [ext_resource type="Texture2D" uid="uid://bxh40iko5hkkd" path="res://media/gfx/ui/shoot.png" id="35_ygd0j"]
 [ext_resource type="Script" path="res://scripts/shoot_button.gd" id="36_8pv4b"]
 [ext_resource type="Texture2D" uid="uid://bsloyqksj4fnm" path="res://media/gfx/ui/ball_choose_nonact.png" id="37_wis5b"]
@@ -315,13 +317,19 @@ texture_normal = ExtResource("33_swmsf")
 script = ExtResource("34_rrgd4")
 
 [node name="shoot_button" type="TextureButton" parent="CanvasLayer/ui"]
-modulate = Color(1, 1, 1, 0.313726)
 offset_left = 528.0
 offset_top = 176.0
-offset_right = 628.0
-offset_bottom = 276.0
+offset_right = 608.0
+offset_bottom = 256.0
 texture_normal = ExtResource("35_ygd0j")
 script = ExtResource("36_8pv4b")
+
+[node name="help_button" type="TextureButton" parent="CanvasLayer/ui"]
+offset_left = 136.0
+offset_top = 8.0
+offset_right = 186.0
+offset_bottom = 58.0
+texture_normal = ExtResource("20_26eyk")
 
 [node name="choose_first_button" type="TextureButton" parent="CanvasLayer/ui"]
 offset_left = 256.0
@@ -422,10 +430,22 @@ script = ExtResource("49_4wmac")
 
 [node name="end_level_screen" parent="." instance=ExtResource("51_ufl74")]
 
+[node name="InfoBook" type="Sprite2D" parent="."]
+position = Vector2(320, 424)
+texture = ExtResource("35_pfnma")
+
+[node name="book_button" type="TextureButton" parent="InfoBook"]
+offset_left = -320.0
+offset_top = -144.0
+offset_right = 320.0
+offset_bottom = 152.0
+
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/restart_button" to="CanvasLayer/ui/restart_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/shoot_button" to="CanvasLayer/ui/shoot_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/help_button" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/choose_first_button" to="CanvasLayer/ui/choose_first_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/choose_second_button" to="CanvasLayer/ui/choose_second_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/choose_third_button" to="CanvasLayer/ui/choose_third_button" method="_on_pressed"]
+[connection signal="pressed" from="InfoBook/book_button" to="." method="_on_book_button_pressed"]

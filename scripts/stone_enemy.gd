@@ -33,11 +33,18 @@ func _on_area_2d_area_entered(area):
 			Global.dead_enemies+=1
 			print("Stone enemy is dead by fire")
 			self.dead=true
+	
+	if area.name.substr(0, 6)=="poison":
+		if self.dead==false:
+			DeathSound._play_death_sound("stone_death")
+			queue_free()
+			Global.score+=100
+			Global.dead_enemies+=1
+			print("Stone enemy is dead by fire")
+			self.dead=true
 
 func _ready():
 	self.flip_var=randi()%2
-	self.skin=randi()%2
-	$AnimatedSprite2D.animation=str(self.skin)
 	if self.flip_var==0:
 		pass
 	if self.flip_var==1:

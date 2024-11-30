@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://cugk6otlo1d1l"]
+
+[ext_resource type="Script" path="res://scripts/stone_enemy.gd" id="1_kpac7"]
+[ext_resource type="Texture2D" uid="uid://dychuv2utwxkt" path="res://media/gfx/npc/castle_2.png" id="2_fj8og"]
+[ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="3_q3qmp"]
+[ext_resource type="AudioStream" uid="uid://b3xfsog4kq2m5" path="res://media/sfx/sounds/stone_death.mp3" id="4_l5qer"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dslqf"]
+atlas = ExtResource("2_fj8og")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja1jr"]
+atlas = ExtResource("2_fj8og")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsino"]
+atlas = ExtResource("2_fj8og")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rsve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dslqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja1jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsino")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4wap"]
+size = Vector2(26.9395, 45.0242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjx5e"]
+size = Vector2(26.2325, 0.243485)
+
+[node name="stone_enemy1" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_kpac7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(19.3784, 18.871)
+sprite_frames = SubResource("SpriteFrames_3rsve")
+frame_progress = 0.185986
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5, 9)
+scale = Vector2(0.0444444, 0.08)
+texture = ExtResource("3_q3qmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19.4697, 18.3773)
+shape = SubResource("RectangleShape2D_x4wap")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(19.1162, -4.87826)
+shape = SubResource("RectangleShape2D_bjx5e")
+debug_color = Color(0.968627, 0, 0, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_l5qer")
+pitch_scale = 1.85
+bus = &"sound"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

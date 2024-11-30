@@ -5,9 +5,9 @@ var go_right = false
 var go_left = false
 var spoon_anim=0
 
-@onready var ball_scene = preload("res://scenes/ball.tscn")
-@onready var ball_fire_scene = preload("res://scenes/ball_fire.tscn")
-@onready var ball_sharped_scene = preload("res://scenes/ball_sharped.tscn")
+@onready var ball_scene = preload("res://scenes/ball_bomb.tscn")
+@onready var ball_fire_scene = preload("res://scenes/ball_poison.tscn")
+@onready var ball_sharped_scene = preload("res://scenes/ball_fire_barrel.tscn")
 
 var ball=null
 

@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bvbg567epadqs" path="res://media/gfx/catap/castle_wheel.png" id="4_lkiya"]
 [ext_resource type="Texture2D" uid="uid://bdkgxcc3plp5j" path="res://media/gfx/catap/castle_base.png" id="5_gcflk"]
 [ext_resource type="Texture2D" uid="uid://m5dovqugdyas" path="res://media/gfx/catap/castle_spoon.png" id="6_b4adw"]
-[ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="6_fcivp"]
 [ext_resource type="Texture2D" uid="uid://brf6oj4d7623r" path="res://media/gfx/balls/poizon.png" id="7_nt47i"]
+[ext_resource type="Texture2D" uid="uid://bj4mqmg5t5wx4" path="res://media/gfx/balls/ball_fire_barrel.png" id="8_1yef7"]
 [ext_resource type="Texture2D" uid="uid://l7iser2lbq3" path="res://media/gfx/balls/bomb.png" id="9_b4xxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y6o4"]
@@ -179,7 +179,7 @@ visible = false
 show_behind_parent = true
 position = Vector2(-46, -47)
 rotation = 0.698132
-texture = ExtResource("6_fcivp")
+texture = ExtResource("8_1yef7")
 
 [node name="TestBall" type="Sprite2D" parent="StoneSpoon"]
 visible = false

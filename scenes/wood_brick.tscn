@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://dj30t1x5kjwhc"]
+
+[ext_resource type="Script" path="res://scripts/wood_brick.gd" id="1_ov1ty"]
+[ext_resource type="Texture2D" uid="uid://cwcfuq8ak7gdw" path="res://media/gfx/bricks/castle/wood_brick1.png" id="2_gowel"]
+[ext_resource type="AudioStream" uid="uid://da22pwymto485" path="res://media/sfx/sounds/main_menu_slide.wav" id="2_mkttq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ptll"]
+size = Vector2(41, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7icfm"]
+size = Vector2(43, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i43ck"]
+size = Vector2(47, 23)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vd51i"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 17.45
+angle_min = -165.6
+angle_max = 86.4
+inherit_velocity_ratio = 0.146
+initial_velocity_max = 45.0
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -9.0
+radial_accel_max = 9.0
+color = Color(0, 0, 0, 1)
+anim_offset_max = 0.075
+
+[node name="wood_brick" type="RigidBody2D"]
+mass = 3.0
+script = ExtResource("1_ov1ty")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mkttq")
+max_distance = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21.5, 9.5)
+shape = SubResource("RectangleShape2D_0ptll")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(21.5, 9.5)
+shape = SubResource("RectangleShape2D_7icfm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(21.5, 9.5)
+scale = Vector2(1, 1)
+texture = ExtResource("2_gowel")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(21.5, 9.5)
+shape = SubResource("RectangleShape2D_i43ck")
+debug_color = Color(0.358609, 0.596944, 0.455658, 0.42)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(18, 2)
+emitting = false
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_vd51i")
+lifetime = 2.0
+one_shot = true
+speed_scale = 5.0
+explosiveness = 0.09
+fixed_fps = 60
+collision_base_size = 0.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

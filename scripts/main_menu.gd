@@ -183,8 +183,6 @@ func _ready(): #при входе в сцену
 	$settings_graphics/fps_label/white_arrow_left.frame=0
 	
 func _process(delta):
-	angle += 3 * delta
-	$Logo.rotation = 0.04 * sin(angle)
 	if exit_game_bool==true:
 		exit_game(delta)
 	if exit_game_bool==false:

@@ -1,6 +1,6 @@
 extends Node
 
-var ver="0.0.22"
+var ver="0.0.23"
 
 var max_fps=DisplayServer.screen_get_refresh_rate()
 var main_menu_start_melt=false
@@ -25,7 +25,7 @@ var global_swipe_start=0
 var current_level=1
 var current_location=1
 var first_max_levels=8
-var second_max_levels=0
+var second_max_levels=8
 var score=0
 var dead_enemies=0
 var level_clear=0
@@ -49,6 +49,8 @@ var high_score_2_5=0
 var high_score_2_6=0
 var high_score_2_7=0
 var high_score_2_8=0
+
+var medal=0
 
 var num_of_balls=0
 var choosen_ball=1
