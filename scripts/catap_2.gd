@@ -28,23 +28,18 @@ func _process(delta):
 		if Global.choosen_ball==1:
 			$StoneSpoon/FireBall.visible=false
 			$StoneSpoon/SharpedBall.visible=false
-			$StoneSpoon/GPUParticles2D.visible=false
 			$StoneSpoon/TestBall.visible=true
 		if Global.choosen_ball==2:
 			$StoneSpoon/FireBall.visible=true
 			$StoneSpoon/SharpedBall.visible=false
-			$StoneSpoon/GPUParticles2D.visible=true
 			$StoneSpoon/TestBall.visible=false
 		if Global.choosen_ball==3:
 			$StoneSpoon/FireBall.visible=false
 			$StoneSpoon/SharpedBall.visible=true
-			$StoneSpoon/GPUParticles2D.visible=false
 			$StoneSpoon/TestBall.visible=false
 	if Global.num_of_balls==0:
 		$StoneSpoon/FireBall.visible=false
 		$StoneSpoon/SharpedBall.visible=false
-		if Global.current_qual!="НИЗКОЕ":
-			$StoneSpoon/GPUParticles2D.visible=false
 		$StoneSpoon/TestBall.visible=false
 	spoon_animation()
 	if go_right:
@@ -73,14 +68,6 @@ func _on_arrow_left_button_button_up():
 #func _input(event):
 	#if event.is_action_pressed("ui_accept"):
 		#spawn_ball()
-
-func _ready():
-	if Global.current_qual=="ВЫСОКОЕ":
-		$StoneSpoon/GPUParticles2D.fixed_fps=60
-	if Global.current_qual=="СРЕДНЕЕ":
-		$StoneSpoon/GPUParticles2D.fixed_fps=30
-	if Global.current_qual=="НИЗКОЕ":
-		$StoneSpoon/GPUParticles2D.queue_free()
 
 func spawn_ball():
 	if spoon_anim==0 and Global.num_of_balls>0:

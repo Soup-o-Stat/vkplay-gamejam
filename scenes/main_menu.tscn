@@ -249,6 +249,10 @@ blend_mode = 1
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_2k50o")
 
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(80, 48)
+texture = ExtResource("8_c15jc")
+
 [node name="play_label" type="Label" parent="."]
 offset_left = -256.0
 offset_top = 136.0
@@ -600,16 +604,6 @@ offset_top = 1.0
 offset_right = 357.0
 offset_bottom = 29.0
 
-[node name="Logo" type="Sprite2D" parent="settings_audio"]
-position = Vector2(80, 48)
-texture = ExtResource("8_c15jc")
-
-[node name="Black" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(309, 140.125)
-scale = Vector2(687.5, 347.75)
-texture = ExtResource("2_qmrk0")
-
 [node name="ver_label" type="Label" parent="."]
 offset_left = 552.0
 offset_top = 264.0
@@ -620,6 +614,12 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/font = ExtResource("1_eu8jm")
 text = "Версия: 1489"
+
+[node name="Black" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(309, 140.125)
+scale = Vector2(687.5, 347.75)
+texture = ExtResource("2_qmrk0")
 
 [node name="main_menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_0ncif")

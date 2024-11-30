@@ -227,12 +227,10 @@ position = Vector2(1185.57, 232.733)
 [node name="stone_brick32" parent="building" instance=ExtResource("3_mufd4")]
 position = Vector2(999.479, 274.457)
 rotation = -0.785398
-scale = Vector2(1, 1)
 
 [node name="stone_brick33" parent="building" instance=ExtResource("3_mufd4")]
 position = Vector2(1234.08, 247.409)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="stone_brick17" parent="building" instance=ExtResource("23_gijqp")]
 position = Vector2(1139.75, 221.75)
@@ -257,6 +255,12 @@ position = Vector2(931.745, 269.704)
 
 [node name="stone_brick14" parent="building" instance=ExtResource("12_a0v2l")]
 position = Vector2(919.79, 260.342)
+
+[node name="stone_enemy3" parent="building" instance=ExtResource("4_s4r67")]
+position = Vector2(1092.01, 191.206)
+
+[node name="stone_enemy4" parent="building" instance=ExtResource("4_s4r67")]
+position = Vector2(1162.56, 190.734)
 
 [node name="floor" type="CharacterBody2D" parent="."]
 
@@ -454,12 +458,6 @@ text = "FPS: 244"
 script = ExtResource("50_mtpop")
 
 [node name="end_level_screen" parent="." instance=ExtResource("51_m31b2")]
-
-[node name="stone_enemy3" parent="." instance=ExtResource("4_s4r67")]
-position = Vector2(1092.01, 191.206)
-
-[node name="stone_enemy4" parent="." instance=ExtResource("4_s4r67")]
-position = Vector2(1162.56, 190.734)
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]

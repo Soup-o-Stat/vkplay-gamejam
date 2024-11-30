@@ -1,6 +1,6 @@
 extends Node
 
-var ver="0.0.21"
+var ver="0.0.22"
 
 var max_fps=DisplayServer.screen_get_refresh_rate()
 var main_menu_start_melt=false
@@ -24,7 +24,8 @@ var global_swipe_start=0
 
 var current_level=1
 var current_location=1
-var first_max_levels=7
+var first_max_levels=8
+var second_max_levels=0
 var score=0
 var dead_enemies=0
 var level_clear=0

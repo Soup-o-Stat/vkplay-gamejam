@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://scripts/level_2_1.gd" id="1_jtyby"]
 [ext_resource type="PackedScene" uid="uid://duqqana1x4eg" path="res://scenes/background_2.tscn" id="2_weuqo"]
 [ext_resource type="PackedScene" uid="uid://6xcrvgtiywph" path="res://scenes/catap2.tscn" id="4_v8hmr"]
+[ext_resource type="Texture2D" uid="uid://l7iser2lbq3" path="res://media/gfx/balls/bomb.png" id="15_rgud0"]
+[ext_resource type="Texture2D" uid="uid://brf6oj4d7623r" path="res://media/gfx/balls/poizon.png" id="18_mjiak"]
 [ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="25_2l28f"]
 [ext_resource type="PackedScene" uid="uid://b14cc16hp8msu" path="res://scenes/end_level_screen.tscn" id="26_dtgis"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="27_s0xih"]
@@ -15,10 +17,8 @@
 [ext_resource type="Script" path="res://scripts/shoot_button.gd" id="35_u8hxb"]
 [ext_resource type="Texture2D" uid="uid://bsloyqksj4fnm" path="res://media/gfx/ui/ball_choose_nonact.png" id="36_ifk47"]
 [ext_resource type="Script" path="res://scripts/choose_first_button.gd" id="37_mw4rf"]
-[ext_resource type="Texture2D" uid="uid://drxfx8e7ph6l6" path="res://media/gfx/balls/test_ball.png" id="38_ue6mo"]
 [ext_resource type="Texture2D" uid="uid://2xynonfkqb34" path="res://media/gfx/ui/white_arrow.png" id="39_t7ru4"]
 [ext_resource type="Script" path="res://scripts/choose_second_button.gd" id="40_ccslh"]
-[ext_resource type="Texture2D" uid="uid://d16v2bffxsgs1" path="res://media/gfx/balls/fire_ball.png" id="41_ve2n2"]
 [ext_resource type="Script" path="res://scripts/choose_third_button.gd" id="42_bfdsr"]
 [ext_resource type="Texture2D" uid="uid://crw15ws3fo1mk" path="res://media/gfx/balls/sharped_ball.png" id="43_8qa0i"]
 [ext_resource type="FontFile" uid="uid://l0m8ybadaffd" path="res://media/fonts/Keleti-Regular.ttf" id="44_5sfl7"]
@@ -193,7 +193,7 @@ script = ExtResource("37_mw4rf")
 
 [node name="TestBall" type="Sprite2D" parent="CanvasLayer/ui/choose_first_button"]
 position = Vector2(18, 18)
-texture = ExtResource("38_ue6mo")
+texture = ExtResource("15_rgud0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_first_button"]
 position = Vector2(25, 42)
@@ -212,7 +212,7 @@ script = ExtResource("40_ccslh")
 
 [node name="FireBall" type="Sprite2D" parent="CanvasLayer/ui/choose_second_button"]
 position = Vector2(18, 18)
-texture = ExtResource("41_ve2n2")
+texture = ExtResource("18_mjiak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/ui/choose_second_button"]
 visible = false

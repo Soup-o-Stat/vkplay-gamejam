@@ -6,6 +6,7 @@ var button_speed2=700
 var main_settings_button_step=0
 var settings_act="none"
 var exit_game_bool=false
+var angle=0
 
 var current_fps_local=0
 var current_qual_local=1
@@ -163,7 +164,7 @@ func _ready(): #при входе в сцену
 	current_fps_local=Global.max_fps_in_list
 	current_qual_local=1
 	print(current_fps_local)
-	$Black.modulate.a=0
+	$Black.modulate.a=1.5
 	$Black.visible=true
 	$SysImage.hide()
 	print($SysImage/CameraMenu.position_smoothing_speed)
@@ -181,6 +182,13 @@ func _ready(): #при входе в сцену
 	$settings_graphics/fps_label/white_arrow_right.frame=0
 	$settings_graphics/fps_label/white_arrow_left.frame=0
 	
-func _process(delta): #основной цикл (неоптимизированный кал блять)
+func _process(delta):
+	angle += 3 * delta
+	$Logo.rotation = 0.04 * sin(angle)
 	if exit_game_bool==true:
 		exit_game(delta)
+	if exit_game_bool==false:
+		if $Black.modulate.a>0:
+			$Black.modulate.a-=1*delta
+		else:
+			$Black.modulate.a=0
