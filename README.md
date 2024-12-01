@@ -1,3 +1,8 @@
+# Symphony of Distraction  
+
+## Project Description  
+**Symphony of Distraction** is a game created for a hackathon, where you play as a mad scientist who has invented a time machine. To prove the existence of the past, present, and future, he destroys them using a catapult. The game combines chaos, destruction, and precise calculations in a style inspired by Angry Birds.  
+
 ### Terms of Use  
 1. All artwork published by the author **rekuiemuu** is protected by copyright.  
 2. Artworks may only be used for personal, non-commercial purposes with proper attribution. For example: "Author: rekuiemuu".  
