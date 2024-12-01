@@ -330,7 +330,7 @@ position = Vector2(1142, 239)
 position = Vector2(921, 239)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="building"]
-position = Vector2(82, 257)
+position = Vector2(31, 257)
 sprite_frames = SubResource("SpriteFrames_j0jiq")
 frame_progress = 0.0918144
 flip_h = true
@@ -418,6 +418,7 @@ texture_normal = ExtResource("30_xikoq")
 script = ExtResource("31_ypbt2")
 
 [node name="PauseTable" type="Sprite2D" parent="CanvasLayer/ui/pause_button"]
+process_mode = 3
 visible = false
 position = Vector2(312, 139)
 texture = ExtResource("34_o6mh8")
@@ -579,7 +580,6 @@ offset_right = 320.0
 offset_bottom = 153.0
 
 [node name="end_level_screen" parent="." instance=ExtResource("49_ex0e3")]
-visible = false
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]

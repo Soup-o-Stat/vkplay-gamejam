@@ -71,6 +71,8 @@ func _process(delta):
 			$"../AudioStreamPlayer".play()
 	else:
 		scale_change=0
+	if Global.level_clear==1:
+		local_score=Global.score
 	if Global.high_score_reached==1:
 		if high_score_played==0:
 			$AudioStreamPlayer.play()

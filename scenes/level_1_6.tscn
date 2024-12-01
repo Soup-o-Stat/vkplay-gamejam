@@ -444,7 +444,7 @@ position = Vector2(733, 244)
 position = Vector2(935, 239)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="building"]
-position = Vector2(82, 257)
+position = Vector2(34, 257)
 sprite_frames = SubResource("SpriteFrames_dudv6")
 flip_h = true
 script = ExtResource("28_8sa6d")
@@ -531,6 +531,7 @@ texture_normal = ExtResource("32_mre6r")
 script = ExtResource("33_52puu")
 
 [node name="PauseTable" type="Sprite2D" parent="CanvasLayer/ui/pause_button"]
+process_mode = 3
 visible = false
 position = Vector2(312, 139)
 texture = ExtResource("36_pm44q")

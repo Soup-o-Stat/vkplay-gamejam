@@ -402,6 +402,7 @@ texture_normal = ExtResource("11_tetds")
 script = ExtResource("12_86edb")
 
 [node name="PauseTable" type="Sprite2D" parent="CanvasLayer/ui/pause_button"]
+process_mode = 3
 visible = false
 position = Vector2(312, 139)
 texture = ExtResource("15_y7vdc")
