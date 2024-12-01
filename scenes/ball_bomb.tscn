@@ -20,8 +20,8 @@ fill_to = Vector2(0.8, 0.8)
 metadata/_snap_enabled = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsya0"]
-radius = 73.0
-height = 320.0
+radius = 47.0
+height = 146.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqgwf"]
 atlas = ExtResource("4_jv3xu")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dqcbtwhad7a65"]
 
-[ext_resource type="Script" path="res://scripts/ball_fire.gd" id="1_nvxid"]
+[ext_resource type="Script" path="res://scripts/ball_poison.gd" id="1_foiii"]
 [ext_resource type="Texture2D" uid="uid://brf6oj4d7623r" path="res://media/gfx/balls/poizon.png" id="2_1w8tj"]
 [ext_resource type="AudioStream" uid="uid://bip1qxn51i4kx" path="res://media/sfx/sounds/explosion.wav" id="3_j3h74"]
 
@@ -19,12 +19,12 @@ fill_to = Vector2(0.8, 0.8)
 metadata/_snap_enabled = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0p3jy"]
-radius = 28.0
+radius = 37.0
 
 [node name="ball_fire_barrel" type="RigidBody2D"]
 mass = 5.0
 gravity_scale = 1.2
-script = ExtResource("1_nvxid")
+script = ExtResource("1_foiii")
 
 [node name="TestBall" type="Sprite2D" parent="."]
 position = Vector2(12, 12)

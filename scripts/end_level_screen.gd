@@ -86,6 +86,63 @@ func _process(delta):
 				Global.medal=1
 			if Global.score>=4750:
 				Global.medal=2
+	if Global.current_location==2:
+		if Global.current_level==1:
+			if Global.score>=300 and Global.score<1300:
+				Global.medal=0
+			if Global.score>=1300 and Global.score<2300:
+				Global.medal=1
+			if Global.score>=2300:
+				Global.medal=2
+		if Global.current_level==2:
+			if Global.score>=300 and Global.score<500:
+				Global.medal=0
+			if Global.score>=500 and Global.score<1200:
+				Global.medal=1
+			if Global.score>=1200:
+				Global.medal=2
+		if Global.current_level==3:
+			if Global.score>=700 and Global.score<1700:
+				Global.medal=0
+			if Global.score>=1700 and Global.score<2700:
+				Global.medal=1
+			if Global.score>=2700:
+				Global.medal=2
+		if Global.current_level==4:
+			if Global.score>=400 and Global.score<500:
+				Global.medal=0
+			if Global.score>=500 and Global.score<1400:
+				Global.medal=1
+			if Global.score>=1400:
+				Global.medal=2
+		if Global.current_level==5:
+			if Global.score>=400 and Global.score<1400:
+				Global.medal=0
+			if Global.score>=1400 and Global.score<2400:
+				Global.medal=1
+			if Global.score>=2400:
+				Global.medal=2
+		if Global.current_level==6:
+			if Global.score>=400 and Global.score<1400:
+				Global.medal=0
+			if Global.score>=1400 and Global.score<2400:
+				Global.medal=1
+			if Global.score>=2400:
+				Global.medal=2
+		if Global.current_level==7:
+			if Global.score>=400 and Global.score<2400:
+				Global.medal=0
+			if Global.score>=2400 and Global.score<3400:
+				Global.medal=1
+			if Global.score>=3400:
+				Global.medal=2
+		if Global.current_level==8:
+			if Global.score>=600 and Global.score<2600:
+				Global.medal=0
+			if Global.score>=2600 and Global.score<3600:
+				Global.medal=1
+			if Global.score>=3600:
+				Global.medal=2
 	if Global.medal==0:
 		$EndLevelTable/Bronze.modulate="#ffffff"
 	if Global.medal==1:

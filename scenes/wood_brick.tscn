@@ -47,7 +47,6 @@ shape = SubResource("RectangleShape2D_7icfm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(21.5, 9.5)
-scale = Vector2(1, 1)
 texture = ExtResource("2_gowel")
 
 [node name="Area2D" type="Area2D" parent="."]

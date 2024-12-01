@@ -16,9 +16,12 @@ func change_step_param():
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_texture_button_pressed():
-	cut_step+=1
-	change_step_param()
-	$Label.visible_ratio=0
+	if $Label.visible_ratio!=1:
+		$Label.visible_ratio=1
+	else:
+		cut_step+=1
+		change_step_param()
+		$Label.visible_ratio=0
 	
 func _process(delta):
-	$Label.visible_ratio+=0.0005
+	$Label.visible_ratio+=0.001
