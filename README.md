@@ -1,4 +1,4 @@
-# Symphony of Distraction  
+# Symphony of Destruction
 
 ## Project Description  
 **Symphony of Distraction** is a game created for a hackathon, where you play as a mad scientist who has invented a time machine. To prove the existence of the past, present, and future, he destroys them using a catapult. The game combines chaos, destruction, and precise calculations in a style inspired by Angry Birds.  
