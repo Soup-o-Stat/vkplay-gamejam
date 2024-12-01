@@ -28,7 +28,7 @@ func url_encode(string: String) -> String:
 	
 func share_to_vk():
 	var base_url = "https://vk.com/share.php?"
-	var text = str("Я прошел уровень "+str(Global.current_level)+" на "+str(Global.score)+" очков!\n Попробуй и ты: https://store.steampowered.com/app/2835570/Buckshot_Roulette/")
+	var text = str("Я прошел уровень "+str(Global.current_level)+" на "+str(Global.score)+" очков!")
 	
 	var full_url = base_url + "comment=" + (text)
 	

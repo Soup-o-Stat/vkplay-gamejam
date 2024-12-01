@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cqdurubooj6x2"]
+[gd_scene load_steps=70 format=3 uid="uid://cqdurubooj6x2"]
 
 [ext_resource type="Script" path="res://scripts/level_1_7.gd" id="1_0anwb"]
 [ext_resource type="PackedScene" uid="uid://baj0a7nltpjrl" path="res://scenes/background_1.tscn" id="2_vdr1f"]
@@ -14,14 +14,20 @@
 [ext_resource type="PackedScene" uid="uid://d3hpqgaoxtp7w" path="res://scenes/stone_brick1.tscn" id="15_vsery"]
 [ext_resource type="PackedScene" uid="uid://cbxchunpgpdee" path="res://scenes/stone_brick11.tscn" id="16_50yhf"]
 [ext_resource type="PackedScene" uid="uid://di67xytd0mkdq" path="res://scenes/stone_brick13.tscn" id="18_oiskm"]
+[ext_resource type="Texture2D" uid="uid://c7ywc4k6f8cuk" path="res://media/gfx/npc/gg.png" id="18_vau86"]
+[ext_resource type="Script" path="res://scripts/gg.gd" id="19_3p2r7"]
 [ext_resource type="PackedScene" uid="uid://df4fcs8pvr5q6" path="res://scenes/stone_brick15.tscn" id="20_usjgq"]
 [ext_resource type="PackedScene" uid="uid://c1awy2ji2ruke" path="res://scenes/stone_brick16.tscn" id="21_qgyuo"]
 [ext_resource type="PackedScene" uid="uid://b2gvolg6ajc4b" path="res://scenes/stone_brick17.tscn" id="23_gijqp"]
 [ext_resource type="Texture2D" uid="uid://b4jpy7srupkdv" path="res://media/gfx/bg/kazaxi.jpg" id="27_cute7"]
+[ext_resource type="Texture2D" uid="uid://bqlh4rkijp6jf" path="res://media/gfx/ui/pause_table.png" id="27_d442d"]
+[ext_resource type="Script" path="res://scripts/p_home_button.gd" id="28_rr2b0"]
 [ext_resource type="PackedScene" uid="uid://bv4wvkw1iel0u" path="res://scenes/catap.tscn" id="28_yg67x"]
+[ext_resource type="Script" path="res://scripts/p_retry_button.gd" id="29_1wmvs"]
 [ext_resource type="Texture2D" uid="uid://8ea1vr6ddbyd" path="res://media/gfx/ui/help.png" id="29_08uur"]
 [ext_resource type="Texture2D" uid="uid://h2xgsnsf8b4p" path="res://media/gfx/sys_image.jpg" id="29_larp6"]
 [ext_resource type="AudioStream" uid="uid://s2e3gnv3xys3" path="res://media/sfx/music/rock_and_stone.mp3" id="30_hhxa7"]
+[ext_resource type="Script" path="res://scripts/p_continue_button.gd" id="30_uhk6o"]
 [ext_resource type="AudioStream" uid="uid://dwr7g26lyaxw8" path="res://media/sfx/sounds/desert_sound.mp3" id="31_wl3cv"]
 [ext_resource type="Texture2D" uid="uid://i0sgkad503dc" path="res://media/gfx/ui/pause.png" id="32_o7tcw"]
 [ext_resource type="Script" path="res://scripts/pause_button.gd" id="33_bme0h"]
@@ -44,6 +50,35 @@
 [ext_resource type="AudioStream" uid="uid://cexefqev148o0" path="res://media/sfx/sounds/score_up.wav" id="49_iiy2q"]
 [ext_resource type="Script" path="res://scripts/fps_debug.gd" id="50_mtpop"]
 [ext_resource type="PackedScene" uid="uid://b14cc16hp8msu" path="res://scenes/end_level_screen.tscn" id="51_m31b2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yge5"]
+atlas = ExtResource("18_vau86")
+region = Rect2(0, 0, 32, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v80c8"]
+atlas = ExtResource("18_vau86")
+region = Rect2(32, 0, 32, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyk6t"]
+atlas = ExtResource("18_vau86")
+region = Rect2(64, 0, 32, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37ay2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yge5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v80c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyk6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyiku"]
 size = Vector2(1280, 40)
@@ -264,6 +299,12 @@ position = Vector2(1092.01, 191.206)
 [node name="stone_enemy4" parent="building" instance=ExtResource("4_s4r67")]
 position = Vector2(1162.56, 190.734)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="building"]
+position = Vector2(82, 257)
+sprite_frames = SubResource("SpriteFrames_37ay2")
+flip_h = true
+script = ExtResource("19_3p2r7")
+
 [node name="floor" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="floor"]
@@ -344,6 +385,32 @@ offset_right = 58.0
 offset_bottom = 58.0
 texture_normal = ExtResource("32_o7tcw")
 script = ExtResource("33_bme0h")
+
+[node name="PauseTable" type="Sprite2D" parent="CanvasLayer/ui/pause_button"]
+visible = false
+position = Vector2(312, 139)
+texture = ExtResource("27_d442d")
+
+[node name="p_home_button" type="TextureButton" parent="CanvasLayer/ui/pause_button/PauseTable"]
+offset_left = -102.0
+offset_top = 1.0
+offset_right = -50.0
+offset_bottom = 53.0
+script = ExtResource("28_rr2b0")
+
+[node name="p_retry_button" type="TextureButton" parent="CanvasLayer/ui/pause_button/PauseTable"]
+offset_left = -41.0
+offset_top = 2.0
+offset_right = 11.0
+offset_bottom = 53.0
+script = ExtResource("29_1wmvs")
+
+[node name="p_continue_button" type="TextureButton" parent="CanvasLayer/ui/pause_button/PauseTable"]
+offset_left = 20.0
+offset_top = 1.0
+offset_right = 72.0
+offset_bottom = 54.0
+script = ExtResource("30_uhk6o")
 
 [node name="restart_button" type="TextureButton" parent="CanvasLayer/ui"]
 offset_left = 72.0
@@ -458,6 +525,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="fps_debug" type="Label" parent="CanvasLayer"]
+visible = false
 offset_left = 573.0
 offset_top = 27.0
 offset_right = 638.0
@@ -479,6 +547,9 @@ offset_bottom = 152.0
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ui/pause_button" to="CanvasLayer/ui/pause_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/pause_button/PauseTable/p_home_button" to="CanvasLayer/ui/pause_button/PauseTable/p_home_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/pause_button/PauseTable/p_retry_button" to="CanvasLayer/ui/pause_button/PauseTable/p_retry_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ui/pause_button/PauseTable/p_continue_button" to="CanvasLayer/ui/pause_button/PauseTable/p_continue_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/restart_button" to="CanvasLayer/ui/restart_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/shoot_button" to="CanvasLayer/ui/shoot_button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ui/help_button" to="." method="_on_help_button_pressed"]
