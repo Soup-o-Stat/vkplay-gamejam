@@ -13,17 +13,9 @@ The project is built using the **Godot Engine**.
   - **Music:** All music tracks were composed and produced manually for this project.  
 
 ## Authors
-- **Code and Project:** [Your name or nickname]  
-- **Graphics:** [Name or nickname of the graphic designer]  
-- **Music:** [Name or nickname of the composer]  
-
-## Installation and Run Instructions  
-1. Download the repository.  
-2. Make sure you have **Godot Engine** installed (version 3.x or 4.x).  
-3. Open the project in Godot and run the `main.tscn` scene.  
-
-## Contribution  
-We welcome your contributions! Feel free to submit pull requests or create issues for suggestions, bug reports, or improvements.  
+- **Code:** Soup-o-Stat
+- **Graphics:** rekuiemuu 
+- **Music:** ShusJeirokku
 
 ## License  
 The project is distributed under the [MIT License](LICENSE). Please credit the authors if you use the code, graphics, or music from this project.  
